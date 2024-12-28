@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+	<channel>
+		<title>dinpixels' blog</title>
+		<link>https://dinpixels.neocities.org/</link>
+		<description>My little space for arts, thoughts, and other silly stuff</description>
+        <atom:link href="https://dinpixels.neocities.org/blog/blog.xml" rel="self" type="application/rss+xml" />
+
+		<item>
+			<title>October 20, 2024 - Hello Today; Goodbye Yesterday</title>
+			<link>https://dinpixels.neocities.org/blog/#Hello%20Today;%20Goodbye%20Yesterday</link>
+			<description>I deleted unnecessary programs and media, cleaned my PC, and installed Linux Mint. It was a refreshing start for me.</description>
+			<pubDate>Sun, 20 Oct 2024 18:45:35 +0800</pubDate>
+            <guid isPermaLink="true">https://dinpixels.neocities.org/blog/#Hello%20Today;%20Goodbye%20Yesterday</guid>
+		</item>
+        
+	</channel>
+</rss>

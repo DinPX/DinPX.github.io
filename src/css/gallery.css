@@ -1,0 +1,117 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegular';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+}
+body {
+    padding: 20px;
+    font-family: Ubuntu;
+    background-color: #34313b;
+    color: #a9a9bd;
+}
+h1, h2 {
+    margin-bottom: 0;
+    font-family: UbuntuRegular;
+}
+h1, p {
+    margin-top: 0;
+}
+a, a:visited {
+    color: #a9a9bd;
+}
+a:hover {
+    color: #FFA500;
+}
+hr {
+    border-top: 1px solid #a9a9bd;
+}
+.gallery, .gallerySmall, .galleryBig {
+    line-height: 3;
+    column-count: 6;
+    column-gap: 3;
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 48px;
+}
+.gallerySmall {
+    column-count: 10;
+}
+.galleryBig {
+    column-count: 4;
+}
+.intro {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    align-items: end;
+}
+.intro > div > p {
+    margin: 0;
+    padding: 0;
+}
+.info {
+    padding-left: 20px;
+    border-left: 2px solid #a9a9bd;
+}
+.note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*
+.gallery:has(img:hover) img:not(:hover) {
+    filter: grayscale(0.75);
+}*/
+img, picture {
+    width: 100% !important;
+    height: auto !important;
+    display: inline-block !important;
+    image-rendering: pixelated !important;
+    transition: transform 0.25s;
+}
+img:hover, picture:hover {
+    transform: scale(1.25);
+}
+
+/* Mobile layout support */
+@media (max-width: 1000px) {
+    .gallery, .gallerySmall, .galleryBig {
+        -moz-column-count:    4;
+        -webkit-column-count: 4;
+        column-count:         4;
+    }
+}
+@media (max-width: 800px) {
+    .gallery, .gallerySmall, .galleryBig {
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after,
+    img, picture, button, div {
+        transition: none !important;
+        animation: none !important;
+
+        -webkit-transition: none !important;
+        -webkit-animation: none !important;
+
+        -moz-transition: none !important;
+        -moz-animation: none !important;
+
+        -o-transition: none !important;
+        -o-animation: none !important;
+    }
+}

@@ -1,0 +1,230 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuItalic';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../fonts/ubuntu-v20-latin-300italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegular';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegularItalic';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../fonts/ubuntu-v20-latin-500italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/ubuntu-v20-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBoldItalic';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/ubuntu-v20-latin-700italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Visitor';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/visitor2.ttf') format('woff2');
+}
+@keyframes hovering {
+    from {
+        margin-bottom: 3px;
+    }
+    to {
+        margin-bottom: 0;
+    }
+}
+
+:root {
+    --notification-sfx: "../src/audio/sfx/chat_notif.wav"; 
+}
+
+body {
+    background: none;
+    -webkit-font-smoothing: antialiased;
+}
+.allMessages {
+    margin: 0;
+    padding: 5px;
+    width: auto;
+    display: flex;
+    position: relative;
+    gap: 2.5vh;
+    color: #555;
+    border: 1px solid rgb(208, 208, 191);
+    border-radius: 0 3px 3px 3px;
+    font-family: Ubuntu;
+    font-size: 12px;
+}
+br {
+    height: 6pt;
+}
+.allMessages:hover:after {
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    background-color: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+}
+.senderInfo {
+    display: block;
+    margin: 2px;
+    font-family: UbuntuBold;
+    text-align: justify;
+}
+/* .sent > .senderInfo {
+    text-align: right;
+}
+.recieved > .senderInfo {
+    text-align: left;
+}
+*/
+#background {
+    background: none;
+}
+.msgBody {
+    text-align: justify;
+    cursor: text;
+}
+#input {
+    color: #333;
+    background-color: #CCC;
+    border: none;
+    font-family: Ubuntu;
+    font-size: 8px;
+    padding: 5px;
+    width: calc(100% - 10px);
+    border-radius: 0;
+    margin: 0;
+    border-top: solid 1px #555;
+}
+#input:focus {
+    outline: dotted 1px #000;
+}
+#input:empty::before {
+    content: "Leave a comment...";
+}
+a {
+    font-family: Ubuntu;
+}
+#timestamp {
+    color: #AAA;
+    font-size: 8pt;
+}
+.badge {
+    display: none;
+}
+.senderInfo:has(.owner), .senderInfo:has(.mod) {
+    font-family: Ubuntu;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #000;
+}
+#top_banner {
+    display: none;
+}
+#settings {
+    filter: invert(50%);
+    opacity: 0.75;
+}
+#settings:hover {
+    filter: invert(10%);
+}
+blockquote {
+    font-style: italic;
+}
+#loadMore {
+    font-size: 10pt;
+    font-family: Ubuntu;
+}
+.pinned {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-radius: 5px;
+    max-height: 15vh;
+    overflow: hidden;
+    cursor: default;
+}
+.pinned:hover {
+    max-height: none;
+    height: auto;
+    box-shadow: 0px 2px 5px #000;
+    background-color: #FFF;
+}
+.pinned::before {
+    content: "\23F7";
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 15vh;
+    max-height: 15vh;
+    animation: 500ms linear infinite alternate hovering;
+}
+.pinned:hover::before {
+    display: none;
+}
+.pinned > .allMessages {
+    box-shadow: 0 0 3px #000;
+}
+.pinned > .allMessages:hover {
+    box-shadow: none;
+}
+.pinned > .allMessages::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 15vh;
+    max-height: 100%;
+    background: linear-gradient(transparent, transparent, #333);
+    opacity: 0.75;
+}
+.pinned > .allMessages:hover::before {
+    display: none;
+}
+.pinned:after {
+    display: inline-block;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    content: "📌";
+}
+#replyBanner {
+    font-size: 8pt;
+    font-family: Ubuntu;
+}

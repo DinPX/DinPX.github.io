@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../src/img/tsuyomi_favicon.gif">
+    <title>Resources</title>
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'UbuntuRegular';
+            font-style: normal;
+            font-weight: 500;
+            src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+        }
+        body {
+            padding: 20px;
+            font-family: Ubuntu;
+            font-size: larger;
+            word-wrap: break-word;
+        }
+        h1, h2, h3, h4 {
+            margin-bottom: 0;
+            font-family: UbuntuRegular;
+        }
+        h1, h3, h4, p {
+            margin-top: 0;
+        }
+        a, a:visited {
+            color: #245DDA;
+        }
+        a:hover {
+            color: #FFA500;
+        }
+        ul {
+            margin: 0;
+            padding: 10px 20px;
+            list-style: none;
+        }
+        hr {
+            border-top: 1px solid #a9a9bd;
+        }
+        code {
+            padding: 0 5px 0 5px;
+            background-color: #dedede;
+            border-radius: 5px;
+        }
+        img {
+            image-rendering: pixelated;
+        }
+        .intro {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .intro > div > p {
+            margin: 0;
+            padding: 0;
+        }
+        .introMain {
+            padding-right: 20px;
+            border-right: 2px solid #a9a9bd;
+        }
+        .info {
+            margin: 0;
+            padding: 0;
+        }
+        .konaLaugh {
+            margin-left: 24px;
+        }
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .resources {
+            width: 100%;
+        }
+        .sidebar {
+            /*outline: 2px dashed red;*/
+            margin: 20px 20px 0 0;
+            padding: 20px 0;
+            width: 300px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: whitesmoke;
+            /* font-size: 16px; */
+            border-top: 36px solid #245DDA;
+            border-left: 5px solid #245DDA;
+            border-right: 5px solid #245DDA;
+            border-bottom: 5px solid #245DDA;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px black;
+        }
+        .sidebar ul {
+            list-style-type: "⭐  ";
+            list-style-position: inside;
+        }
+        .mainNavOverflow {
+            overflow: auto;
+            margin: 0;
+        }
+        .titleIcon {
+            text-shadow: -1px -1px white;
+            color: transparent;
+        }
+        .sidebarTitle {
+            font-size: 16px;
+            color: whitesmoke;
+            position: absolute;
+            top: -25px;
+            left: 10px;
+        }
+        .sectionWindow {
+            margin-bottom: 24px;
+            background-color: whitesmoke;
+            border-top: 64px solid #245DDA;
+            border-left: 5px solid #245DDA;
+            border-right: 5px solid #245DDA;
+            border-bottom: 5px solid #245DDA;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px black;
+        }
+        .title {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+        }
+        .sectionWindowTitle {
+            font-size: 32px;
+            color: whitesmoke;
+            position: relative;
+            top: -50px;
+            left: 10px;
+            padding-right: 20px;
+            border-right: 3px solid #83c2f5;
+        }
+        .sectionWindowInfo {
+            font-size: 16px;
+            color: whitesmoke;
+            position: relative;
+            font-family: UbuntuRegular;
+            top: -34px;
+        }
+        .xBtn {
+            padding: 2px 8px;
+            background-image: radial-gradient(#ff7f7f, #f01919);
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 0;
+            border: 2px outset #ff7f7f;
+            border-radius: 4px;
+        }
+        .sizeBtn {
+            padding: 2px 8px;
+            background-color: transparent;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 32px;
+            border: 2px outset #83c2f5;
+            border-radius: 4px;
+        }
+        .minBtn {
+            padding: 2px 8px;
+            background-color: transparent;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 66px;
+            border: 2px outset #83c2f5;
+            border-radius: 4px;
+        }
+        .startBtn:hover, .minBtn, .sizeBtn:hover, .xBtn:hover {
+            cursor: pointer;
+        }
+        .mainNav {
+            margin: 0;
+            padding: 0 20px;
+        }
+        .webmastery hr {
+            border: none;
+            border-top: 1px solid #a9a9bd;
+        }
+        .content {
+            margin: -40px 0 0 20px;
+            padding-bottom: 20px;
+        }
+        .content ul {
+            border-bottom: 1px solid #a9a9bd;
+            padding-bottom: 40px;
+        }
+        .content ul:last-child {
+            border: none;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="resources">
+            <div class="intro">
+                <div class="introMain">
+                    <h1>Resources <span><small><em>beta</em></small></span></h1>
+                    <p>This page serves as my resource dump and bookmarks</p>
+                    <br>
+                    <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a></small></p>
+                </div>
+                <div class="info">
+                    <p><small>Offline pages are available for preservation.<br>Just look for a Snapshot and visit it.<br><!--Some Snapshots may have broken CSS.--></small></p><br>
+
+                    <p><small>Credits to the assets I used are <a href="#Credits">here</a>.</small></p>
+                    <p><small>Encountered issues? Report them at this <a href="#!">board</a>.</small></p>
+
+                </div>
+                <picture class="konaLaugh">
+                    <!-- Animated versions. -->
+                    <source
+                    srcset="../src/img/stickers/konata-laugh-100x100.gif"
+                    type="image/gif"
+                    media="(prefers-reduced-motion: no-preference)"
+                    width="112"
+                    height="112"
+                    style="image-rendering: pixelated;"
+                    />
+                    <!-- Static versions. -->
+                    <img src="../src/img/stickers/konata-laugh-100x100.png" alt="" width="112" height="112" style="image-rendering: pixelated;"/>
+                </picture>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Webmastery" class="sectionWindowTitle"><span class="titleIcon">🧙</span> Webmastery</h1>
+                    <p class="sectionWindowInfo"> Resources on building a website.</p>
+                </div>
+                <div class="content">
+                    <h2 id="CSS">✨ CSS</h2>
+                    <p>Guides and references for layout and design.</p>
+                    <ul>
+                        <li><a href="https://medium.com/@MilesOfRoses/css-image-gallery-for-pictures-with-different-aspect-ratios-a20ffecb75d5" target="_blank">CSS Image gallery for pictures with different aspect ratios</a><br>How to build a responsive gallery with images have are different aspect ratios.<br><small> Offline page: <a href="../archive/websites/Webmastery/CSS/CSS_Image_gallery_for_pictures_with_different_aspect_ratios.html" target="_blank">Snapshot</a></small></li><br>
+                        
+                        <li><a href="https://css-tricks.com/seamless-responsive-photo-grid/" target="_blank">Seamless Responsive Photo Grid</a><br><small>Offline page: <a href="../archive/websites/Webmastery/CSS/Seamless%20Responsive%20Photo%20Grid%20_%20CSS-Tricks.html" target="_blank">Snapshot</a></small></li><br>
+                        
+                        <li><a href="https://stackoverflow.com/questions/1461015/why-dont-ul-bullets-stay-within-their-containing-div" target="_blank">Why don't UL bullets stay within their containing DIV?</a><br>Fixes the issue of <code>ul</code>'s custom bullets being cut off when overflow is enabled.<br><small> Offline page: <a href="../archive/websites/Webmastery/CSS/html - Why don't UL bullets stay within their containing DIV_ - Stack Overflow.html" target="_blank">Snapshot</a></small></li><br>
+
+                        <li><a href="https://www.w3schools.com/">W3Schools</a><br>Simplified & beginner-friendly tutorials. Also offers other programming languages.</li><br>
+
+                        <li><a href="https://goblin-heart.net/sadgrl/learn/sections/html-and-css">Webmaster guides</a><br>sadgrl.online's guide on HTML, CSS, RSS, and more. Also has guides specifically for Neocities.</li><br>
+
+                        <li><a href="https://webguide.neocities.org/" target="_blank">Web Guide</a><br>A beginner's guide to HTML and CSS.</li>
+                        
+                    </ul>
+
+                    <h2 id="RSS">📰 RSS</h2>
+                    <p>Setup and handle your blog feed with more ease.</p>
+                    <ul>
+                        <li><a href="https://rss.bloople.net/">RSS 2 HTML</a><br>Converts RSS and XML files to HTML. Has JavaScript code to allow CSS,<br>iframe embed if the website doesn't have any Javascript, and<br>a PHP code that only works if the webpage is already written in PHP.</li><br>
+
+                        <li><a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank">RSS Guide</a><br>A beginner-friendly guide on setting up an RSS feed by <a href="https://dogmeat.neocities.org/" target="_blank">dogmeat</a>.<br><small> Offline page: <a href="../archive/websites/Webmastery/RSS/RSS guide.html" target="_blank">Snapshot</a></small></li><br>
+
+                        <li><a href="https://aboutfeeds.com/" target="_blank">What is a feed? (a.k.a. RSS) | About Feeds</a><br>An introduction to web feed by <a href="https://interconnected.org/" target="_blank">Matt Webb</a>.</li><br> 
+
+                    </ul>
+
+                    <h2 id="Accessibility">🔍 Accessibility</h2>
+                    <p>Make your site more accessible.</p>
+                    <ul>
+                        <li><a href="https://web.dev/articles/prefers-reduced-motion#motion-triggered_vestibular_spectrum_disorder" target="_blank">prefers-reduced-motion: Sometimes less movement is more</a><br>How to disable animations when a user needs it. Helpful for people with vestibular disorder.</li>
+                        <br>
+                        <li><a href="https://natclark.com/tutorials/javascript-reduced-motion/" target="_blank">Checking for Reduced Motion Preference in JavaScript</a></li>
+                    </ul>
+                    
+                    <h2 id="Archiving">📚 Archiving</h2>
+                    <p>Download a webpage as an offline HTML. Also available on <a href="../archive/">my archive</a>.</p>
+                    <ul>
+                        <li><h3 id="ArchivingGuides">🔧 Guides</h3></li><br>
+
+                        <li>
+                            <a href="https://badgraph1csghost.neocities.org/hoardinzone" target="_blank"><h4>The Datahoarder's Toolkit by Badgraph1csghost</h4></a>
+                            <p>
+                                An informative introduction and guide to datahoarding by Badgraph1csghost.<br>It covers important websites to get data from, the tools you'll need for archiving,<br>how to store and preserve those data, and even the basics of downloading for new learners.
+                            </p>
+                            <a href="https://badgraph1csghost.neocities.org/" target="_blank"><img src="../src/img/buttons/8s_badgraph1csghost.png" alt="Badgraph1csghost's 88x31 button"></a>
+                        </li>
+                        
+                        <br><br><br>
+
+                        <li><h3 id="ArchivingTools">🔧 Tools</h3></li><br>
+                        
+                        <li><h4 id="ArchivingExtensions"><small>&emsp;&emsp;</small>Extensions</h4></li><br>
+
+                        <li>
+                            <h4><small>&emsp;&emsp;</small>Save Page WE</h4>
+                            <p>
+                                <small>&emsp;&emsp;</small>A browser extension that lets you save the page 'as is', just as how you see it.<br><small>&emsp;&emsp;</small>Frankly I prefer using this because it's far more simpler, faster, and convenient than the<br><small>&emsp;&emsp;</small><a href="#WaybackMachineDownloader">Wayback Machine Downloader</a>. Not to mention the single HTML it produces is light in size.
+                            </p>
+                            <p><small>&emsp;&emsp;</small><b>Firefox:</b> <a href="https://addons.mozilla.org/en-US/firefox/addon/save-page-we/" target="_blank">Firefox Browser Add-ons</a><br><small>&emsp;&emsp;</small><b>Chrome:</b> <a href="https://chromewebstore.google.com/detail/save-page-we/dhhpefjklgkmgeafimnjhojgjamoafof" target="_blank">Chrome Web Store</a></p>
+                        </li><br><br>
+
+                        <li>
+                            <h4><small>&emsp;&emsp;</small>SingleFile</h4>
+                            <p>
+                                <small>&emsp;&emsp;</small>Saves an entire page as a single HTML file, just as the Save Page WE.
+                            </p>
+                            <p><small>&emsp;&emsp;</small><b>Firefox:</b> <a href="https://addons.mozilla.org/en-US/firefox/addon/single-file/" target="_blank">Firefox Browser Add-ons</a><br><small>&emsp;&emsp;</small><b>Chrome:</b> <a href="https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle" target="_blank">Chrome Web Store</a></p>
+                        </li>
+
+                        <br><br><br>
+
+                        <li><h4 id="ArchivingTerminal"><small>&emsp;&emsp;</small>Terminal</h4></li><br>
+
+                        <li>
+                            <h4><small>&emsp;&emsp;</small>wget</h4>
+                            <p><small>&emsp;&emsp;</small>Go to your terminal and type <code>wget -k -p LINK</code><br><small>&emsp;&emsp;</small>Depending on connection speed it should only just take a few seconds or so.</p>
+                            <p><small>&emsp;&emsp;</small><code>-k</code> &nbsp;&nbsp;&nbsp;makes it possible to be browsed offline
+                            <br><small>&emsp;&emsp;</small><code>-p</code> &nbsp;&nbsp;&nbsp;downloads needed files for displaying the page
+                            <br><small>&emsp;&emsp;</small><code>LINK</code> &nbsp;&nbsp;&nbsp;the link of the page you'd like to download</p>
+                            <p><small>&emsp;&emsp;</small>Examples: <a href="https://linuxize.com/post/wget-command-examples/">Wget Command in Linux with Examples</a></p>
+                            <p><small>&emsp;&emsp;</small>If you'd like to download the <em><b>website</b></em> as a complete mirror, add the <code>-m</code> flag.
+                            <br><small>&emsp;&emsp;</small><code>-m</code> flag creates a complete mirror, a local copy</p>
+                        </li>
+
+                        <br><br><br>
+                        
+                        <li><h4 id="ArchivingWebApp"><small>&emsp;&emsp;</small>Web App</h4></li><br>
+
+                        <li>
+                            <h4 id="WaybackMachineDownloader"><small>&emsp;&emsp;</small>Wayback Machine Downloader</h4>
+                            <p><small>&emsp;&emsp;</small>Comes in free and paid services.<br><small>&emsp;&emsp;</small>Just paste your link and fill other options if needed.</p>
+                            <p><small>&emsp;&emsp;</small>Link: <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/" target="_blank">Wayback Machine Downloader</a></p>
+                        </li>
+                    </ul>
+
+                    <h2 id="Assets">🖼️ Assets</h2>
+                    <p>Images, fonts, audio, and more.</p>
+                    <ul>
+                        <li><h3 id="AssetsImages">🎨 Images</h3></li>
+                        <li>Buttons, stamps, emotes, and other image assets.</li><br>
+
+                        <li><a href="https://kaoani.ikilote.net/" target="_blank">Ik` ilote - Le monde des Kaoani</a><br>A collection of over 3600 small, pixelated animated faces or emotes.</li><br>
+
+                        <li><a href="https://pixelsea.neocities.org/" target="_blank">Pixel Sea</a><br>An archive of tiny images (mostly GIFs) around the web.</li><br>
+
+                        <li><a href="https://gifcities.org/" target="_blank">GifCities</a><br>A search engine for archived animated GIFs from Geocities.<br>Hosted by the non-profit digital library <a href="https://archive.org/" target="_blank">Internet Archive</a>.</li><br>
+
+                        <li><a href="https://cyber.dabamos.de/88x31/" target="_blank">The 88x31 GIF Collection</a><br>A collection of over 4000 GIFs from 1990s, 2000s, and present.</li><br>
+
+                        <li><a href="https://anlucas.neocities.org/88x31Buttons" target="_blank">A.N. Lucas' 88x31 button Collection</a><br>Over 700 buttons from the 1990s and 2000s including <em>Netscape NOW</em> and <em>Internet Explorer</em>.</li><br>
+
+                        <li><a href="https://99gifshop.neocities.org/" target="_blank">99GIF shop</a></li>
+                        <li><a href="https://hellnet.work/8831/" target="_blank">THE 88×31 ARCHIVE</a></li>
+                        <li><a href="https://kopawz.neocities.org/stamphoard/stamphoard" target="_blank">stamp hoard</a></li>
+
+                        <br><br><br>
+
+                        <li><h3 id="AssetsFonts"><span style="color: #245DDA;">🗛</span> Fonts</h3></li>
+                        <li>Fonts for webdev, gamedev, and other uses.</li><br>
+
+                        <li><a href="https://humantooth.neocities.org/freefonts" target="_blank">free webfonts</a><br>Free webfonts provided by <a href="https://humantooth.neocities.org" target="_blank">humantooth</a>.</li><br>
+
+                        <li><a href="https://goblin-heart.net/sadgrl/webmastery/downloads/fonts" target="_blank">Free fonts</a><br>Listed by <a href="https://goblin-heart.net/sadgrl/" target="_blank">sadgrl.online</a>. They are available for download.</li>
+
+                    </ul>
+
+                    <h2 id="HTML">👋 HTML</h2>
+                    <p>Hand coding to learn how things really work, and tools for convenience or efficiency.</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/">W3Schools</a><br>Simplified & beginner-friendly tutorials. Also offers other programming languages.</li><br>
+
+                        <li><a href="https://goblin-heart.net/sadgrl/learn/sections/html-and-css">Webmaster guides</a><br>sadgrl.online's guide on HTML, CSS, RSS, and more. Also has guides specifically for Neocities.</li><br>
+
+                        <li><a href="https://webguide.neocities.org/" target="_blank">Web Guide</a><br>A beginner's guide to HTML and CSS.</li><br>
+
+                        <li><a href="https://htmlcheatsheet.com/" target="_blank">HTML Cheat Sheet</a><br>A helpful reference sheet when coding HTML.</li><br>
+
+                        <li><a href="https://codepen.io/pen/" target="_blank">CodePen</a><br>Edit and see changes to your code in real time.</li><br>
+                    </ul>
+                    
+                    <h2 id="Javascript">⚙️ Javascript</h2>
+                    <p>Useful scripts for user experience or extra stuff.</p>
+                    <ul>
+                        <li><p><code>javascript:window.history.back();</code> &nbsp;&nbsp;&nbsp;tell your browser to go back on previous page<br><code>javascript:window.history.forward();</code> &nbsp;&nbsp;&nbsp;tell your browser to go forward on next page<br><code>javascript:window.scrollTo(X, Y);</code> &nbsp;&nbsp;&nbsp;scroll your browser to the coordinates, where <code>X</code> is width and <code>Y</code> is height</p></li>
+
+                        
+                    </ul>
+
+                    <h2 id="Hosting">💻 Hosting</h2>
+                    <p>Start and host your own website or server.</p>
+                    <ul>
+                        <li><a href="https://neocities.org/" target="_blank">Neocities</a><br>Host your static website for free. No ads, no strings attached.<br>Paid hosting for more benefits is also available.</li><br>
+
+                        <li><a href="https://nekoweb.org/" target="_blank">Nekoweb</a><br>Like Neocities but comes with more features, and is much versatile.</li><br>
+
+                        <li><a href="https://imgbb.com" target="_blank">imgbb</a><br>A free image hosting service. Images can be stored with or without duration.<br>They have a plugin, an API, and paid plans to choose from.</li><br>
+
+                        <li><a href="https://landchad.net/" target="_blank">LandChad.net</a><br>How to setup websites, email and chat servers, and more.</li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="WorldWideWeb" class="sectionWindowTitle"><span class="titleIcon">🌐</span> World Wide Web</h1>
+                    <p class="sectionWindowInfo"> There is so much more to the Internet than social media.</p>
+                </div>
+                <div class="content">
+                    <h2 id="Directory">🗂️ Directory</h2>
+                    <ul>
+                        <li><a href="https://peelopaalu.neocities.org/" target="_blank">Peelopaalu</a><br>An unsorted list of links. There's a lot of old pages, even obscure ones. Some links are dead.</li><br>
+
+                        <li><a href="https://suzymchale.neocities.org/bookmarks" target="_blank">Bookmarks Menu</a><br>A large list of links of extensions, astronomy, blogs, and more by <a href="https://suzymchale.neocities.org/" target="_blank">Suzy McHale</a>.</li>
+                    </ul>
+
+                    <h2 id="Manifesto">📜 Manifesto</h2>
+                    <ul>
+                        <li><a href="https://melonking.net/thoughts/manifesto" target="_blank">Melon's Manifesto v1.1</a><br>A manifesto by <a href="https://melonking.net/" target="_blank">Melon</a> on web revival and creative freedom.<br><small>Offline page: <a href="../archive/websites/Manifesto/Melon's_MANIFESTO.html" target="_blank">Snapshot</a></small></li><br>
+
+                        <li><a href="https://goblin-heart.net/sadgrl/cyberspace/internet-manifesto" target="_blank">Internet manifesto</a><br>Manifesto of <a href="https://goblin-heart.net/sadgrl/" target="_blank">sadgrl.online</a> about keeping social connections online humane,<br>the role of social media, the importance of small circles, and more.<br><small>Offline page: <a href="../archive/websites/Manifesto/sadgrl.online_new.html" target="_blank">Snapshot</a></small><br><br>There is also a previous iteration which covers the importance of personal web<br>and how to take part on its growth. You might want to read this first before the current version.<small><br>Offline page: <a href="../archive/websites/Manifesto/sadgrl.online.html" target="_blank">Snapshot</a><br>Online page: <a href="https://web.archive.org/web/20230409024642if_/https://sadgrl.online/cyberspace/internet-manifesto" target="_blank">Internet Archive</a></small></li><br>
+
+                        <li><a href="https://dx.bearblog.dev/make-boring-websites/" target="_blank">Make Boring Websites.</a></li><br>
+
+                        <li><a href="https://wiki.melonland.net/manifestos" target="_blank">List of Manifestos of the Web Revival</a><br>List of web revival manifestos compiled by <a href="https://melonking.net/" target="_blank">Melon</a>.</li>
+                    </ul>
+
+                    <h2 id="WebRevival">♻️ Web Revival</h2>
+                    <ul>
+                        <li><a href="https://thoughts.melonking.net/guides/introduction-to-the-web-revival-1-what-is-the-web-revival">Intro to the Web Revival #1: What is the Web Revival?</a><br>An introduction to web revival by <a href="https://melonking.net/" target="_blank">Melon</a>, a part of a larger internet movement.</li>
+                    </ul>
+
+                    <h2 id="Archives">💾 Archives</h2>
+                    <ul>
+                        <li><a href="https://visualboyadvance.org/gba-roms" target="_blank">GBA Roms - Download Gameboy Advance Rom Games</a><br>A library of ROMs and ROM hacks hosted by Visual Boy Advance for preservation.</li><br>
+
+                        <li><a href="https://vimm.net/vault">The Vault</a><br>A catalog of games from a total of 29 classic consoles and handheld combined by <a href="https://vimm.net/" target="_blank">Vimm's Lair</a>.<br>Some games have been taken down due to copyright.</li><br>
+                        
+                        <li><a href="https://vimm.net/emulate" target="_blank">Emulation Lair</a><br>A section of <a href="https://vimm.net/" target="_blank">Vimm's Lair</a> which lists various system emulators.</li><br>
+
+                        <li><a href="https://vimm.net/manual" target="_blank">The Manual Project</a><br>A project of <a href="https://vimm.net/" target="_blank">Vimm's Lair</a> to scan and preserve as much video game manuals as possible.</li><br>
+
+
+
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Tools" class="sectionWindowTitle"><span class="titleIcon">🔧</span> Tools</h1>
+                    <p class="sectionWindowInfo"> Handy tools for optimizing images, emulating games, and more.</p>
+                </div>
+                <div class="content">
+                    <h2 id="Art">Art</h2>
+                    <p>Applications and extensions for creating art. Mostly are about pixel art.</p>
+
+                    <ul>
+                        <li><h3 id="ArtApplications">Applications</h3></li><br>
+
+                        <li><a href="https://www.aseprite.org/" target="_blank">Aseprite</a><br>Probably the most known and popular choice by pixel artists such as me.<br><br>Developed by <a href="https://github.com/dacap/" target="_blank">David Capello</a> and the <a href="https://github.com/aseprite/aseprite/graphs/contributors" target="_blank">Aseprite community</a>, it is a powerful sprite editor that can animate<br>and export in many supported and known formats. It features groupable layers, tile sets, interactable text,<br><a href="#ArtExtensions">extensions via Lua scripting</a>, grouping cels into tags with varying loops, different cel durations, onion skinning,<br>brush pressure, custom brushes, blend modes, image sequence via multiple image import, and more.<br><br>It also has an autosave and data recovery feature, as well as a customizable theme.<br><br>It comes in <a href="https://www.aseprite.org/#buy" target="_blank">a paid bundle</a> and <a href="https://www.aseprite.org/trial/" target="_blank">a trial version</a>. You can also <a href="https://github.com/aseprite/aseprite" target="_blank">build it from source for free</a>.<br>Available to download for Windows, Linux, and macOS platforms.<br><br>Overall, because it is popular for us pixel artists and game developers alike,<br>there's countless resources of tutorials and extensions available online which mostly are free.</li>
+
+                        <br><br><br>
+
+                        <li><a href="https://graphicsgale.com/us/" target="_blank">GraphicsGale</a><br>Another popular <em>freeware</em> and a powerful pixel art program for pixel artists, animators and alike.<br><br>Unlike Aseprite, it supports <b>.cur</b> and <b>.ani</b> formats by default. It also features real time editing, i.e.<br>edit your sprites while they're being played. Like other pixel programs, it also supports multiple layers,<br>onion skinning, sprite sheet export, palette control, and more.</li>
+
+                        <br><br><br>
+
+                        <li><a href="">Pixelorama</a></li><br>
+
+                        <li><a href="">Pixquare</a></li><br>
+
+                        <li><a href="">Pixel Studio</a></li><br>
+
+                        <li><a href="">dotpict</a></li><br>
+
+                        <li><a href="">Pixilart</a></li><br>
+
+                        <li><a href="">Krita</a></li><br>
+
+                        <li><a href="">Microsoft Paint</a></li><br>
+
+                        <li><a href="">Inkscape</a></li>
+
+                        <br><br><br>
+
+                        <li><h3 id="ArtExtensions">Extensions</h3></li><br>
+
+                        <li><a href="https://sprngr.itch.io/aseprite-record" target="_blank">Record</a><br>A recording tool which is useful for making timelapses. Made by <a href="https://sprngr.itch.io/" target="_blank">sprngr</a>.<br>Great for preserving the crispness of each frames unlike when recording via screen/window capture.</li><br>
+
+                        <li><a href="https://darkdes.itch.io/aseplatform" target="_blank">AsePlatform</a><br>Turns your platformer mockup as a simple interactive sandbox! Made by <a href="https://darkdes.itch.io/" target="_blank">darkdes</a>.</li><br>
+
+                        <li><a href="https://bitbucket.org/jjhaggar/aseprite-dithering-matrices/downloads/" target="_blank">Aseprite Dithering Matrices</a><br>More dithering patterns provided by <a href="https://twitter.com/JJHaggar" target="_blank">JJHaggar</a>!</li><br>
+
+                        <li><a href="https://sudo-whoami.itch.io/lospec-palette-importer" target="_blank">Lospec Palette Importer</a><br>Save and use color palettes directly from <a href="https://lospec.com/" target="_blank">Lospec</a><br>--a pixel art gallery,  color palettes catalog, tools, and tutorials website.<br>Made and maintained by <a href="https://sudo-whoami.itch.io/" target="_blank">sudo_whoami</a>.</li><br>
+
+                        <li><a href="https://fletchmakesstuff.itch.io/gif-sequencing" target="_blank">Gif sequencing</a><br>Allows GIF export with ordered tags and their number of loops.<br>It features saving and using sequences as presets.<br>Created by <a href="https://fletchmakesstuff.itch.io/" target="_blank">Fletch</a>.</li><br>
+
+                        <li><a href="https://thkaspar.itch.io/animation-suite" target="_blank">Animation Suite</a><br>A powerful animation tools suite made by <a href="https://thkaspar.itch.io/" target="_blank">Kacper Woźniak</a>.<br>It can import animations from a selection, layer, or a tag, as well as animate them<br>in a linear or sine motion.<br>It can also turn separate layers with various durations into a single perfect loop.</li><br>
+
+                        <li><a href="https://thkaspar.itch.io/time-tracking-for-aseprite" target="_blank">Time Tracking</a><br>Another amazing work by <a href="https://thkaspar.itch.io/" target="_blank">Kacper Woźniak</a> that tracks the time spent on an Aseprite work locally.</li><br>
+
+                        <li><a href="https://darkwark.itch.io/isobox-for-aseprite" target="_blank">Isometric Box Generator</a><br>Can create isometric boxes in various sizes. It features x, y, and z size of the box,<br>custom colors for highlight, stroke, and sides, and more.<br>Made by <a href="https://darkwark.itch.io/" target="_blank">darkwark</a>.</li><br>
+
+                        <li><a href="https://github.com/Tsukina-7mochi/aseprite-scripts/tree/master/psd" target="_blank">Export as PSD</a><br>Allows Aseprite files to be exported in Photoshop Document (.psd) format.<br>It is made and maintained by <a href="https://github.com/Tsukina-7mochi/" target="_blank">Tsukina-7mochi</a>.</li><br>
+
+                        <li><a href="https://github.com/Tsukina-7mochi/aseprite-scripts/tree/master/icon-and-cursor" target="_blank">Export as ico cur ani</a><br>Another Aseprite extension being handled by <a href="https://github.com/Tsukina-7mochi/" target="_blank">Tsukina-7mochi</a>.<br>It allows export to ico, cur, and ani formats which is useful for making icons and cursors.</li><br>
+
+                        <li><a href="https://github.com/behreajj/aseicoexport">AseIcoExport</a><br>Also exports to ico, cur, and ani files, and features import as well.<br>Created and maintained by <a href="https://github.com/behreajj" target="_blank">behreajj</a>.</li><br>
+
+                        <li><a href="https://github.com/behreajj/AsepriteAddons" target="_blank">Aseprite Add-ons</a><br>A repository of useful Lua scripts that are also handled by <a href="https://github.com/behreajj" target="_blank">behreajj</a>.<br>Features add-ons like exporting Tile Maps for <a href="https://www.mapeditor.org/" target="_blank">Tiled</a>, text insertion dialog, outline gradient, and more.</li><br>
+
+                        <li><a href="https://kidmarscat.itch.io/autoparallax" target="_blank">autoParallax.lua</a><br>An auto scrolling parallax script made by <a href="https://kidmarscat.itch.io/" target="_blank">kid marscat</a>.</li><br>
+                        
+                        <li><a href="https://darkmatterdreams.itch.io/aseprite-parallax-script" target="_blank">Aseprite Parallax Script</a><br>A convenient parallax script created by <a href="https://darkmatterdreams.itch.io/" target="_blank">DarkMatterDreams</a>.<br>It can set the count of frames, speed of each layer, and the direction of the motion.</li><br>
+
+                        <li><a href="https://noesteryo.itch.io/aseprite-isometric-guidelines" target="_blank">Aseprite isometric guidelines</a><br>It can create isometric guidelines for walls and floors.<br>Colors can be set on walls and floors. Made by <a href="https://noesteryo.itch.io/" target="_blank">Noesteryo</a>.</li><br>
+
+                        <li><a href="https://thkaspar.itch.io/select-content" target="_blank">Select Content</a><br>Selects cel's content precisely. Made by <a href="https://thkaspar.itch.io/" target="_blank">Kacper Woźniak</a>.</li>
+
+                        <li><a href="" target="_blank"></a></li>
+
+                        <li><a href="" target="_blank"></a></li>
+
+                    </ul>
+
+                    <h2 id="Image">🎞️ Image</h2>
+                    <ul>
+                        <li><a href="https://ezgif.com" target="_blank">Ezgif</a><br>Optimize, Edit, and Convert GIFs. Has GIF to video support, image editor, and more.<br>Personally, this is one of my favorite editors and converters for my GIFs.</li><br>
+
+                        <li><a href="https://trimage.org/">Trimage</a><br>Lossless image optimizer. Compress your image without losing quality.</li>
+                    </ul>
+
+                    <h2 id="3Dmodel">🎲 3D Model</h2>
+                    <ul>
+                        <li><a href="https://lucatronica.github.io/picocad-web-viewer/" target="_blank">picoCAD Viewer</a><br>A web app by <a href="https://github.com/lucatrn" target="_blank">Luca</a> that lets you view and export picoCAD files as GIFs.<br>You can edit the FPS, show wireframes, and even add an outline.</li><br>
+
+                        <li><a href="https://github.com/jordanfb/PicoCADToolKit" target="_blank">PicoCADToolkit</a><br>A versatile picoCAD viewer and editor made by <a href="https://github.com/jordanfb" target="_blank">Jordan</a> with Python.<br>It can be used on picoCAD models to optimize their size by merging or deleting meshes or faces.<br>You can also edit and export UVs.</li>
+
+                        
+                    </ul>
+
+                    <h2 id="Games">🎮 Games</h2>
+                    <ul>
+                        <li><h3 id="GameEngines">🤖 Game Engines</h3></li><br>
+
+                        <li><a href="https://godotengine.org/" target="_blank">Godot Engine</a><br>A free, open-source game engine. Very lightweight and doesn't have any strings attached, i.e.<br>just code right away. It features a 'node-based system' where blocks or <em>Nodes</em> are used<br>to build complex and reusable scenes.<br><br>GDScript, its built-in scripting language, is dynamically typed and inspired by Python's simplicity.<br>The 4.0 and above releases has support for static typing in order to improve performance.<br>There is also a C# release that supports the .NET platform, which also increases performance.<br><br>Godot also has a library of add-ons, as well as templates and guides from its community.<br>Has OpenGL support for 3.x releases, and Vulkan support for 4.0 and above.<br>While mainly a <em>simple</em> game engine it can build applications too. Users can also animate with it.<br><br>It is released with its permissive <a href="https://github.com/godotengine/godot/blob/master/LICENSE.txt" target="_blank">MIT license</a>, which allows users to use Godot for any purpose,<br>study how it works and modify it, and even distribute both unmodified and changed versions<br>(e.g. with other licenses and/or commercially).<br><br><small>Download: <a href="https://godotengine.org/download/3.x/" target="_blank">3.x version</a> | <a href="https://godotengine.org/download/" target="_blank">4.x version</a></small></li><br>
+
+                        <br><br><br>
+                        <li><h3 id="Emulators">🕹️ Emulators</h3></li><br>
+                        
+                        <li><h4 id="GameBoy"><small>&emsp;&emsp;</small>Game Boy Handhelds</h4></li><br>
+
+                        <li><small>&emsp;&emsp;</small><a href="https://mgba.io/" target="_blank">mGBA</a><br><small>&emsp;&emsp;</small>An emulator for the Gameboy Advance that is lightweight and stable, and even runs on older hardware.<br><small>&emsp;&emsp;</small>It supports Game Boy and Game Boy Color emulation, as well as DS which is still early in development.<br><small>&emsp;&emsp;</small>Features include solar sensor, Game Boy Printer, and even the <a href="https://www.therockmanexezone.com/general/2019/02/18/battlechip-gate-emulation-now-supported-by-mgba-and-gbe/" target="_blank">BattleChip Gate</a>.<br><small>&emsp;&emsp;</small>Homebrews on 3DS, Switch, Wii, and Vita are available.</li><br>
+
+                        <li><small>&emsp;&emsp;</small><a href="https://visualboyadvance.org/" target="_blank">Visual Boy Advance (VBA)</a><br><small>&emsp;&emsp;</small>Another emulator for Game Boy, Game Boy Color, and Game Boy Advance ROMs.<br><small>&emsp;&emsp;</small>A bit stable to Game Boy and Game Boy Color emulation compared to mGBA.</li><br>
+
+                        <li><small>&emsp;&emsp;</small><a href="https://visualboyadvance.org/download/vba-m/" target="_blank">Visual Boy Advance M (VBA-M)</a><br><small>&emsp;&emsp;</small>An improved fork of the VBA.</li>
+                        
+                        <br><br><br>
+
+                        <li><h4 id="PSP"><small>&emsp;&emsp;</small>Playstation Portable (PSP)</h4></li><br>
+
+                        <li><small>&emsp;&emsp;</small><a href="https://www.ppsspp.org/" target="_blank">PPSSPP</a><br><small>&emsp;&emsp;</small>A PSP emulator that can run games in high resolutions and even render in OpenGL and Vulkan.<br><small>&emsp;&emsp;</small>Supports save states, upscaling textures, setting shaders, network setups, <a href="https://retroachievements.org/" target="_blank">RetroAchievements</a> and more.</li>
+
+                        <br><br><br>
+                        <li><h3 id="Frontend">🖥️ Frontend</h4></li><br>
+
+                        <li><a href="https://www.retroarch.com/">RetroArch</a><br>One of the largest and updated frontend for emulators, game engines and media players.<br>It supports a wide range of classic computers and consoles, and can even original game discs.</li><br>
+
+                        <li><a href="https://www.retrobat.org/">RetroBat</a><br>Designed for convenient emulation with its customizable <em>EmulationStation</em>.</li><br>
+
+                        <li><a href="https://retropie.org.uk/">RetroPie</a><br>It can turn a Raspberry Pi, ODroid C1/C2, or a PC into a retro-gaming machine.</li><br>
+
+                        <li><a href="https://www.lakka.tv/">Lakka</a></li>
+                        <li><a href="https://batocera.org/">Batocera.linux</a></li><br>
+
+                        
+                    </ul>
+
+                    <h2 id="Streaming">🎥 Streaming</h2>
+                    <ul>
+                        <li><a href="https://applic.dev/inspect/twitch-elements/" target="_blank">Inspect / Twitch Elements (legacy)</a><br>See previews of your sub badges, emotes, and more of how they'll look like on Twitch.<br>Supports both dark and light mode, custom username and color, and texts on chat.<br><br><small>Example with my <a href="https://ko-fi.com/s/4cdee6d7ec" target="_blank">Eeveelution badges</a>:</small><br><img src="../src/img/works/screenshots/pokemon_eeveelutions_x1_twitch_preview_smol.png" alt=""></li><br>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Education" class="sectionWindowTitle"><span class="titleIcon">💭</span> Education</h1>
+                    <p class="sectionWindowInfo"> Useful learning materials.</p>
+                </div>
+
+                <div class="content">
+                    <h2 id="Database">🗃️ Database</h2>
+                    <ul>
+                        <li><a href="https://sci-hub.se/" target="_blank">Sci-hub</a><br>A database of over 88 million free and unrestricted research articles and books.<br>They are part of the <a href="https://www.openaccess.nl/en/what-is-open-access" target="_blank">Open Access Movement</a> in science,<br><em>as knowledge should be accessible for everyone and not be monopolized</em>.
+                        </li><br>
+
+                        <li><a href="https://www.sciencedirect.com/" target="_blank">ScienceDirect</a><br>Another database of peer-reviewed scholarly literature. 3.3 million articles are <a href="https://www.openaccess.nl/en/what-is-open-access" target="_blank">Open Access</a>.</li>
+                    </ul>
+
+                    <h2 id="Biology">🦠 Biology</h2>
+                    <ul>
+                        <li><a href="https://biologydictionary.net/" target="_blank">biology dictionary</a></li>
+                        <li><a href="https://bio.libretexts.org/" target="_blank">Libretexts Biology</a></li>
+                        <li><a href="https://chem.libretexts.org/" target="_blank">Libretexts Chemistry</a></li>
+                    </ul>
+
+                    <h2 id="Chemistry">🧪 Chemistry</h2>
+                    <ul>
+                        <li><a href="https://chem.libretexts.org/" target="_blank">Libretexts Chemistry</a></li>
+                        <li><a href="https://chemdictionary.org/" target="_blank">Chemistry Dictionary</a></li><br>
+
+                        <li><a href="https://library.sciencemadness.org/library/index.html" target="_blank">Scientific and technical books of yesteryear</a><br>Library of rather old chemistry books.</li>
+                    </ul>
+            
+                    <h2 id="Math">📐 Math</h2>
+                    <ul>
+                        <li><a href="https://www.mathsisfun.com/" target="_blank">Math is Fun</a></li>
+                        <li><a href="https://math.libretexts.org" target="_blank">Libretexts Math</a></li>
+                        <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></li>
+                    </ul>
+            
+                    <h2 id="SocialSciences">🏛️ Social Sciences</h2>
+                    <ul>
+                        <li><a href="https://crushcapitalism.neocities.org/" target="_blank">Let's Crush Capitalism</a><br>The impacts of capitalism, and theories of socialism and communism are explained here.</li><br>
+
+                        <li><a href="https://sci-hub.se/alexandra#communism" target="_blank">Sci-hub, works and ideas: communism</a><br>Explained why science fails in capitalism, given the threats to scientific progress and advancement.</li>
+                    </ul>
+
+                    <h2 id="K12">📝 K12</h2>
+                    <ul>
+                        <li><a href="https://k12.libretexts.org/" target="_blank">Libretexts K12 Education</a></li>
+                    </ul>
+
+                    <h2 id="Skills">🍲 Skills</h2>
+                    <ul>
+                        <li><a href="https://masterwiki.how/" target="_blank">masterWiki</a><br><em>"Stolen from MasterClass, republished as wikiHow."</em> - masterWiki<br>While every lesson is free, they're providing a 'Premium' membership in a sarcastic manner.</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Credits" class="sectionWindowTitle"><span class="titleIcon">©️</span> Credits</h1>
+                    <p class="sectionWindowInfo"> Credits and links to the creators of some assets and media that I use.</p>
+                </div>
+
+                <div class="content">
+                    <h2 id="Images">🖼️ Images</h2>
+                    <p>Backgrounds, stickers, buttons, etc.</p>
+                    <ul>
+                        <li><a href="https://www.deviantart.com/muziekzaholic/art/konata-izumi-desktop-124171178" target="_blank">konata izumi desktop by muziekzaholic</a><br>The original<a href="#!" title="Unsure" style="text-decoration: none;"><sup>?</sup></a> Konata XP wallpaper I could find way back in 2009.</li><br>
+                        
+                        <li><a href="https://imgur.com/a/lucky-star-x-windows-xp-bliss-wallpaper-remaster-NPX2rFu" target="_blank">Lucky Star x Windows XP Bliss wallpaper Remaster</a><br>A remaster by <a href="https://steamcommunity.com/id/Bleeplo" target="_blank">Bleeplo</a>.</li><br>
+                        
+                        <li><a href="https://www.wallpaperflare.com/bliss-lucky-star-windows-xp-anime-izumi-konata-1600x1200-space-stars-hd-art-wallpaper-qjrpd" target="_blank">HD wallpaper: bliss lucky star windows xp anime izumi konata 1600x1200 Space Stars HD Art</a><br>The one I'm using, and only edited to fit on a 16:9 aspect ratio.<br><small>Download: <a href="../src/img/konata_windows_xp.png">konata_windows_xp.png</a></small></li><br>
+
+                        <li><a href="https://forums.terraria.org/index.php?threads/terraria-turns-eleven-town-slimes-are-coming-to-celebrate-the-occasion.112451/" target="_blank">Terraria Turns Eleven - Town Slimes Are Coming to Celebrate the Occassion!</a><br>A GIF of pet slimes and cherry blossoms as part of an update on Terraria.<br><small>Download: <a href="../src/img/Slime%20Town%203.gif">Slime Town 3.gif</a></small></li><br>
+
+                        <li><a href="https://tenor.com/" target="_blank">Tenor</a><br>Tons of reaction and sticker GIFs are shared here.</li>
+                        
+                        
+                    </ul>
+
+                    <h2 id="Music">🎵 Music</h2>
+                    <ul>
+                        <li><a href="https://open.spotify.com/track/6PhLTa3YsokPwiWbztNeYp" target="_blank">Another colony</a> by TRUE<br><b>Spotify:</b> <a href="https://open.spotify.com/track/6PhLTa3YsokPwiWbztNeYp" target="_blank">song track</a><br><b>YouTube:</b> <a href="https://www.youtube.com/watch?v=x2wUyP0l4bw" target="_blank">music video</a> | <a href="https://www.youtube.com/watch?v=lzQgZRt4wGc" target="_blank">TV size</a> | <a href="https://www.youtube.com/watch?v=C7a-V1pGBjQ" target="_blank">tender mix</a><br><b>Covers:</b> <a href="https://www.youtube.com/watch?v=6Lw-xjxiWQw" target="_blank">ENG cover</a> by <a href="https://x.com/bonbonangel_/status/1416837917062819840" target="_blank">Angela (Studio Yuraki)</a></li><br>
+
+                        <li><a href="" target="_blank">My Friend (ぼくのフレンド)</a> by mewhan<br><b>Spotify:</b> <a href="https://open.spotify.com/track/5AH0F230K1ab9TPYUA3wR5" target="_blank">song track</a><br><b>YouTube:</b> <a href="https://www.youtube.com/watch?v=83xwNaTUB54" target="_blank">music only</a> | <a href="https://www.youtube.com/watch?v=LOKM9Gl3cA4">music video TV size</a> | <a href="https://www.youtube.com/watch?v=NTsvgqRwUIc" target="_blank">Serval and Kaban and Common raccoon and Fennec (SAFARI DRIVE)</a></li><br>
+
+                        <li><a href="https://open.spotify.com/track/4O8puCX5HdcMUn6JvCuAbC" target="_blank">cobalt (コバルト)</a> by MOB CHOIR<br><b>Spotify:</b> <a href="https://open.spotify.com/track/4O8puCX5HdcMUn6JvCuAbC" target="">song track</a><br><b>YouTube:</b> <a href="https://www.youtube.com/watch?v=NWwDm5AUFFw" target="_blank">music only</a></li><br>
+
+                        <li><a href="https://open.spotify.com/track/39lq5gU4lPc0rYVaRo0stH" target="_blank">PINK BLOOD</a> by Hikaru Utada<br><b>Spotify:</b> <a href="https://open.spotify.com/track/39lq5gU4lPc0rYVaRo0stH" target="_blank">song track</a><br><b>YouTube:</b> <a href="https://www.youtube.com/watch?v=U_Ry2dM0B34" target="_blank">music video</a></li><br>
+                    </ul>
+            
+                    <h2 id="Fonts"><span style="color: #245DDA;">🗛</span> Fonts</h2>
+                    <ul>
+                        <li><a href="#!" target="_blank">Ubuntu</a></li>
+                    </ul>
+            
+                    <h2 id="Embeds">👾 Embeds</h2>
+                    <ul>
+                        <li><a href="#!" target="_blank">Chattable</a><br>A customizable chatbox made by <a href="https://xobyte.neocities.org/" target="_blank">Xobyte</a>.<br>Supports custom emojis, pinned messages, and more.</li><br>
+
+                        <li><a href="https://dimden.dev/navlinkads/" target="_blank">NavLink Ads</a><br>Personalized, non-commercial ad system for personal websites that is created by <a href="https://dimden.dev/" target="_blank">dimden</a>.<br>It's free to join but you have to follow some guidelines firstly of course.</li><br>
+
+                        <li><a href="https://gifypet.neocities.org/" target="_blank">GIFYpet</a><br>A virtual GIF pet that is pretty customizable, i.e. you can set its name, gender, sprite, background, and more.<br>Features include <em>Belly</em> and <em>Mood</em> systems, auto feed on idle, and even a mini slot machine game.<br>Has 1 FPS render so it has no impact on performance.</li><br>
+
+                        <li><a href="https://tamanotchi.world/" target="_blank">tamaNOTchi!</a><br>Cute virtual pixel pets that are inspired by Tamagotchi.<br>It started on being used with forum signatures (and still is),<br>and now it found its home to blogs and other websites.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; gap: 90px;">
+                <div>
+                    <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a></small></p>
+                </div>
+                <div>
+                    <p style="text-align: center;"><small>Made with ❤️ and ☕!&nbsp;&nbsp;Din (DinPixels), Today 'til the End of Eternity<br>Best viewed on 1366x768 resolution.</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h1 class="sidebarTitle"><span class="titleIcon">🔗</span> navigation</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+            <div class="mainNavOverflow">
+                <ul class="mainNav">
+                    <li><a href="#Webmastery" class="">Webmastery</a>
+                        <ul>
+                            <li><a href="#CSS">CSS</a></li>
+                            <li><a href="#RSS">RSS</a></li>
+                            <li><a href="#Accessibility">Accessibility</a></li>
+                            <li><a href="#Archiving">Archiving</a></li>
+                            <li><small>&emsp;</small><a href="#ArchivingGuides">Guides</a></li>
+                            <li><small>&emsp;</small><a href="#ArchivingTools">Tools</a></li>
+                            <li><small>&emsp;&emsp;</small><a href="#ArchivingExtensions">Extensions</a></li>
+                            <li><small>&emsp;&emsp;</small><a href="#ArchivingTerminal">Terminal</a></li>
+                            <li><small>&emsp;&emsp;</small><a href="#ArchivingWebApp">Web App</a></li>
+                            <li><a href="#Assets">Assets</a></li>
+                            <li><small>&emsp;</small><a href="#AssetsImages">Images</a></li>
+                            <li><small>&emsp;</small><a href="#AssetsFonts">Fonts</a></li>
+                            <li><a href="#HTML">HTML</a></li>
+                            <li><a href="#Javascript">Javascript</a></li>
+                            <li><a href="#Hosting">Hosting</a></li>
+                        </ul>
+                    </li><br>
+    
+                    <li><a href="#WorldWideWeb" class="">World Wide Web</a>
+                        <ul>
+                            <li><a href="#Directory">Directory</a></li>
+                            <li><a href="#Manifesto">Manifesto</a></li>
+                            <li><a href="#WebRevival">Web Revival</a></li>
+                            <li><a href="#Archives">Archives</a></li>
+                        </ul>
+                    </li><br>
+    
+                    <li><a href="#Tools" class="">Tools</a>
+                        <ul>
+                            <li><a href="#Art">Art</a></li>
+                            <li><small>&emsp;</small><a href="#ArtApplications">Applications</a></li>
+                            <li><small>&emsp;</small><a href="#ArtExtensions">Extensions</a></li>
+                            <li><a href="#Image">Image</a></li>
+                            <li><a href="#3Dmodel">3D Model</a></li>
+                            <li><a href="#Games">Games</a></li>
+                            <li><small>&emsp;</small><a href="#GameEngines">Game Engines</a></li>
+                            <li><small>&emsp;</small><a href="#Emulators">Emulators</a></li>
+                            <li><small>&emsp;</small><a href="#Frontend">Frontend</a></li>
+                            <li><a href="#Streaming">Streaming</a></li>
+                        </ul>
+                    </li><br>
+    
+                    <li><a href="#Education" class="">Education</a>
+                        <ul>
+                            <li><a href="#Database">Database</a></li>
+                            <li><a href="#Biology">Biology</a></li>
+                            <li><a href="#Chemistry">Chemistry</a></li>
+                            <li><a href="#Math">Math</a></li>
+                            <li><a href="#SocialSciences">SocialSciences</a></li>
+                            <li><a href="#K12">K12</a></li>
+                            <li><a href="#Skills">Skills</a></li>
+                        </ul>
+                    </li><br>
+
+                    <li><a href="#Credits" class="">Credits</a>
+                        <ul>
+                            <li><a href="#Images">Images</a></li>
+                            <li><a href="#Music">Music</a></li>
+                            <li><a href="#Fonts">Fonts</a></li>
+                            <li><a href="#Embeds">Embeds</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

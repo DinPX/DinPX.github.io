@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0; 
+    background-image: url(../img/stardewvalleybg.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+.entryFeed {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.entryNavi {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+.navBtn {
+    margin: 0;
+    padding: 10px 20px;
+    border: 5px solid #ffe23d;
+    border-radius: 10px;
+    background-color: #a76714;
+    color: #fdff7f;
+    font-size: 16px;
+    box-shadow: inset 2px 2px 2px 1px rgba(78, 27, 4, 0.6);
+}
+.navBtn:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+.navBtn:hover > a {
+    text-decoration: none;
+    color: #ffe23d;
+}
+.entry {
+    margin: 0 20% 20px 20%;
+    padding: 30px 40px;
+    position: relative;
+    top: -78px;
+    border: 5px solid #ffe23d;
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px 1px rgba(78, 27, 4, 0.6);
+    background-color: #a76714;
+    color: #fdff7f;
+    text-align: justify;
+    text-indent: 50px;
+}
+h1 {
+    color: #ffe23d;
+}
+h1, h3, .date {
+    text-indent: 0;
+}
+a, a:visited {
+    color: #ffe23d;
+    text-decoration: underline;
+}
+a:hover {
+    color: #fdff7f;
+}
+th, td {
+    padding: 5px 10px;
+}
+table, th, td {
+    margin: auto;
+    border: 1px solid #ffe23d;
+}
+.entryInfo {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    text-indent: 0;
+}
+.entryInfo > p {
+    font-size: 12px;
+}
+.source {
+    text-align: right;
+}
+.tableGap, td {
+    border: none;
+}
+.tableGap {
+    padding: 10px 0;
+}
+.blockEnd, .entryInfo {
+    border-bottom: 1px solid #ffe23d;
+}
+.footer {
+    top: 0;
+    text-indent: 0;
+    text-align: center;
+}
+.footer > p > a, .footer > p > a:visited {
+    color: #ffe23d;
+    text-decoration: underline;
+}
+.footer > p > a:hover {
+    color: #fdff7f;
+}
+.divider {
+    text-indent: 0;
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+    .entry {
+        margin: 0 5% 10px 5%;
+        padding: 40px;
+    }
+    h1 {
+        text-align: left;
+    }
+}

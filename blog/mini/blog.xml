@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+	<channel>
+		<title>dinpixels' microblog</title>
+		<link>https://dinpixels.neocities.org/</link>
+		<description>My little space for arts, thoughts, and other silly stuff</description>
+        <atom:link href="https://dinpixels.neocities.org/blog/mini/blog.xml" rel="self" type="application/rss+xml" />
+
+		<item>
+			<title>December 06, 2024 - Completed a Gamedev &amp; Devlog</title>
+			<link>https://dinpixels.neocities.org/blog#Lowpoly%20Renders</link>
+			<description>I joined the <i>1-Button Jam 2024</i> and managed to finish a game!</description>
+			<pubDate>Mon, 04 Nov 2024 01:56:00 +0800</pubDate>
+            <guid isPermaLink="true">https://dinpixels.neocities.org/blog#Lowpoly%20Renders</guid>
+		</item>
+
+
+		<item>
+			<title>November 04, 2024 - Lowpoly Renders</title>
+			<link>https://dinpixels.neocities.org/blog#Lowpoly%20Renders</link>
+			<description>I'm tired but I really need to finish this this day--I know that I can. Right now I'm adding the lowpoly models I worked on.</description>
+			<pubDate>Mon, 04 Nov 2024 01:56:00 +0800</pubDate>
+            <guid isPermaLink="true">https://dinpixels.neocities.org/blog#Lowpoly%20Renders</guid>
+		</item>
+
+		<item>
+			<title>November 04, 2024 - My Page, Archiving, and Pokemon TCG (Pocket)</title>
+			<link>https://dinpixels.neocities.org/blog#My%20Page,%20Archiving,%20and%20Pokemon%20TCG%20(Pocket)</link>
+			<description>I updated a lot of stuff to my website, archived some sites, and started playing Pokemon TCG Pocket.</description>
+			<pubDate>Mon, 04 Nov 2024 01:30:26 +0800</pubDate>
+            <guid isPermaLink="true">https://dinpixels.neocities.org/blog#My%20Page,%20Archiving,%20and%20Pokemon%20TCG%20(Pocket)</guid>
+		</item>
+        
+	</channel>
+</rss>

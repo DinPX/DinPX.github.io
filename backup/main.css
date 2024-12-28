@@ -1,0 +1,532 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuItalic';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../fonts/ubuntu-v20-latin-300italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegular';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegularItalic';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../fonts/ubuntu-v20-latin-500italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/ubuntu-v20-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBoldItalic';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/ubuntu-v20-latin-700italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Visitor';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/visitor2.ttf') format('woff2');
+}
+*, html {
+    font-family: Ubuntu;
+}
+b, .toDo > p, .updates > p, .mySetup > p {
+    font-family: UbuntuRegular;
+}
+em {
+    font-family: UbuntuItalic;
+}
+body {
+    background-image: url('../img/konata_windows_xp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+p {
+    margin: 0;
+}
+.desktop {
+    /* STRETCHES ON FULL RESOLUTION
+    width: calc(100vw - 20px);
+    */
+
+    /* ASPECT RATIO REMAINS */
+    width: 1350px;
+
+    height: auto;
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.left, .right {
+    width: 50%;
+}
+.middle {
+    width: 100%;
+}
+.window {
+    margin: 10px;
+    padding: 10px;
+    /*
+    min-width: 300px;
+    min-height: 20px;
+    */
+    position: relative;
+    background-color: whitesmoke;
+    border-top: 36px solid #245DDA;
+    border-left: 5px solid #245DDA;
+    border-right: 5px solid #245DDA;
+    border-bottom: 5px solid #245DDA;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px black;
+}
+.windowIcon {
+    text-shadow: -1px -1px white;
+    color: transparent;
+}
+.windowTitle {
+    font-size: 16px;
+    color: whitesmoke;
+    position: absolute;
+    top: -38px;
+    left: 10px;
+}
+.navi > a, .mobileNavi > a {
+    margin: 0;
+    padding: 0;
+}
+.btn {
+    padding: 5px;
+    background-image: linear-gradient(white, #cadbff);
+    border: 2px solid #245DDA;
+    border-radius: 5px;
+}
+.btn:hover {
+    cursor: pointer;
+    border: 2px solid #FFA500;
+}
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.section > div {
+    width: 100%;
+}
+.stats {
+    margin-right: 5px;
+    height: 80px;
+}
+.embed {
+    margin-left: 5px;
+}
+.xBtn {
+    padding: 2px 8px;
+    background-image: radial-gradient(#ff7f7f, #f01919);
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 0;
+    border: 2px outset #ff7f7f;
+    border-radius: 4px;
+}
+.sizeBtn {
+    padding: 2px 8px;
+    background-color: transparent;
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 32px;
+    border: 2px outset #83c2f5;
+    border-radius: 4px;
+}
+.minBtn {
+    padding: 2px 8px;
+    background-color: transparent;
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 66px;
+    border: 2px outset #83c2f5;
+    border-radius: 4px;
+}
+.startBtn:hover, .minBtn, .sizeBtn:hover, .xBtn:hover {
+    cursor: pointer;
+}
+.coolSites, .embedsrc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer, .credits {
+    text-align: center;
+}
+.bio {
+    display: flex;
+    flex-direction: row;
+}
+.info {
+    width: 70%;
+}
+.pfp {
+    width: 30%;
+    height: auto;
+    image-rendering: pixelated;
+}
+.webcamBG {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    cursor:grab;
+}
+.toDo, .updates, .mySetup {
+    margin-left: -20px;
+    height: 128px;
+    overflow-y: auto;
+}
+.toDo > p, .updates > p, .mySetup > p {
+    font-weight: bold;
+    margin-left: 24px;
+}
+.toDo > ul, .updates > ul, .mySetup > ul {
+    margin-top: 5px;
+}
+li {
+    border-bottom: 1px solid lightsteelblue;
+}
+.txtImg {
+    margin: 0;
+    padding: 0;
+    width: 128px;
+    height: 90px;
+    image-rendering: pixelated;
+}
+.chat {
+    height: 256px;
+}
+#btnEmbed {
+    padding: 0;
+    width: calc(100% - 24px);
+    height: 40px;
+    text-align: center;
+}
+.blog {
+    width: 100%;
+    height: 420px;
+    overflow-y: auto;
+}
+.taskbar {
+    width: 100%;
+    height: 42px;
+    background-color: #245DDA;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.taskbarItems {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.taskbarStart {
+    width: auto;
+    height: 100%;
+    border-right: 3px solid #83c2f5;
+}
+.taskbarLinks {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+.taskbarDate {
+    width: auto;
+    height: 100%;
+    align-content: center;
+}
+.startBtn {
+    margin-right: 5px;
+    padding: 5px 2px;
+    width: 120px;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    background-image: linear-gradient(#2eb41c, #a2f06e);
+    color: whitesmoke;
+    border: 2px outset #83c2f5;
+    border-left: 0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+.dateTime {
+    margin: 0;
+    padding: 4px 2px;
+    width: 96px;
+    font-size: 14px;
+    font-weight: bold;
+    color: whitesmoke;
+    border-left: 3px solid #83c2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnLink {
+    image-rendering: pixelated;
+}
+.txtLink, .txtLink:visited {
+    color: #245DDA;
+}
+.txtLink:hover {
+    color: #FFA500;
+}
+.statsMain {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.statsViews {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.embedButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fanlists, .toolLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.navi, .mobileNavi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+.mobileNavi {
+    margin: -10px -20px;
+    padding: 10px 20px;
+    background-color: #245DDA;
+    display: none;
+}
+.artBtn .btn {
+    margin-bottom: 5px;
+    width: 100%;
+}
+.welcome {
+    height: 320px;
+    overflow-y: auto;
+}
+.imgInsert {
+    display: flex;
+}
+.divider {
+    margin: 32px auto;
+    width: 80%;
+    border: none;
+    border-top: 2px dotted slategray;
+}
+#chattable {
+    border: none;
+    height: 100%;
+}
+
+/* MP3 PLAYER CSS */
+.player {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 5px;
+}
+.playerCtrl {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.playerImg {
+    height: 100%;
+    /*border: 1px dotted red;*/
+}
+.trackArt {
+    height: 100%;
+    /*border-radius: 5px;*/
+}
+.trackName {
+    padding: 4px 0;
+    font-size: 20px;
+    font-family: Visitor;
+    background-color: black;
+    color: lime;
+}
+.playerInfo {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /*border: 1px dotted blue;*/
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.playpause-track, .prev-track, .next-track {
+    opacity: 0.8;
+    transition: opacity .2s; /* Smoothly transition the opacity */
+}
+.playpause-track:hover, .prev-track:hover, .next-track:hover {
+    opacity: 1.0;
+}
+.sliders {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: grab;
+}
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.seek_slider:hover, .volume_slider:hover {
+    opacity: 1.0;
+}
+.volume-icon {
+    font-size: 12px;
+}
+.playpause-track, .prev-track, .next-track {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* RSS Feed CSS */
+/* Feed CHANNEL title */
+h3.feed-title {
+    display: none;
+}
+/* Feed ITEM title */
+h4.feed-item-title > a, h4.feed-item-title > a:visited {
+    color: #245DDA;
+}
+h4.feed-item-title > a:hover {
+    color: #FFA500;
+}
+
+
+/* Featured Art START */
+.featuredArt {
+    width: calc(100%-10px);
+    height: 300px;
+    background-image: url('../img/works/commissions/2024/Akira_sketch_glasses.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    image-rendering: pixelated;
+}
+
+/* Mobile layout support */
+@media (max-width: 800px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+    .desktop, .section {
+        width: auto;
+        height: auto;
+        margin-bottom: 42px;
+        display: flex;
+        flex-direction: column;
+    }
+    .left, .middle, .right, .section {
+        width: 100%;
+    }
+    .section {
+        margin-bottom: 0;
+    }
+    .linkBtn, .galleryBtn {
+        display: none;
+    }
+    .mobileNavi {
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 99999;
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after,
+    img, button, div, marquee {
+        transition: none !important;
+        animation: none !important;
+        transform: translate(0,0);
+
+        -webkit-transition: none !important;
+        -webkit-animation: none !important;
+        -webkit-transform: translate(0,0);
+
+        -moz-transition: none !important;
+        -moz-animation: none !important;
+        -moz-transform: translate(0,0);
+
+        -o-transition: none !important;
+        -o-animation: none !important;
+        -o-transform: translate(0,0);
+        
+    }
+}

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din's Desktop</title>
+    <link rel="icon" type="image/x-icon" href="src/img/tsuyomi_favicon.gif">
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://chattable.neocities.org/scripts/main.min.js"></script>
+    <script>
+    chattable.initialize({
+        stylesheet : "src/css/chattable.css",
+    });
+    </script>
+</head>
+<body>
+    <div class="mobileNavi">
+        <a href="/me" target="_blank"><button class="btn tooltipable" data-tooltip="About me, kins, hobbies, interests, likes, pet peeves, you name it">me</button></a>
+        <a href="/blog" target="_blank"><button class="btn tooltipable" data-tooltip="My blog, microblog, journal, ramblings, messy thoughts--valid RSS supported">blog</button></a>
+        <a href="/gallery" target="_blank"><button class="btn tooltipable" data-tooltip="My pixel art, oekakis, photos, anything you can put in a gallery">gallery</button></a><br>
+        <a href="/shrines" target="_blank"><button class="btn tooltipable" data-tooltip="Weeb, games, old tech, obscure stuff, anything that I like">shrines</button></a><br>
+        <a href="/commissions" target="_blank"><button class="btn tooltipable" data-tooltip="Where you give me lots of money and I give you art">commissions</button></a><br>
+        <a href="/portfolio" target="_blank"><button class="btn tooltipable" data-tooltip="Animations, streaming and game dev assets, and more">portfolio</button></a>
+        <a href="/projects" target="_blank"><button class="btn tooltipable" data-tooltip="Games and app development, or others">projects</button></a>
+        <a href="/reads" target="_blank"><button class="btn tooltipable" data-tooltip="Manga, comsci, math, science, philosophy, and possibly few political readings">reads</button></a>
+        <a href="/games" target="_blank"><button class="btn tooltipable" data-tooltip="Games I love to play and admire in design and visuals">games</button></a>
+        <a href="/fun" target="_blank"><button class="btn tooltipable" data-tooltip="Just for fun stuff! Enter at your own risk (jk)">fun</button></a>
+        <a href="/archive" target="_blank"><button class="btn tooltipable" data-tooltip="Stuff that I archived are here">archive</button></a>
+        <a href="/resources" target="_blank"><button class="btn tooltipable" data-tooltip="Media, guides, links, credits, all of it">resources</button></a>
+        <a href="/sitemap" target="_blank"><button class="btn tooltipable" data-tooltip="A directory of this website's pages">sitemap</button></a>
+    </div>
+    <div class="desktop">
+        <div class="column left">
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">👤</span> bio</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="bio">
+                    <div class="info">
+                        <p><b>age:</b> enough to shrimp</p>
+                        <p><b>pronouns:</b> they / them</p>
+                        <p><b>nationality:</b> Terran</p>
+                        <p><b>status:</b> solo campaign</p>
+                    </div>
+                    <img class="pfp" src="src/img/works/Persona_kinda_icon.gif" alt="">
+                </div>
+            </div>
+            <div class="window featuredArt">
+                <h1 class="windowTitle"><span class="windowIcon">👤</span> featured art</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🎵</span> player</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="player">
+                    <div class="playerCtrl">
+                        <div class="playerImg">
+                            <img src="src/img/konata_thumbnail.png" alt="Track cover art" class="trackArt">
+                        </div>
+                        <div class="playerInfo">
+                            <div>
+                                <div class="itemNumber">PLAYING x OF y</div>
+                                <marquee class="trackName">Track Name</marquee>
+                                <div class="trackArtist">Track Artist</div>
+                            </div>
+                            <div class="buttons">
+                                <span class="prev-track" onclick="prevTrack()">⏮️</span>
+                                <span class="playpause-track" onclick="playpauseTrack()">▶️</span>
+                                <span class="next-track" onclick="nextTrack()">⏭️</span>
+                                <span class="volume-icon vol-min">🔉</span>
+                                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                                <span class="volume-icon vol-max">🔊</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playerRow">
+                        <div class="sliders">
+                            <div class="current-time">00:00</div>
+                            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                            <div class="total-duration">00:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🔧</span> toolbox</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="toolLinks">
+                    <a href="https://www.aseprite.org/" target="_blank"><img src="src/img/buttons/aseprite.png" alt="Aseprite 88x31 button" class="btnLink tooltipable" data-tooltip="Cool pixel art software!"></a>
+                    <a href="https://godotengine.org/" target="_blank"><img src="src/img/buttons/godotengine.png" alt="Godot 88x31 button" class="btnLink tooltipable" data-tooltip="My the-GOAT game and app engine."></a>
+                    <a href="https://johanpeitz.itch.io/picocad" target="_blank"><img src="src/img/buttons/picoCAD_88x31.png" alt="picoCAD 88x31 button" class="btnLink tooltipable" data-tooltip="Cool lowpoly modeling program."></a>
+                    <a href="https://planets.corvidae.digital/linux-mint" target="_blank"><img src="src/img/buttons/fanlist/linux_mint_50x50.png" alt="Linux Mint fanlist button" class="btnLink tooltipable" data-tooltip="The best and my favorite OS. I used it to build this site!"></a>
+                    <a href="https://fans.thislove.nu/mozilla" target="_blank"><img src="src/img/buttons/fanlist/mozillafirefox_50x50_009.png" alt="Mozilla Firefox fanlist button" class="btnLink tooltipable" data-tooltip="Cool browser for privacy. Sad that they're going for ads now."></a>
+                    
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🖊️</span> my setup</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="mySetup">
+                    <p>Creative Software</p>
+                    <ul>
+                        <li>Linux Mint 22, Xfce Edition</li>
+                        <li>VSCodium</li>
+                        <li>Librewolf</li>
+                        <li>Aseprite</li>
+                        <li>Godot</li>
+                    </ul>
+                    <p>Browser Extensions</p>
+                    <ul>
+                        <li>uBlock Origin</li>
+                        <li>Decentraleyes</li>
+                        <li>Privacy Badger</li>
+                        <li>Canvas Blocker</li>
+                        <li>Don't track me Google</li>
+                        <li>Return YouTube Dislike</li>
+                        <li>Feedbro</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">⭐</span> fanlists</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="fanlists">
+                    <a href="https://akiba.flirt-wind.net/azumanga/" target="_blank"><img src="src/img/buttons/fanlist/azumangadaioh.png" alt="Azumanga Daioh fanlist button" class="btnLink tooltipable" data-tooltip="Azumanga Daioh fanlist"></a>
+                    <a href="http://www.noonvale.net/hiscoregirl/" target="_blank"><img src="src/img/buttons/fanlist/hiscoregirl2.gif" alt="Hi Score Girl fanlist button" class="btnLink tooltipable" data-tooltip="Hi Score Girl fanlist"></a>
+                    <a href="http://www.marheavenj.net/saber/" target="_blank"><img src="src/img/buttons/fanlist/saber0_50x50.jpg" alt="Saber fanlist button" class="btnLink tooltipable" data-tooltip="Saber (Fate/stay night) fanlist"></a>
+                    <a href="http://amalgamate.afflatus-misery.net/orcbolg/" target="_blank"><img src="src/img/buttons/fanlist/goblinslayer_100x50.gif" alt="Goblin Slayer fanlist button" class="btnLink tooltipable" data-tooltip="Goblin Slayer fanlist"></a>
+                    <a href="https://zanarkand.neocities.org/stardust/yume" target="_blank"><img src="src/img/buttons/fanlist/yumenikki_100x50.png" alt="Yume Nikki fanlist button" class="btnLink tooltipable" data-tooltip="Yume Nikki fanlist"></a>
+                    <a href="http://hellokitty.ravenbeauty.net/kuromi" target="_blank"><img src="src/img/buttons/fanlist/kuromi75x50_1.png" alt="Kuromi fanlist button" class="btnLink tooltipable" data-tooltip="Kuromi (Sanrio) fanlist"></a>
+                    <a href="http://fan.greenhype.net/gbasp/" target="_blank"><img src="src/img/buttons/fanlist/gbasp50x50.gif" alt="GBA SP fanlist button" class="btnLink tooltipable" data-tooltip="Gameboy Advance SP fanlist"></a>
+                    <a href="https://hoshi.nu/lain/" target="_blank"><img src="src/img/buttons/fanlist/lain04.png" alt="Serial Experiments Lain fanlist button" class="btnLink tooltipable" data-tooltip="Lain Iwakura (Serial Experiments Lain) fanlist"></a>
+                    <a href="https://fan.glast-heim.net/lucky/" target="_blank"><img src="src/img/buttons/fanlist/konata_50x50.gif" alt="Lucky Star fanlist button" class="btnLink tooltipable" data-tooltip="Lucky Star fanlist"></a>
+                    <a href="http://yandere.nu/erased/" target="_blank"><img src="src/img/buttons/fanlist/erased_75x50.png" alt="Erased fanlist button" class="btnLink tooltipable" data-tooltip="Erased fanlist"></a>
+                    <a href="http://shana.reiji-maigo.net/" target="_blank"><img src="src/img/buttons/fanlist/shana_100x50_6.jpg" alt="Shana Flame Haze fanlist button" class="btnLink tooltipable" data-tooltip="(Shana) Shakugan no Shana fanlist"></a>
+                    <a href="http://sky-petals.org/clannad" target="_blank"><img src="src/img/buttons/fanlist/clannad.gif" alt="Clannad fanlist button" class="btnLink tooltipable" data-tooltip="Clannad fanlist"></a>
+                    <a href="http://www.marheavenj.net/roll/" target="_blank"><img src="src/img/buttons/fanlist/024.jpg" alt="Roll.EXE fanlist button" class="btnLink tooltipable" data-tooltip="Roll.EXE (Mega Man Battle Network) fanlist"></a>
+                    <a href="https://moondvsted.neocities.org/fan/oneshot/" target="_blank"><img src="src/img/buttons/fanlist/75x50-1.png" alt="OneShot fanlist button" class="btnLink tooltipable" data-tooltip="Oneshot fanlist"></a>
+                    <a href="https://fan.hopeslair.haliya.net/fl/kirby/" target="_blank"><img src="src/img/buttons/fanlist/kirby50x50_1.png" alt="Kirby fanlist button" class="btnLink tooltipable" data-tooltip="Kirby fanlist"></a>
+                    <a href="http://powerup.i-heart-you.net/ps4" target="_blank"><img src="src/img/buttons/fanlist/ps4-50x50_04.gif" alt="PS4 fanlist button" class="btnLink tooltipable" data-tooltip="Playstation 4 fanlist"></a>    
+                    <a href="https://aerofanlisting.nekoweb.org/" target="_blank"><img src="src/img/buttons/fanlist/frutiger50x504.png" alt="Frutiger Aero fanlist button" class="btnLink tooltipable" data-tooltip="Frutiger Aero fanlist"></a>    
+                    <a href="https://glitterskies.org/steam/" target="_blank"><img src="src/img/buttons/fanlist/steam_50x50.png" alt="Steam fanlist button" class="btnLink tooltipable" data-tooltip="Steam fanlist"></a>    
+                    
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">💫</span> webrings</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="webrings"></div>
+            </div>
+        </div>
+        <div class="column middle">
+            <div class="window linkBtn">
+                <h1 class="windowTitle"><span class="windowIcon">🔗</span> links</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="navi">
+                    <a href="/me" target="_blank"><button class="btn tooltipable" data-tooltip="About me, kins, hobbies, interests, likes, pet peeves, you name it">me</button></a>
+                    <a href="/blog" target="_blank"><button class="btn tooltipable" data-tooltip="My blog, microblog, journal, ramblings, messy thoughts--valid RSS supported">blog</button></a>
+                    <a href="/projects" target="_blank"><button class="btn tooltipable" data-tooltip="Games and app development, or others">projects</button></a>
+                    <a href="/reads" target="_blank"><button class="btn tooltipable" data-tooltip="Manga, comsci, math, science, philosophy, and possibly few political readings">reads</button></a>
+                    <a href="/games" target="_blank"><button class="btn tooltipable" data-tooltip="Games I love to play and admire in design and visuals">games</button></a>
+                    <a href="/fun" target="_blank"><button class="btn tooltipable" data-tooltip="Just for fun stuff! Enter at your own risk (jk)">fun</button></a>
+                    <a href="/archive" target="_blank"><button class="btn tooltipable" data-tooltip="Stuff that I archived are here">archive</button></a>
+                    <a href="/resources" target="_blank"><button class="btn tooltipable" data-tooltip="Media, guides, links, credits, all of it">resources</button></a>
+                    <a href="/sitemap" target="_blank"><button class="btn tooltipable" data-tooltip="A directory of this website's pages">sitemap</button></a>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🏠</span> home</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="welcome">
+                    <div style="display:flex; flex-direction: row; gap: 10px;">
+                        <img src="src/img/stickers/umaru-psp.gif" alt="" style="height: 96px; image-rendering: optimizeSpeed !important;">
+                        <p>Hello, I go by Din! I'm a pixel artist and the webmaster of this site!<br><br>Welcome to my own corner of the internet! It's my space for my creations, thoughts, and interests—practically anything. To see my pixel art visit the <a href="https://dinpixels.neocities.org/gallery" target="_blank" class="txtLink tooltipable" data-tooltip="A gallery of my pixel art from 2019 to this year"> gallery</a>!</p>
+                    </div><br>
+                    <p>I made this site because while I'd like to share my works and thoughts, the larger known parts of the internet are pretty unusable. The dystopian landscape is filled with bots, <em>AI</em>, algorithms, Web3, disinformation, and the unnecessary hate. It leaves us <em>humans</em> with no room to breathe, create, and make connections online.<br><br>Also I just miss webdev and coding too. Burn out got me for with art.</p>
+                    <br>
+                    <p>Speaking of webdev, the site's design was built with <a href="https://frutiger-aero.org/" target="_blank" class="txtLink tooltipable" data-tooltip="Glossy textures, nature visuals, and more. Just like how Windows 7 looked like"><em>Frutiger Aero</em></a> core in mind, while the layout and desktop theme was inspired with <a href="https://lilithdev.neocities.org/" target="_blank" class="txtLink tooltipable" data-tooltip="Cool Needy Streamer Overload themed page">LilithDev</a>!</p><br>
+                    <p>This site was made possible with <a href="https://www.linuxmint.com/" target="_blank" class="txtLink tooltipable" data-tooltip="I'm using Linux Mint 22, Xfce Edition!">Linux Mint</a>, <a href="https://vscodium.com/" target="_blank" class="txtLink tooltipable" data-tooltip="I have CodeGeass: CC Doki Theme! I love my IDM pastel green <3">VSCodium</a>, and <a href="" target="_blank" class="txtLink tooltipable" data-tooltip="Even better than Firefox in terms of privacy, and a direct fork on top of that!">Librewolf</a>!</p>
+                    <hr class="divider">
+                    <p><b>NOTE:</b> While there are no NSFW stuff, I write things here with adult audience in mind. There's also few profanity ahead.</p><br>
+                    <p><b>FIX:</b> Remove the cache to fix the layout or other issues with the page.</p>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🖊️</span> blog, journal, ramblings</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <a href="http://validator.w3.org/feed/check.cgi?url=https%3A//dinpixels.neocities.org/blog/blog.rss"><img src="src/img/buttons/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed"></a>
+                <a href="/blog/blog.rss" add target="_blank"><img src="src/img/rss-icon.png" alt="RSS icon" title="Subscribe to my RSS feed" style="height:31px; image-rendering:optimizeSpeed !important;"></a>
+                <img src="src/img/stickers/gawr-gura-tail.gif" alt="" style="width:128px; image-rendering:optimizeSpeed !important; position:absolute; bottom:0; right:0;"></a>
+                <a href="https://everskies.com/item/outfit/WzE5ODAzMTIsMTg0MiwxNDIyNTQ0LDE0MjI1NDYsMTQyMjU1MCwyMDU1MTMsNDcxMDk3LDE0MjI1NDMsMTIzOTA5LDEyMzkxMCwxODQwLDM3MTYsLTEsLTIsMTQyMjU1Ml0=" target="_blank"><img src="src/img/dolls/Everskies/me_october-26-2024.png" alt="" style="height: 256px; image-rendering: optimizeSpeed !important; position:absolute; bottom:0; left:0;" class="tooltipable" data-tooltip="My Everskies avatar outfit"></a>
+                <div class="blog">
+                    <script src="//rss.bloople.net/?url=https%3A%2F%2Fdinpixels.neocities.org%2Fblog%2Fblog.rss&showtitle=false&type=js"></script>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🖊️</span> Statement on AI Training</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <blockquote>"The unlicensed use of creative works for training generative AI is a major, unjust threat to the livelihoods of the people behind those works, and must not be permitted"</blockquote>
+                <p style="text-align:end;margin-right:48px;">- Statement on AI Training<br><a href="https://www.aitrainingstatement.org/" target="_blank" class="txtLink">https://www.aitrainingstatement.org</a></p><br>
+                <blockquote>As of this writing, over 25,000 creators have signed this petition to protect their rights and livelihood against AI.</blockquote>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🖊️</span> Removal of Neocities AI/ML Petition</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZ6LSErE6Z3syNb-d_XgRLEiPMgnJkdG9Y70_qGjVeBqjeEw/viewform?embedded=true" width="100%" height="860" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+            </div>
+            <div class="section">
+                <div class="window stats">
+                    <h1 class="windowTitle"><span class="windowIcon">⌛</span> stats</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    <div class="statsMain">
+                        <div class="statsViews">
+                            <p>Views:&nbsp;</p>
+                            <!-- Start of CuterCounter Code -->
+<a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hvxqxqpp&nd=6&style=102" border="0" alt="visitor counter"></a>
+<!-- End of CuterCounter Code -->
+                        </div>
+                        <div class="statsViews">
+                            <p>I'm feeling:&nbsp;</p>
+                            <a href="https://www.imood.com/users/dinpixels"><img src="https://moods.imood.com/display/uname-dinpixels/trans-1/imood.gif" alt="The current mood of dinpixels at www.imood.com" border="0" class="imood"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="window embed">
+                    <h1 class="windowTitle"><span class="windowIcon">🔗</span> embed</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    <div class="embedsrc">
+                        <div class="embedButtons">
+                            <img src="src/img/buttons/dinbtn0.gif" alt="DinPixels 88x31 button 0">
+                            <img src="src/img/buttons/dinbtn1.gif" alt="DinPixels 88x31 button 1">
+                            <img src="src/img/buttons/dinbtn2.gif" alt="DinPixels 88x31 button 2">
+                        </div>
+                        <textarea name="btnEmbed" id="btnEmbed" cols="auto" rows="1"></textarea>
+                        <p><small>Download them, and no hotlinking please!</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="window credits">
+                <h1 class="windowTitle"><span class="windowIcon">👤</span> credits</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <p>I don't own any of the music as well as other visual assets in this page,<br>but I worked on some of the pixel art here, as well as the artworks<br>in the <a class="txtLink" href="https://dinpixels.neocities.org/gallery" target="_blank">gallery</a>.<br><br>This section and its own page for credits, resources,<br>and links will be worked on in the future.</p>
+            </div>
+            <div class="window footer">
+                <h1 class="windowTitle"><span class="windowIcon">👣</span> footer</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <p>Mobile friendly. Best on <small>1366x768</small> resolution!</p><br>
+                <img src="src/img/stamps/ilovechoco.webp" alt="i love choco stamp" class="btnLink">
+                <img src="src/img/stamps/popuko_manga.png" alt="Popuko manga stamp" class="btnLink">
+                <img src="src/img/stamps/evilkitty.png" alt="evil kitty stamp" class="btnLink"><br><br>
+                <p>Made with ❤️ and ☕!</p>
+                <p>Din (DinPixels), Today 'til the End of Eternity</p>
+            </div>
+        </div>
+        <div class="column right">
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🔗</span> cool sites</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="coolSites">
+                    <marquee behavior="alternate" direction="left">
+                        <a href="https://arutemu64.neocities.org/" target="_blank"><img src="src/img/buttons/arutemu64.gif"  class="btnLink"></a>
+                        <a href="https://mitzyrie.neocities.org/" target="_blank"><img src="src/img/buttons/mitzyriebutton.gif" alt="mitzy's button" class="btnLink"></a>
+                        <a href="https://lilithdev.neocities.org/" target="_blank"><img src="src/img/buttons/lilithdevbtn.gif" alt="LilithDev's button" class="btnLink"></a>
+                        <a href="https://dimden.dev/" target="_blank"><img src="src/img/buttons/dimden.gif" alt="DimDen's button" class="btnLink"></a>
+                        <a href="https://zoeyonline.me/" target="_blank"><img src="src/img/buttons/zoeyonline.gif" alt="Zoey's button" class="btnLink"></a>
+                        <a href="https://olliveen.neocities.org/" target="_blank"><img src="src/img/buttons/olliveen.gif" alt="Olliveen's button" class="btnLink"></a>
+                        <a href="https://daikonet.neocities.org/" target="_blank"><img src="src/img/buttons/link_yoruko.gif" alt="DAIKONET's button" class="btnLink"></a>
+                    </marquee>
+                    <div>
+                        <a href="https://raym.neocities.org/" target="_blank"><img src="src/img/buttons/raym.png" alt="Ray M's button" class="btnLink"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="window galleryBtn">
+                <h1 class="windowTitle"><span class="windowIcon">📢</span> gallery & comms</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="artBtn">
+                    <a href="/gallery" target="_blank"><button class="btn tooltipable" data-tooltip="My pixel art, oekakis, photos, anything you can put in a gallery">gallery</button></a><br>
+                    <a href="/shrines" target="_blank"><button class="btn tooltipable" data-tooltip="Weeb, games, old tech, obscure stuff, anything that I like">shrines</button></a><br>
+                    <a href="/commissions" target="_blank"><button class="btn tooltipable" data-tooltip="Where you give me lots of money and I give you art">commissions</button></a><br>
+                    <a href="/portfolio" target="_blank"><button class="btn tooltipable" data-tooltip="Animations, streaming and game dev assets, and more">portfolio</button></a>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">📢</span> updates</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="updates">
+                    <img src="src/img/stickers/bug-cat-bug-cat-sticker.gif" alt="" style="width: 128px; image-rendering: optimizeSpeed !important; position: absolute; bottom: 0; right: 20px;">
+                    <p>10/26/2024</p>
+                    <ul>
+                        <li><em>Prefers Reduced Motion</em> added--<b>still under testing</b></li>
+                        <li>Removed tooltip on 769+ window width</li>
+                        <li>Made the layout mobile friendly</li>
+                        <li>Added a sticky navbar for mobile</li>
+                        <li>Added my Everskies avatar outfit link</li>
+                    </ul>
+                    <p>10/25/2024</p>
+                    <ul>
+                        <li>Added few optimized stickers</li>
+                        <li>Disabled player autoplay</li>
+                        <li>Updated navigation buttons</li>
+                        <li>Moved art buttons for visibility</li>
+                    </ul>
+                    <p>10/24/2024</p>
+                    <ul>
+                        <li>Added sections for petitions against AI</li>
+                        <li>Added featured art window</li>
+                        <li>Added credits section</li>
+                    </ul>
+                    <p>10/22/2024</p>
+                    <ul>
+                        <li>Added my pixel art gallery!</li>
+                    </ul>
+                    <p>10/20/2024</p>
+                    <ul>
+                        <li>Updated tooltip to match the theme.</li>
+                        <li>Added tooltip to other buttons.</li>
+                        <li>Added 'WIP' sitemap.</li>
+                        <li>Added favicon.</li>
+                        <li>Posted my first blog entry.</li>
+                        <li>Updated <em>Not Found</em> page.</li>
+                        <li>Fixed <em>Not Found</em> page's assets.</li>
+                        <li>Updated views based on Neocities' stats.</li>
+                    </ul>
+                    <p>10/12/2024</p>
+                    <ul>
+                        <li>Added tooltip. Loads element's tooltip text dynamically.</li>
+                        <li>Added more songs and enabled random track at start.</li>
+                    </ul>
+                    <p>10/11/2024</p>
+                    <ul>
+                        <li>Fixed a layout issue with mp3 player where it won't load properly, therefore breaking overall layout of the page. I found the quick fix thanks to this <a href="https://www.reddit.com/r/neocities/comments/1ciyrcq/why_did_my_layout_break/" target="_blank" class="txtLink">Reddit post 'why did my layout break?'</a> post.</li>
+                        <li>Added more fanlists!</li>
+                        <li>Added my 1st tamanotchi!</li>
+                        <li>Removed webcam section (as its purely static rn)</li>
+                    </ul>
+                    <p>10/10/2024</p>
+                    <ul>
+                        <li>Added an mp3 player and 3 songs!</li>
+                        <li>Added a <a href="https://gifypet.neocities.org/" target="_blank" class="txtLink">GIFYPET</a> of my oc Akari! (Go take care of her!)</li>
+                    </ul>
+                    <p>10/09/2024</p>
+                    <ul>
+                        <li>Added chat box via Chattable! All thanks to <a href="https://xobyte.neocities.org/" target="_blank" class="txtLink">Xobyte</a> for being awesome!</li>
+                    </ul>
+                    <p>10/08/2024</p>
+                    <ul>
+                        <li>Stuff I'm fan of are here! It's really cool to see your hidden gem to have its dedicated fansite</li>
+                        <li>More awesome links added</li>
+                        <li>Added a mood tracker</li>
+                        <li>Link buttons don't work for now. Most stuff are WIP!</li>
+                        <li><del>Found a counter but it's still buggy :P</del> I finally made it work. Spoiler, I didn't add a slash at the end of my URL :></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🖊️</span> to-do</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="toDo">
+                    <p>10/26/2024</p>
+                    <ul>
+                        <li>Add static images for GIFs</li>
+                    </ul>
+                    <p>10/20/2024</p>
+                    <ul>
+                        <li>add personal section</li>
+                        <li><del>finish gallery section</del></li>
+                        <li><del>make layout mobile-friendly</del></li>
+                    </ul>
+                    <p>10/13/2024</p>
+                    <ul>
+                        <li><del>set RSS feed</del></li>
+                        <li><del>style blog section</del></li>
+                    </ul>
+                    <p>10/12/2024</p>
+                    <ul>
+                        <li><del>set tooltip details</del></li>
+                        <li><del>add tooltip</del></li>
+                        <li><del>add more songs</del></li>
+                    </ul>
+                    <p>10/11/2024</p>
+                    <ul>
+                        <li>add credits and links to resources (media, scripts, guides, etc.)</li>
+                        <li>add <em>fun</em> webpage</li>
+                        <li><del>add new fanlists</del></li>
+                        <li>add Ko-fi embed widget</li>
+                        <li><del>add webring section</del></li>
+                        <li><del>fix layout bug (appears when hosted here in Neocities)</del></li>
+                    </ul>
+                    <p>10/09/2024</p>
+                    <ul>
+                        <li><del>add RSS feed for blog</del></li>
+                        <li><del>add mp3 and functional player</del></li>
+                    </ul>
+                    <p>10/05/2024</p>
+                    <ul>
+                        <li><del>'complete' homepage</del></li>
+                        <li><del>add gallery</del></li>
+                        <li>invizimals shrine</li>
+                        <li><del>add chat/guestbook</del></li>
+                        <li><del>add visitor counter</del></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">💬</span> chat</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="chat">
+                    <iframe src='https://iframe.chat/embed/index.html?chat=87169623' id='chattable' frameborder='none' width="100%"></iframe>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">🔗</span> more sites</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="coolSites">
+                    <marquee behavior="alternate" direction="left">
+                        <a href="https://andou.gay/" target="_blank"><img src="src/img/buttons/andou2.gif" alt="andou's 88x31 button" class="btnLink"></a>
+                        <a href="https://medjed.nekoweb.org/" target="_blank"><img src="src/img/buttons/medjed.jpg" alt="MedJed's 88x31 button" class="btnLink"></a>
+                        <a href="https://pocl.vip/" target="_blank"><img src="src/img/buttons/poclbutton.gif" alt="pocl's 88x31 button" class="btnLink"></a>
+                        <a href="https://whitedesert.neocities.org/" target="_blank"><img src="src/img/buttons/whitedesertbutton.png" alt="whitedessert's 88x31 button" class="btnLink"></a>                        
+                        <a href="https://xobyte.neocities.org/" target="_blank"><img src="src/img/buttons/xobyte.gif" alt="Xobyte's 88x31 button" class="btnLink"></a>
+                    </marquee>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon">💕</span> pet Akari!</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                <div class="gifypetoc">
+                    <iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Akari&dob=1728571358&gender=f&element=Fire&pet=https%3A%2F%2Fi.ibb.co%2FXSbsJhD%2Fakari-80x100-outlined.gif&map=https%3A%2F%2Fi.ibb.co%2F0MFHvrN%2Fcyberpunk-bg-rkgk-200x200.gif&background=paper.jpg&tablecolor=%23bf4066&textcolor=%23bf4066" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="window">
+                <h1 class="windowTitle"><span class="windowIcon"></span> my tamanotchis!</h1>
+                <div class="tamaNOTchi">
+                    <a href="https://tamanotchi.world/15848c" target="_blank"><img src="https://tamanotchi.world/i2/15848" alt="It's tamaNOTchi! Click to feed!"></a>
+                    <p>Cluster</p>
+                </div>
+            </div>
+        </div>
+        <div class="taskbar">
+            <div class="taskbarItems">
+                <div class="taskbarStart">
+                    <a href="/start"><button class="startBtn">🪟 start</button></a>
+                </div>
+                <div class="taskbarLinks">
+                    <marquee behavior="" direction="left">
+                        <a href="https://yesterweb.org/no-to-web3/" target="_blank"><img src="src/img/buttons/noweb32.gif" alt="YesterWeb No To Web3 88x31 button" class="btnLink"></a>
+                        <a href="https://nekoweb.org/"><img src="src/img/buttons/nekowebbutton.gif" alt="Nekoweb 88x31 button" class="btnLink"></a>
+                        <a href="https://goblin-heart.net/sadgrl/cyberspace/internet-manifesto" target="_blank"><img src="src/img/buttons/sadgrlonline.gif" alt="sadgirl's 88x31 button" class="btnLink"></a>
+                        <a href="https://neocities.org" target="_blank"><img src="src/img/buttons/neorainbow.gif" alt="Neocities 88x31 button" class="btnLink"></a>
+                        <a href="https://chattable.neocities.org/" target="_blank"><img src="src/img/buttons/chattable-alt.png" alt="Chattable 88x31 button" class="btnLink"></a>
+                        <a href="https://melonking.net/thoughts/manifesto" target="_blank"><img src="src/img/buttons/MELON-BADGE-2.GIF" alt="MelonKing's badge" class="btnLink"></a>
+                        <a href="https://gifypet.neocities.org/" target="_blank"><img src="src/img/buttons/GIFYPET-badge.gif" alt="GIFYPET button" class="btnLink"></a>
+                        <a href="https://tamanotchi.world/" target="_blank"><img src="src/img/buttons/tamanotchi.gif" alt="tamanotchi button" class="btnLink"></a>
+                    </marquee>
+                </div>
+                <div class="taskbarDate">
+                    <div class="dateTime">
+                        <div class=""><b class="time"></b></div>
+                        <div class=""><b class="date"></b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let now_playing = document.querySelector(".itemNumber");
+        let track_art = document.querySelector(".trackArt");
+        let track_name = document.querySelector(".trackName");
+        let track_artist = document.querySelector(".trackArtist");
+
+        let playpause_btn = document.querySelector(".playpause-track");
+        let next_btn = document.querySelector(".next-track");
+        let prev_btn = document.querySelector(".prev-track");
+
+        let seek_slider = document.querySelector(".seek_slider");
+        let volume_slider = document.querySelector(".volume_slider");
+        let curr_time = document.querySelector(".current-time");
+        let total_duration = document.querySelector(".total-duration");
+
+        let isPlaying = false;
+        let updateTimer;
+
+        let curr_track = document.createElement('audio');
+
+        let track_list = [
+        {
+            name: "Ikiru Hitobito",
+            artist: "MOB CHOIR/sajou no hana",
+            image: "src/img/album_covers/ikiru_hitobito.png",
+            path: "src/audio/bgm/Ikiru%20Hitobito.mp3"
+        },
+        {
+            name: "cobalt",
+            artist: "Mob Choir",
+            image: "src/img/album_covers/mobchoir1.png",
+            path: "src/audio/bgm/cobalt.mp3"
+        },
+        {
+            name: "gray",
+            artist: "sajou no hana",
+            image: "src/img/album_covers/MemosepiaandGray.png",
+            path: "src/audio/bgm/gray.mp3"
+        },
+        {
+            name: "Shout Baby",
+            artist: "Ryokuoushoku Shakai",
+            image: "src/img/album_covers/shoutbby.png",
+            path: "src/audio/bgm/Shout%20Baby.mp3"
+        },
+        {
+            name: "PINK BLOOD",
+            artist: "Hikaru Utada",
+            image: "src/img/album_covers/pink_blood.png",
+            path: "src/audio/bgm/PINK BLOOD.mp3"
+        },
+        {
+            name: "Re:Re:",
+            artist: "ASIAN KUNG-FU GENERATION",
+            image: "src/img/album_covers/rere.png",
+            path: "src/audio/bgm/Re:Re:.mp3"
+        },
+        {
+            name: "To see the future",
+            artist: "レン (CV:楠木ともり)",
+            image: "src/img/album_covers/toseethefuture.png",
+            path: "src/audio/bgm/To%20see%20the%20future.mp3"
+        },
+        {
+            name: "Another Colony",
+            artist: "TRUE",
+            image: "src/img/album_covers/Anakoro.png",
+            path: "src/audio/bgm/Another%20colony.mp3"
+        },
+        {
+            name: "My Friend",
+            artist: "mewhan",
+            image: "src/img/album_covers/ぼくのフレンド.png",
+            path: "src/audio/bgm/ぼくのフレンド.mp3"
+        },
+        {
+            name: "Greedy Greedy - English ver.",
+            artist: "KUROMI",
+            image: "src/img/album_covers/greedy_greedy_kuromi.png",
+            path: "src/audio/bgm/Greedy%20Greedy%20-%20English ver..mp3"
+        },
+        ];
+
+        let track_index = Math.floor(Math.random() * track_list.length);
+
+        function loadTrack(track_index) {
+            clearInterval(updateTimer);
+            resetValues();
+            curr_track.autoplay = false;
+            curr_track.src = track_list[track_index].path;
+            curr_track.load();
+        
+            track_art.src = track_list[track_index].image;
+            track_name.textContent = track_list[track_index].name;
+            track_artist.textContent = track_list[track_index].artist;
+            now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+        
+            updateTimer = setInterval(seekUpdate, 1000);
+            curr_track.addEventListener("ended", nextTrack);
+        }
+        
+        function resetValues() {
+            curr_time.textContent = "00:00";
+            total_duration.textContent = "00:00";
+            seek_slider.value = 0;
+        }
+        
+        function playpauseTrack() {
+            if (!isPlaying) playTrack();
+            else pauseTrack();
+        }
+        
+        function playTrack() {
+            curr_track.play();
+            isPlaying = true;
+            playpause_btn.innerHTML = '▶️';
+        }
+        
+        function pauseTrack() {
+            curr_track.pause();
+            isPlaying = false;
+            playpause_btn.innerHTML = '⏸️';
+        }
+        
+        function nextTrack() {
+            if (track_index < track_list.length - 1)
+                track_index += 1;
+            else track_index = 0;
+            loadTrack(track_index);
+            playTrack();
+        }
+        
+        function prevTrack() {
+            if (track_index > 0)
+                track_index -= 1;
+            else track_index = track_list.length;
+            loadTrack(track_index);
+            playTrack();
+        }
+        
+        function seekTo() {
+            let seekto = curr_track.duration * (seek_slider.value / 100);
+            curr_track.currentTime = seekto;
+        }
+        
+        function setVolume() {
+            curr_track.volume = volume_slider.value / 100;
+        }
+        
+        function seekUpdate() {
+            let seekPosition = 0;
+        
+            if (!isNaN(curr_track.duration)) {
+                seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        
+                seek_slider.value = seekPosition;
+        
+                let currentMinutes = Math.floor(curr_track.currentTime / 60);
+                let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+                let durationMinutes = Math.floor(curr_track.duration / 60);
+                let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+        
+                if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+                if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+                if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+                if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+        
+                curr_time.textContent = currentMinutes + ":" + currentSeconds;
+                total_duration.textContent = durationMinutes + ":" + durationSeconds;
+            }
+        }
+
+
+        // Taskbar date and time
+        function setEmbed() {
+            let linkEmbedTxtBox = document.querySelector('#btnEmbed');
+            linkEmbedTxtBox.value = '<a href="dinpixels.neocities.org" target="_blank"><a/>';
+        }
+        function showTime() {
+            let timeTxt = document.querySelector('.time');
+            let dateTxt = document.querySelector('.date');
+            const now = new Date();
+            timeTxt.textContent = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+            dateTxt.textContent = now.toLocaleDateString();
+        }
+
+        // Tooltip by Xobyte
+        // Dynamic data-* tooltips by DinPixels
+        Element.prototype.tooltip = function(text){
+        var root = this;
+        this.onmouseover = function(e){
+            if (window.innerWidth >= 769) {
+                var offsetX = e.pageX;
+                var offsetY = e.pageY - document.documentElement.scrollTop;
+                offsetX += 10;
+                offsetY += 10;
+                var borderRight = window.innerWidth;
+                var borderTop = 0;
+                var div = document.createElement("DIV");
+                div.style.background = "whitesmoke";
+                div.style.border = "solid 2px #245DDA";
+                div.style.borderRadius = "3px";
+                div.style.opacity = "1.0";
+                div.style.padding = "5px 10px";
+                div.style.fontSize = "10pt";
+                var maximumWidth = (borderRight - offsetX) - 50;
+                if(maximumWidth > 500){
+                    div.style.maxWidth = "500px";
+                } else {
+                    div.style.maxWidth = (maximumWidth + "px");
+                }
+                div.style.position = "fixed";
+                div.style.top = offsetY + "px";
+                div.style.left = offsetX + "px";
+                div.style.zIndex = "999999999";
+                div.style.color = "black";
+                div.style.fontFamily = "Ubuntu";
+                div.innerHTML = text;
+                div.className = "tooltip"; div.class = "toolip"; div.id = "tooltip";
+                document.body.appendChild(div);
+            }
+        };
+        this.onmouseout = function(){
+            if (window.innerWidth >= 769) {
+                document.body.removeChild(document.getElementsByClassName("tooltip")[0]);
+            }
+        };
+        this.onmousemove = function(e){
+            if (window.innerWidth >= 769) {
+                var tt = document.getElementsByClassName("tooltip")[0];
+            tt.style.top = ((e.pageY - document.documentElement.scrollTop) + 10) + "px";
+            tt.style.left = (e.pageX + 10) + "px";
+            }
+        };
+        };
+        document.querySelectorAll(".tooltipable").forEach(btn => btn.tooltip(btn.getAttribute("data-tooltip")));
+
+
+        loadTrack(track_index);
+        setEmbed();
+        setInterval(showTime, 1000);
+    </script>
+</body>
+</html>
