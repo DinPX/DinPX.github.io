@@ -101,6 +101,7 @@
 }
 html {
     font-family: Ubuntu;
+    cursor: url('../img/cursor_leap_bound.png'), default;
 }
 b, .toDo > p, .updates > p, .mySetup > p {
     font-family: UbuntuRegular;
@@ -115,7 +116,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     image-rendering: optimizeSpeed;
-    cursor: url('../img/cursor_leap_bound.png'), default;
 }
 p {
     margin: 0;
