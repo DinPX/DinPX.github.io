@@ -11,6 +11,7 @@ As the webpage is inspired by the old web, it has a music player, a pet sim and 
 - Animations can be turned off with `prefers-reduced-motion`
     - Helpful for visitors who want/need less motions
 - Chat box powered by [Chattable by xobyte](https://iframe.chat/).
+- Tooltips on hovered items by [xobyte](https://andrew-grider.com/).
 - Pet sim game powered by [GifyPet by MelonKing](https://gifypet.neocities.org/).
 - Tamagotchi-inspired pet powered by [tamaNOTchi!](https://tamanotchi.world/).
 - Mobile layout (still in need for more adjustments to UI)
