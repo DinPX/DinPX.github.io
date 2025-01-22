@@ -1,4 +1,4 @@
-# [dinpixels.github.io](https://dinpixels.github.io)
+# [DinPX.github.io](https://dinpx.github.io/)
 My static personal website that is [hosted on Neocities](https://dinpixels.neocities.org).
 
 ![homepage preview](/preview.png)

@@ -99,7 +99,7 @@
     font-weight: 300;
     src: url('../fonts/visitor2.ttf') format('woff2');
 }
-*, html {
+html {
     font-family: Ubuntu;
 }
 b, .toDo > p, .updates > p, .mySetup > p {
@@ -115,14 +115,16 @@ body {
     background-position: center;
     background-attachment: fixed;
     image-rendering: optimizeSpeed;
+    cursor: url('../img/cursor_leap_bound.png'), default;
 }
 p {
     margin: 0;
 }
 
 .tooltip {
-    background-color: var(--xp-border-color);
-    border: solid 2px var();
+    background-color: var(--sakura-background-color) !important;
+    border: solid 4px var(--sakura-text-link-color) !important;
+    border-radius: 10px !important;
 }
 
 .banner {
@@ -181,6 +183,7 @@ p {
 
 .headerBtn:hover {
     transform: scale(1.5);
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 
 .desktop {
@@ -263,8 +266,8 @@ p {
     color: var(--sakura-button-text-color);
 }
 .btn:hover {
-    cursor: pointer;
     border: 2px solid var(--sakura-button-border-color-hover);
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .section {
     position: relative;
@@ -312,7 +315,7 @@ p {
     border-radius: 4px;
 }
 .startBtn:hover, .minBtn, .sizeBtn:hover, .xBtn:hover {
-    cursor: pointer;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .coolSites, .embedsrc {
     display: flex;
@@ -320,6 +323,7 @@ p {
     gap: 6px;
     justify-content: center;
     align-items: center;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .footer, .credits {
     text-align: center;
@@ -453,6 +457,7 @@ li {
 }
 .txtLink:hover {
     color: var(--sakura-text-link-color-hover);
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .statsMain {
     height: 100%;
@@ -590,6 +595,7 @@ li {
 }
 .playpause-track:hover, .prev-track:hover, .next-track:hover {
     opacity: 1.0;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .sliders {
     width: 100%;
@@ -624,6 +630,7 @@ li {
 }
 .seek_slider:hover, .volume_slider:hover {
     opacity: 1.0;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .volume-icon {
     font-size: 12px;
@@ -652,6 +659,7 @@ li {
 .microblog h4.feed-item-title a:hover,
 .blog h4.feed-item-title a:hover {
     color: var(--sakura-blog-link-color-hover) !important;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .microblog p.feed-item-desc,
 .blog p.feed-item-desc {
