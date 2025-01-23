@@ -1,9 +1,4 @@
 // Taskbar date and time
-function setEmbed() {
-    let linkEmbedTxtBox = document.querySelector('#btnEmbed');
-    linkEmbedTxtBox.value = '<a href="dinpixels.neocities.org" target="_blank"><a/>';
-}
-
 function showTime() {
     let timeTxt = document.querySelector('.time');
     let dateTxt = document.querySelector('.date');
@@ -12,5 +7,4 @@ function showTime() {
     dateTxt.textContent = now.toLocaleDateString();
 }
 
-setEmbed();
 setInterval(showTime, 1000);
