@@ -121,6 +121,10 @@ p {
     margin: 0;
 }
 
+a:hover {
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
+}
+
 .tooltip {
     background-color: var(--sakura-background-color) !important;
     border: solid 4px var(--sakura-text-link-color) !important;
@@ -660,6 +664,7 @@ li {
 /* Feed CHANNEL title */
 .blog a {
     color: var(--sakura-button-background-color) !important;
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .microblog h3.feed-title,
 .blog h3.feed-title {
