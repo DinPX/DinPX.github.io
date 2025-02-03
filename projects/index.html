@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../src/img/tsuyomi_favicon.gif">
+    <title>Projects ; Din's Desktop</title>
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'UbuntuRegular';
+            font-style: normal;
+            font-weight: 500;
+            src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+        }
+        body {
+            padding: 20px;
+            font-family: Ubuntu;
+            font-size: larger;
+            word-wrap: break-word;
+        }
+        h1, h2, h3, h4 {
+            margin-bottom: 0;
+            font-family: UbuntuRegular;
+        }
+        h1, h3, h4, p {
+            margin-top: 0;
+        }
+        a, a:visited {
+            color: #245DDA;
+        }
+        a:hover {
+            color: #FFA500;
+        }
+        ul {
+            padding: 10px 20px;
+            list-style: none;
+        }
+        hr {
+            border-top: 1px solid #a9a9bd;
+        }
+        code {
+            padding: 0 5px 0 5px;
+            background-color: #dedede;
+            border-radius: 5px;
+        }
+        img {
+            image-rendering: pixelated;
+        }
+        .intro {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .intro > div > p {
+            margin: 0;
+            padding: 0;
+        }
+        .introMain {
+            padding-right: 20px;
+            border-right: 2px solid #a9a9bd;
+        }
+        .info {
+            margin: 0;
+            padding: 0;
+        }
+        .konaLaugh {
+            margin-left: 24px;
+        }
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .resources {
+            width: 100%;
+        }
+        .sidebar {
+            /*outline: 2px dashed red;*/
+            margin: 20px 20px 0 0;
+            padding: 20px 0;
+            width: 300px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: whitesmoke;
+            /* font-size: 16px; */
+            border-top: 36px solid #245DDA;
+            border-left: 5px solid #245DDA;
+            border-right: 5px solid #245DDA;
+            border-bottom: 5px solid #245DDA;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px black;
+        }
+        .sidebar ul {
+            list-style-type: "⭐  ";
+            list-style-position: inside;
+        }
+        .mainNavOverflow {
+            overflow: auto;
+            margin: 0;
+        }
+        .titleIcon {
+            text-shadow: -1px -1px white;
+            color: transparent;
+        }
+        .sidebarTitle {
+            font-size: 16px;
+            color: whitesmoke;
+            position: absolute;
+            top: -25px;
+            left: 10px;
+        }
+        .sectionWindow {
+            margin-bottom: 24px;
+            background-color: whitesmoke;
+            border-top: 64px solid #245DDA;
+            border-left: 5px solid #245DDA;
+            border-right: 5px solid #245DDA;
+            border-bottom: 5px solid #245DDA;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px black;
+        }
+        .title {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+        }
+        .sectionWindowTitle {
+            font-size: 32px;
+            color: whitesmoke;
+            position: relative;
+            top: -50px;
+            left: 10px;
+            padding-right: 20px;
+            border-right: 3px solid #83c2f5;
+        }
+        .sectionWindowInfo {
+            font-size: 16px;
+            color: whitesmoke;
+            position: relative;
+            font-family: UbuntuRegular;
+            top: -34px;
+        }
+        .xBtn {
+            padding: 2px 8px;
+            background-image: radial-gradient(#ff7f7f, #f01919);
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 0;
+            border: 2px outset #ff7f7f;
+            border-radius: 4px;
+        }
+        .sizeBtn {
+            padding: 2px 8px;
+            background-color: transparent;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 32px;
+            border: 2px outset #83c2f5;
+            border-radius: 4px;
+        }
+        .minBtn {
+            padding: 2px 8px;
+            background-color: transparent;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 66px;
+            border: 2px outset #83c2f5;
+            border-radius: 4px;
+        }
+        .startBtn:hover, .minBtn, .sizeBtn:hover, .xBtn:hover {
+            cursor: pointer;
+        }
+        .mainNav {
+            margin: 0;
+            padding: 0 20px;
+        }
+        .webmastery hr {
+            border: none;
+            border-top: 1px solid #a9a9bd;
+        }
+        .content {
+            margin: -40px 0 0 20px;
+            padding-bottom: 20px;
+        }
+        .content ul {
+            border-bottom: 1px solid #a9a9bd;
+            padding-bottom: 40px;
+        }
+        .content ul:last-child {
+            border: none;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="resources">
+            <div class="intro">
+                <div class="introMain">
+                    <h1>Projects <span><small><em>beta</em></small></span></h1>
+                    <p>Here's my projects on Github and itch.</p>
+                    <br>
+                    <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a></small></p>
+                </div>
+                <div class="info">
+                    <p><small>Private repos are excluded.<br>Most projects are work-in-progress.<br><!--Some Snapshots may have broken CSS.--></small></p><br><br>
+
+                    <!--<p><small>Credits to the assets I used are <a href="#Credits">here</a>.</small></p>-->
+                    <p><small>Encountered issues? Report them at this <a href="#!">board</a>.</small></p>
+
+                </div>
+                <picture class="konaLaugh">
+                    <!-- Animated versions. -->
+                    <source
+                    srcset="../src/img/stickers/konata-laugh-100x100.gif"
+                    type="image/gif"
+                    media="(prefers-reduced-motion: no-preference)"
+                    width="112"
+                    height="112"
+                    style="image-rendering: pixelated;"
+                    />
+                    <!-- Static versions. -->
+                    <img src="../src/img/stickers/konata-laugh-100x100.png" alt="" width="112" height="112" style="image-rendering: pixelated;"/>
+                </picture>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Tools" class="sectionWindowTitle"><span class="titleIcon">🔧</span> Tools</h1>
+                    <p class="sectionWindowInfo"> Tools for Linux and Windows platforms.</p>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><a id="AseScale" href="https://github.com/DinPX/AseScale" target="_blank">AseScale</a> - it automates export of Aseprite files in different scales and formats.<br>
+                        It currently supports PNG and GIF formats, as well as exports to x1 to x10 scales (ignoring other odds).<br>
+                        Simply drag-and-drop an Aseprite file and it spits out the exports based on its settings.</li><br>
+                        
+                        <li><a id="Model Viewer" href="https://github.com/DinPX/ModelViewer-Godot" target="_blank">Model Viewer</a> - a simple viewer for OBJ models in Godot.<br>
+                        Drag-and-drop an OBJ file to view it on an empty or procedural sky environment.<br>It only works on debug and editor builds for now.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Games" class="sectionWindowTitle"><span class="titleIcon">👾</span> Games</h1>
+                    <p class="sectionWindowInfo"> Games for Linux, Windows, and web. Mostly are proof of concept or prototypes.</p>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><a id="Kunai Kitten" href="https://github.com/DinPX/Kunai-Kitten" target="_blank">Kunai Kitten</a> - play as a ninja cat and defeat your enemies with 1 key only.<br>
+                        Made for the 1-Button Jam 2024.<br>
+                        <small><a href="https://dinpixels.itch.io/kunai-kitten" target="_blank">Game page</a> | <a href="https://dinpixels.itch.io/kunai-kitten/devlog" target="_blank">Devlogs</a></small></li><br>
+
+                        <li><a id="Yuuka's Defense for Sunflowers" href="https://dinpixels.itch.io/yuukas-defense-for-sunflowers" target="_blank">Yuuka's Defense for Sunflowers</a> - a side-scroller survival Touhou fangame<br>
+                        starring Yuuka Kazami. Made for the Touhou Fan Game Jam 9.<br>
+                        Sadly I no longer have my local files for this project.</li><br>
+
+                        <li><a id="Only Once Upon A Time" href="https://dinpixels.itch.io/only-once-upon-a-time" target="_blank">Only Once Upon A Time</a> - it's a top-down puzzle game of a princess with limited movements.<br>
+                        Input keys are consumed in each movement, and so they must be used wisely.<br>
+                        Regain the input keys with pickups on the floor. Made for Swinburne Game Maker's - OCTOBER JAM.</li><br>
+
+                        <li><a id="Leap Bound" href="https://github.com/DinPX/Leap_Bound" target="_blank">Leap Bound</a> - a Frogger-like prototype</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Apps" class="sectionWindowTitle"><span class="titleIcon">🔍</span> Apps</h1>
+                    <p class="sectionWindowInfo"> Apps for Linux and Windows platforms.</p>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><a id="WADoom" href="https://github.com/DinPX/WADoom" target="_blank">WADoom</a> - work-in-progress Doom WAD explorer and launcher.<br>
+                        I made it so I can run <strike>multiple</strike> WAD files on the fly.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sectionWindow">
+                <div class="title">
+                    <h1 id="Misc" class="sectionWindowTitle"><span class="titleIcon">🔍</span> Misc</h1>
+                    <p class="sectionWindowInfo"> Other projects I can't sort.</p>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><a id="DinPX.github.io" href="https://github.com/DinPX/DinPX.github.io" target="_blank">DinPX.github.io</a> - a website mirror and repo in Github.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; gap: 90px;">
+                <div>
+                    <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a></small></p>
+                </div>
+                <div>
+                    <p style="text-align: center;"><small>Made with ❤️ and ☕!&nbsp;&nbsp;Din (DinPixels), Today 'til the End of Eternity<br>Best viewed on 1366x768 resolution.</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h1 class="sidebarTitle"><span class="titleIcon">🔗</span> navigation</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+            <div class="mainNavOverflow">
+                <ul class="mainNav">
+                    <li><a href="#Tools" class="">Tools</a>
+                        <ul>
+                            <li><a href="#AseScale">AseScale</a></li>
+                            <li><a href="#Model Viewer">Model Viewer</a></li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="#Games" class="">Games</a>
+                        <ul>
+                            <li><a href="#Kunai Kitten">Kunai Kitten</a></li>
+                            <li><a href="#Yuuka's Defense for Sunflowers">Yuuka's Defense for Sunflowers</a></li>
+                            <li><a href="#Only Once Upon A Time">Only Once Upon A Time</a></li>
+                            <li><a href="#Leap Bound">Leap Bound</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Apps" class="">Apps</a>
+                        <ul>
+                            <li><a href="#WADoom">WADoom</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Misc" class="">Misc</a>
+                        <ul>
+                            <li><a href="#DinPX.github.io">DinPX.github.io</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

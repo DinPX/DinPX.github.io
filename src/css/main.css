@@ -121,7 +121,7 @@ p {
     margin: 0;
 }
 
-a:hover {
+a, button {
     cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 
@@ -187,7 +187,6 @@ a:hover {
 
 .headerBtn:hover {
     transform: scale(1.5);
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 
 .headerButtons {
@@ -277,7 +276,6 @@ a:hover {
 }
 .btn:hover {
     border: 2px solid var(--sakura-button-border-color-hover);
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .embed {
     margin-left: 5px;
@@ -312,9 +310,6 @@ a:hover {
     border: 2px outset var(--sakura-min-size-button-border-color);
     border-radius: 4px;
 }
-.startBtn:hover, .minBtn, .sizeBtn:hover, .xBtn:hover {
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
-}
 .embedsrc {
     display: flex;
     flex-direction: column;
@@ -328,9 +323,6 @@ a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-.coolSites a, .embedsrc a {
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .footer, .credits {
     text-align: center;
@@ -469,7 +461,7 @@ li {
 }
 .txtLink:hover {
     color: var(--sakura-text-link-color-hover);
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
+
 }
 .statsMain {
     height: 100%;
@@ -615,7 +607,7 @@ li {
 }
 .playpause-track:hover, .prev-track:hover, .next-track:hover {
     opacity: 1.0;
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
+
 }
 .sliders {
     width: 100%;
@@ -650,7 +642,6 @@ li {
 }
 .seek_slider:hover, .volume_slider:hover {
     opacity: 1.0;
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .volume-icon {
     font-size: 12px;
@@ -664,7 +655,7 @@ li {
 /* Feed CHANNEL title */
 .blog a {
     color: var(--sakura-button-background-color) !important;
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
+
 }
 .microblog h3.feed-title,
 .blog h3.feed-title {
@@ -680,7 +671,6 @@ li {
 .microblog h4.feed-item-title a:hover,
 .blog h4.feed-item-title a:hover {
     color: var(--sakura-blog-link-color-hover) !important;
-    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 .microblog p.feed-item-desc,
 .blog p.feed-item-desc {

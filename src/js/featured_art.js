@@ -48,3 +48,5 @@ function set_featured_art() {
 }
 
 set_featured_art();
+
+setInterval(set_featured_art, 120000);
