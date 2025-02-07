@@ -594,6 +594,7 @@ li {
     color: var(--sakura-player-track-color);
 }
 .playerInfo {
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -729,6 +730,7 @@ li {
     .linkBtn, .galleryBtn {
         display: none;
     }
+
     .mobileNavi {
         display: flex;
         position: sticky;
