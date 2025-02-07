@@ -12,6 +12,9 @@
     font-weight: 500;
     src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
 }
+html {
+    cursor: url('../img/cursor_leap_bound.png'), default;
+}
 body {
     padding: 20px;
     font-family: Ubuntu;
@@ -24,6 +27,9 @@ h1, h2 {
 }
 h1, p {
     margin-top: 0;
+}
+a {
+    cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 a, a:visited {
     color: #a9a9bd;

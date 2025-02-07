@@ -337,6 +337,12 @@ a, button {
     flex-direction: column;
     gap: 10px;
 }
+
+.bio > .info {
+    justify-content: center;
+    align-items: center;
+}
+
 .info-data {
     display: flex;
     flex-direction: row;
@@ -703,7 +709,7 @@ li {
         justify-content: center;
         align-items: center;
     }
-    .desktop {
+    .desktop, .columns {
         width: auto;
         height: auto;
         margin-bottom: 42px;
@@ -712,6 +718,10 @@ li {
     }
     .left, .middle, .right {
         width: 100%;
+    }
+    .bio > .info {
+        justify-content: center;
+        align-items: center;
     }
     .taskbar {
         height: 64px;

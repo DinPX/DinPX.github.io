@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../src/img/tsuyomi_favicon.gif">
+    <link rel="stylesheet" href="../src/css/gallery.css">
+</head>
+<body>
+    <div class="intro">
+        <div>
+            <h1>Portfolio <span><small><em>beta</em></small></span></h1>
+            <p>My personal art, mockups, assets, commissions, etc.</p>
+        </div>
+        <div class="info">
+            <p><small>Only selected few images zoom in when being hovered.<br>Please don't use my works for any crypto, NFT, and AI garbage, thank you.<br>If you encountered some bugs please let me know.</small></p>
+        </div>
+    </div><hr>
+    <div class="note">
+        <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a><!--&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2024">2024</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2023">2023</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2022">2022</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2019">2019</a>--></small></p>
+        <p><small><i><b>Accessibility:</b> Supports <b>prefers-reduced-motion</b> or turning off animations.</i></small></p>
+    </div><br>
+    <div class="galleryBig">
+        
+        <img class="tooltipable" src="../src/img/works/commissions/2023/Sleepy_sketch_x1.png" alt="" data-tooltip='<img src="../src/img/works/commissions/2023/Sleepy_sketch_x1.png" style="transform:scale(2);">'>
+        <img class="tooltipable" src="../src/img/works/challenges/ArtFight/2023/Viola_x1.png" alt="" data-tooltip='<img src="../src/img/works/challenges/ArtFight/2023/Viola_x1.png" style="transform:scale(3);">'>
+        <img class="tooltipable" src="../src/img/works/challenges/FightingCollab/oc fighting collab FINAL x1 fix.png" alt="" data-tooltip='<img src="../src/img/works/challenges/FightingCollab/oc fighting collab FINAL x1 fix.png" style="transform:scale(2);">'>
+        
+        <img class="tooltipable" src="../src/img/works/commissions/2024/Akira_sketch_glasses.png" alt="" data-tooltip='<img src="../src/img/works/commissions/2024/Akira_sketch_glasses.png" style="transform:scale(2);">'>
+
+        <img src="../src/img/works/personal/2024/Serenity_XP_x1.png" alt="">
+        <img class="tooltipable" src="../src/img/works/personal/2024/Serenity_XP_Landscape_x1.png" alt="" data-tooltip='<img src="../src/img/works/personal/2024/Serenity_XP_Landscape_x1.png" style="transform:scale(2);">'>
+        
+
+        <img src="../src/img/works/personal/2024/Kirby_Wallpaper_x1.png" alt="">
+        <img class="tooltipable" src="../src/img/works/personal/2024/pokemon_unite_ceruledge_x1.png" alt="" data-tooltip='<img src="../src/img/works/personal/2024/pokemon_unite_ceruledge_x1.png" style="transform:scale(1);">'>
+        <img class="tooltipable" src="../src/img/works/challenges/MockupJam/00_Level_1_Mockup_new_x1_04-FINAL.png" alt="" data-tooltip='<img src="../src/img/works/challenges/MockupJam/00_Level_1_Mockup_new_x1_04-FINAL.png" style="transform:scale(2);">'>
+        <img class="tooltipable" src="../src/img/works/personal/2023/painted_serenity_x1_limited_palette.png" alt="" data-tooltip='<img src="../src/img/works/personal/2023/painted_serenity_x1_limited_palette.png" style="transform:scale(2.5);">'>
+        <img class="tooltipable" src="../src/img/works/challenges/PixelJoint/06_CGAlaxy_x1.png" alt="" data-tooltip='<img src="../src/img/works/challenges/PixelJoint/06_CGAlaxy_x1.png" style="transform:scale(2);">'>
+
+        <img src="../src/img/works/personal/2023/sunny_date_orig_x1.png" alt="">
+        <img class="tooltipable" src="../src/img/works/challenges/PixelJoint/01_Baby_Yoda_Stories_Mockup_FINAL_x1_UPDATED.png" alt="'Din & Yoda', a fanart of them from Star Wars" data-tooltip='<img src="../src/img/works/challenges/PixelJoint/01_Baby_Yoda_Stories_Mockup_FINAL_x1_UPDATED.png" style="transform:scale(2);">'>
+        
+        <img class="tooltipable" src="../src/img/works/challenges/GameJam/frogtwistmockup_x1.png" alt="" data-tooltip='<img src="../src/img/works/challenges/GameJam/frogtwistmockup_x1.png" style="transform:scale(2);">'>
+        <img src="../src/img/works/challenges/PixelJoint/05_Iconic_Desktop_wo_bg_x1.png" alt="">
+    </div>
+
+    <div>
+        <p><small><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a><!--&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2024">2024</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2023">2023</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2022">2022</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2019">2019</a>--></small></p>
+    </div>
+    
+    <script>
+        const isAnimationReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+
+        if (!!isAnimationReduced) {
+            console.log("Animations are disabled.")
+        } else {
+            // Tooltip by Xobyte
+            // Dynamic data-* tooltips by DinPixels
+            Element.prototype.tooltip = function(text){
+            var root = this;
+            this.onmouseover = function(e){
+                if (window.innerWidth >= 769) {
+                    var offsetX = e.pageX;
+                    var offsetY = e.pageY - document.documentElement.scrollTop;
+                    offsetX += 100;
+                    //offsetY += 0;
+                    var borderRight = window.innerWidth;
+                    var borderTop = 0;
+                    var div = document.createElement("DIV");
+                    //div.style.background = "black";
+                    //div.style.border = "solid 2px #245DDA";
+                    //div.style.borderRadius = "3px";
+                    //div.style.opacity = "1.0";
+                    div.style.padding = "0";
+                    div.style.fontSize = "10pt";
+                    var maximumWidth = (borderRight - offsetX) - 50;
+                    if(maximumWidth > 1366){
+                        div.style.maxWidth = "1366px";
+                    } else {
+                        div.style.maxWidth = (maximumWidth + "px");
+                    }
+                    div.style.position = "fixed";
+                    div.style.top = offsetY + "px";
+                    div.style.left = offsetX + "px";
+                    div.style.zIndex = "999999999";
+                    //div.style.color = "black";
+                    //div.style.fontFamily = "Ubuntu";
+                    div.innerHTML = text;
+                    div.className = "tooltip"; div.class = "toolip"; div.id = "tooltip";
+                    document.body.appendChild(div);
+                }
+            };
+            this.onmouseout = function(){
+                if (window.innerWidth >= 769) {
+                    document.body.removeChild(document.getElementsByClassName("tooltip")[0]);
+                }
+            };
+            this.onmousemove = function(e){
+                if (window.innerWidth >= 769) {
+                    var tt = document.getElementsByClassName("tooltip")[0];
+                tt.style.top = ((e.pageY - document.documentElement.scrollTop) + 50) + "px";
+                tt.style.left = (e.pageX + 200) + "px";
+                }
+            };
+            };
+            document.querySelectorAll(".tooltipable").forEach(btn => btn.tooltip(btn.getAttribute("data-tooltip")));
+        }
+        
+        
+    </script>
+</body>
+</html>
