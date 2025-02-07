@@ -21,6 +21,7 @@
             --link-hovered-color: #f5c211;
         }
         body {
+            margin: 0;
             cursor: url('../../src/img/cursor_leap_bound.png'), default;
         }
 
@@ -30,7 +31,7 @@
             padding-bottom: 10px;
             border-bottom: 4px solid;
 
-            margin: 20px 22vw;
+            /*margin: 20px 22vw;*/
         }
 
         h3 {
@@ -44,7 +45,7 @@
             text-align: justify;
             text-indent: 50px;
 
-            margin: 20px 22vw;
+            /*margin: 20px 22vw;*/
         }
 
         .noIndent {
@@ -60,7 +61,7 @@
         }
 
         .largerImage {
-            max-height: 600px;
+            max-height: 500px;
         }
 
         .bigImage {
@@ -78,6 +79,7 @@
         img {
             image-rendering: optimizeSpeed;
             display: block;
+            z-index: 4;
         }
         
         img:not(.infoblock > legend > img, .siteButton) {
@@ -112,7 +114,7 @@
         }
 
         code {
-            margin: 0 22vw 20px 22vw;
+            /*margin: 0 22vw 20px 22vw;*/
             padding: 10px 20px;
             display: block;
             background-color: lightgrey;
@@ -166,7 +168,7 @@
         }
 
         hr {
-            margin: 60px 0;
+            margin: 10px 0;
             border: none;
             border-bottom: 2px solid lightgrey;
         }
@@ -190,7 +192,7 @@
             border-left: 8px solid;
             border-radius: 12px;
 
-            margin: 20px 22vw;
+            /*margin: 20px 22vw;*/
         }
         .infoblock > legend
         {
@@ -225,340 +227,500 @@
         .warningInfoBlock > legend > b { color: var(--warning-text-color); }
         .warningInfoBlock > legend > img
         { content: url("../../src/img/notes/triangle-exclamation-svgrepo-com.svg"); }
+
+        .main {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            gap: 0;
+        }
+        .column {
+            margin: 0;
+            padding: 0;
+            height: auto;
+        }
+
+        .left, .right {
+            width: 50vw;
+            text-indent: 0;
+        }
+        .middle {
+            width: 50vw;
+            /*border-right: 2px solid lightgrey;*/
+            /*border-left: 2px solid lightgrey;*/
+        }
+
+        .sidebar {
+            /*outline: 2px dashed red;*/
+            padding: 10px 20px;
+            width: 260px;
+            height: 80%;
+            display: flex;
+
+            flex-direction: column;
+            position: fixed;
+
+            background-color: whitesmoke;
+            /* font-size: 16px; */
+
+            border-radius: 12px;
+            border-top: 2px solid #c061cb;
+            border-bottom: 4px solid #c061cb;
+            
+            overflow: auto;
+        }
+
+        .sidebarLeft {
+            margin: 20px 20px 0 0;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-right: 4px solid #c061cb;
+        }
+        .sidebarRight {
+            margin: 20px 0 0 20px;
+            top: 0;
+            right: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-left: 4px solid #c061cb;
+        }
+
+
+        .sidebar p {
+            margin: 0 0 10px 0;
+        }
+        .sidebar h3 {
+            margin: 10px 0;
+        }
+        .sidebar hr {
+            border: none;
+            border-top: 2px dashed lightgrey;
+        }
+        .sidebar li {
+            color: slategrey;
+        }
+
+        .sidebarLinks {
+            margin: 0;
+            padding: 0;
+            /*list-style-type: "⭐  ";*/
+            list-style-type: none;
+            list-style-position: inside;
+        }
+        .sidebarLinks a, .sidebarLinks a:visited {
+            color: var(--link-default-color);
+        }
+        .sidebarLinks a:hover {
+            color: var(--link-hovered-color);
+        }
+
+        .buttonLinks {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Linux Gaming</h1>
-    <p>Over the years the gaming ecosystem thrive mostly on Windows platforms alone, and large studios just can't afford to release titles much on Linux given its low potential market at the time. But now the times have changed. Wine was introduced to the world, Bottles and Lutris came for convenience and more compatibility support, and Valve have given us Proton to play games with little to no issues in a Linux environment.</p>
+    <div class="main">
+        <div class="column left">
+            <div class="sidebar sidebarLeft">
+                <h3>Sections</h3>
+                <ul class="sidebarLinks">
+                    <li><a href="#Introduction">Linux Gaming</a></li>
 
-    <p>And so I made this page to not only record what I did to make older games run on modern Linux systems, but also to run modern titles as well as to hopefully convince some users to switch to Linux. But regardless, this is just a space for Linux Gaming.</p>
+                    <hr>
 
-    <hr>
+                    <li><a href="#NFSU2">Need for Speed Underground 2</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Mount the Disks">Mount the Disks</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Setup WineGUI">Setup WineGUI</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Disk 1 Setup">Disk 1 Setup</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Disk 2 Setup">Disk 2 Setup</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - v1.2 Patch">v1.2 Patch</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - No CD Patch">No CD Patch</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Widescreen Fix Mod">Widescreen Fix Mod</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - Setup Shortcuts">Setup Shortcuts</a></li>
+                    <li>&emsp;&emsp;&emsp;&emsp;<a href="#NFSU2 - WineGUI Shortcut">WineGUI Shortcut</a></li>
+                    <li>&emsp;&emsp;&emsp;&emsp;<a href="#NFSU2 - Desktop Entry">Desktop Entry</a></li>
+                    <li>&emsp;&emsp;<a href="#NFSU2 - End">End</a></li>
 
-    <h1>Need for Speed Underground 2</h1>
+                    <hr>
 
-    <p>This game was a big part of my childhood. It's one of the games that even with no access to the internet, it will keep you hooked with its replayability and charm. Particularly, it offers a large array of parts for customizability, as well as an aesthetic (retrofuturistic-like even) open world to explore.</p>
+                    <li><a href="#Wine x WineGUI">Wine x WineGUI</a></li>
+                    <li>&emsp;&emsp;<a href="#Wine - Preparation">Preparation</a></li>
+                    <li>&emsp;&emsp;<a href="#Wine - Installation">Wine Installation</a></li>
+                    <li>&emsp;&emsp;<a href="#WineGUI - Installation">WineGUI Installation</a></li>
 
-    <div class="images">
-        <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_mainmenu_wide.png" alt="Screenshot of Need for Speed Underground 2's main menu, with a widescreen fix mod">
-        <img class="bigImage" src="../../src/img/shrines/NFSU2/NFSU2_cover.png" alt="Game cover of Need for Speed Underground 2">
+                    <hr>
+
+                    <li>&emsp;&emsp;<a href="#Credits">Credits</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column middle">
+            <h1 class="Introduction">Linux Gaming</h1>
+            <p>Over the years the gaming ecosystem thrive mostly on Windows platforms alone, and large studios just can't afford to release titles much on Linux given its low potential market at the time. But now the times have changed. Wine was introduced to the world, Bottles and Lutris came for convenience and more compatibility support, and Valve have given us Proton to play games with little to no issues in a Linux environment.</p>
+
+            <p>And so I made this page to not only record what I did to make older games run on modern Linux systems, but also to run modern titles as well as to hopefully convince some users to switch to Linux. But regardless, this is just a space for Linux Gaming.</p>
+
+            <hr>
+
+            <h1 class="NFSU2">Need for Speed Underground 2</h1>
+
+            <p>This game was a big part of my childhood. It's one of the games that even with no access to the internet, it will keep you hooked with its replayability and charm. Particularly, it offers a large array of parts for customizability, as well as an aesthetic (retrofuturistic-like even) open world to explore.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_mainmenu_wide.png" alt="Screenshot of Need for Speed Underground 2's main menu, with a widescreen fix mod">
+                <img class="bigImage" src="../../src/img/shrines/NFSU2/NFSU2_cover.png" alt="Game cover of Need for Speed Underground 2">
+            </div>
+
+            <h2 id="NFSU2 - Mount the Disks">Mount the Disks</h2>
+
+            <p>If you have your own copy of NSFU2's 2 disks, please use it. Otherwise you can download these archived ISOs that are bundled with the <em>"NoCD" patch</em>, <em>"v1.2" patch</em> and <em>widescreen fix mod</em>.</p>
+
+            <p>Internet Archive file: <a href="https://archive.org/details/NFSU2-USA" target="_blank">https://archive.org/details/NFSU2-USA</a></p>
+
+            <fieldset class="infoblock warningInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Disclaimer</b>
+                </legend>
+                I don't own nor affiliated with this archive. Use it at your own risk.
+                <br>
+                Just a heads-up. I tested it and nothing abnormal happened to my Mint 22.
+                <br>
+                Before using the archived files always check them with antiviruses first.
+            </fieldset>
+
+            <p>Even if you have your own disks, I'd still recommend downloading the ZIP as they have all the patches included. It's a bit hassle to browse each file from the web.</p>
+
+            <p>Anyways, once the files are ready, extract them. Go to the extracted folder <b>NSFU2</b>, open the <b>Disk</b> folder, and mount each ISO file.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_mount_disk.png" alt="">
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_mounted_disks.png" alt="">
+            </div>
+
+            <p>With that they're ready now for being available during installation later.</p>
+
+            <p>For this guide we'll use Wine to run the game, and for convenience and set configurations easily we'll use WineGUI.</p>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                If you already have them installed and possibly have prefixes set, feel free to skip <b>this note</b>. Else, jump to the <a href="#Wine x WineGUI">Wine x WineGUI</a> section for setup guide.
+            </fieldset>
+
+            <h2 id="NFSU2 - Setup WineGUI">Setup WineGUI</h2>
+
+            <p>To install the 2 disks via WineGUI, create a new prefix there first. I recommend making a <b>x32 Windows 7</b> environment to run this game.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/winegui_guide_new_prefix.png" alt="">
+
+                <img class="bigImage" src="../../src/img/works/screenshots/winegui_guide_new_prefix_name_and_architecture.png" alt="">
+            </div>
+
+            <p>And skip the next steps to set them to default. Wait for it to complete the setup. Once the prefix is done and ready, select <b>Run Program...</b> and find the mounted <b>1st disk</b>'s folder. Select the <b>setup.exe</b>.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
+
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_find_1st_disk_setup.png" alt="">
+            </div>
+
+            <h2 id="NFSU2 - Disk 1 Setup">Disk 1 Setup</h2>
+
+            <p>If it works, you'll be greeted with the setup. From there just input the code you have or the ones from the downloaded archive: <span class="spoiler">TFXX-888C-DRP7-CP3J-RLD0</span></p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_00.png" alt="">
+
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_01.png" alt="">
+            </div>
+
+            <p>After entering the code, choose the <b>Advance User</b> to see the options it offers. In this guide we'll select <b>Full</b> to include all files on install.</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_02.png" alt="">
+
+            <p>Proceed on next steps and skip this popup with <b>Register Later</b>. (Man, the sound's nostalgic it makes me remember some PopCap and GameHouse titles)</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_03.png" alt="">
+
+            <p>The installation starts (finally).</p>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_04.png" alt="">
+
+            <h2 id="NFSU2 - Disk 2 Setup">Disk 2 Setup</h2>
+
+            <p>When asked for the <b>2nd disk</b>, go to <b>Run Program...</b> again. Go to the <b>2nd disk's mount folder</b> and select the <b>RunGame.exe</b> program.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_05.png" alt="">
+
+                <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
+            </div>
+
+            <br>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_06.png" alt="">
+
+            <p>After selecting the executable, press <b>OK</b> on the popup. If successful, the installation will continue to the 2nd part.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_05.png" alt="">
+
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_07.png" alt="">
+            </div>
+
+            <p>And that's it! Or it supposed to be, but there's few fixes that must be done first. You're all free to test it for a drive first though.</p>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_08.png" alt="">
+
+            <p>With the setup being done, unmount the disks.</p>
+
+            <h2 id="NFSU2 - v1.2 Patch">v1.2 Patch</h2>
+
+            <p>Use <b>Run a Program...</b> again and find the extracted <b>NFSU2</b> folder. Go to the <b>Patch</b> folder and select the <b>NFSUG2V1-2SP.EXE</b> program to run it.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
+
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_09.png" alt="">
+            </div>
+
+            <h2 id="NFSU2 - No CD Patch">No CD Patch</h2>
+
+            <p>Once it's finished installing, go to the <b>NoCD</b> folder in <b>NFSU2</b> and copy the <b>SPEED2.EXE</b> file into the installation path of Need for Speed Underground 2.</p>
+
+            <fieldset class="infoblock importantInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Important</b>
+                </legend>
+                Non-default prefixes are usually stored in <code class="inlineCode">~/.local/share/winegui/prefixes</code>, while the default Wine machine is located in <code class="inlineCode">~/.wine</code>.
+            </fieldset>
+
+            <p>If the prefix you made isn't the default and has <b>NSFU2</b> name based from the previous steps in this guide, copy the file into the <code class="inlineCode">~/.local/share/winegui/prefixes/<b>NFSU2</b>/drive_c/Program Files/<b>EA GAMES/Need for Speed Underground 2</b></code> folder and choose <b>Replace</b> or <b>Replace All</b> when asked.</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_10.png" alt="">
+
+            <br>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_11.png" alt="">
+
+            <p>And with that, the No CD patch has been applied.</p>
+
+            <h2 id="NFSU2 - Widescreen Fix Mod">Widescreen Fix Mod</h2>
+
+            <p>After applying the patch, copy the contents of <b>Widescreen Fix</b> folder into the same installation path of Need for Speed Underground 2: <code class="inlineCode">~/.local/share/winegui/prefixes/NFSU2/drive_c/Program Files/EA GAMES/Need for Speed Underground 2</code></p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_12.png" alt="">
+
+            <p>And done! Almost. The Widescreen Fix mod won't work immediately as the <b>dinput8.dll</b> can't be detected for some reason. So in order to fix that, go to <b>Wine Config</b>:</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+
+            <p>Switch to the <b>Libraries</b> tab, then enter or find <b>dinput8</b> on the dropdown that's adjacent to the Add button. Press <b>Add</b>, and hit <b>Apply</b>.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_14.png" alt="">
+
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_15.png" alt="">
+            </div>
+
+            <p>With that the dinput8.dll is available to this entire prefix, and it should be detected by the game by now. Then, proceed on going to the <b>scripts</b> folder in the game's folder, and open the <b>NFSUnderground2.WidescreenFix.ini</b> file with any text editor.</p>
+
+            <p>From there, edit the parameters you'd like to adjust. For instance, you might want to adjust the <code class="inlineCode">ResX</code> and <code class="inlineCode">ResY</code> properties to your preferred resolution.</p>
+
+            <fieldset class="infoblock importantInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Important</b>
+                </legend>
+                If the entire setup were completed successfully, there's no need to follow the next parts below. You can jump straight to the <a href="#NFSU2 - End"> End</a> section.
+                <br><br>
+                If everything went right, the <b>shortcut in WineGUI</b> is in the <b>Applications</b> section, listed as <b>Need for Speed Underground 2</b>, while a global shortcut or <b>Desktop Entry</b> of the same name is available in the desktop's Applications (start menu) and Desktop itself.
+                <br><br>
+                Still, if for some reason the desktop shortcut doesn't work, you can proceed with the extra steps below.
+            </fieldset>
+
+            <h2 id="NFSU2 - Setup Shortcuts">Setup Shortcuts</h2>
+
+            <p>Now that we have everything setup, there's only few things left for the sake of convenience in launching the game: <em>setting up shortcuts</em> for the WineGUI and Desktop (or any folder).</p>
+
+            <h3 id="NFSU2 - WineGUI Shortcut">WineGUI Shortcut</h3>
+
+            <p>We'll start with a WineGUI shortcut. Go to WineGUI's <b>Applications</b> list and press the ➕ button to add a new shortcut.</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+
+            <p>Fill in the blanks. As for the command just <b>Select executable...</b> and find the game's folder, then select the <b>SPEED2.EXE</b> program. If all necessary fields are satisfied, hit <b>Save</b>.</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_16.png" alt="">
+
+            <p>That's pretty much it. Now you have a shortcut <b>in the WineGUI</b> to run it easily from there.</p>
+
+            <h3 id="NFSU2 - Desktop Entry">Desktop Entry</h3>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                If you're unfamiliar with Desktop Entry and would like to know more first, head to the <a href="#Desktop Entry">Desktop Entry</a> section first to get more info.
+            </fieldset>
+
+            <p>Now we'll make a shortcut that we can use pretty much anywhere. First, go to Desktop and make a <b>NFSU2.desktop</b> file:</p>
+
+            <p>Right click on Desktop and select <b>Create Launcher...</b></p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_17.png" alt="">
+            
+            <p>Set the name to <b>NFSU2</b> string, and comment values to anything you prefer.</p>
+
+            <p>Enter the command field with the following line: <code class="inlineCode">env WINEPREFIX="/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2" wine-stable "/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/drive_c/Program Files/EA GAMES/Need for Speed Underground 2/SPEED2.EXE"</code>, where <b>YOUR USERNAME</b> should be changed to yours.</p>
+
+            <p>Then, input the path with this string: <code class="inlineCode">/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/dosdevices/c:/Program Files/EA GAMES/Need for Speed Underground 2</code> where <b>YOUR USERNAME</b> is the same as the previous one.</p>
+
+            <p>Then, set the icon. Click the icon box and select from the available icons.</p>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_18.png" alt="">
+
+            <p>If the game's icon is not present on the list, proceed on using the path of the icon within the game's folder. <b>Save</b> the launcher first, then right click on the NFSU2 launcher and open it with a text editor.</p>
+
+            <p>In the text editor, go to the <b>Icon</b> property and enter the game icon's path: <code class="inlineCode">/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/dosdevices/c:/Program Files/EA GAMES/Need for Speed Underground 2/NFSU_icon.ico</code></p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_19.png" alt="">
+
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_20.png" alt="">
+            </div>
+
+            <p>Done! Now a shortcut for NFSU2 has been made. If you want this shortcut to be available globally, i.e. can be accessed in the start menu, jump to the <a href="#Desktop Entry">Desktop Entry</a> guide for more info.</p>
+
+            <h2 id="NFSU2 - End">End</h2>
+
+            <p>It's not the end of the road, but only this specific guide...</p>
+
+            <p>With everything setup I hope you got it right and find it kinda fun to see things work. Enjoy your Need for Speed Underground 2 experience on Linux!</p>
+
+            <hr>
+
+            <h1 id="Wine x WineGUI">Wine x WineGUI</h1>
+
+            <p class="noIndent">A guide for setting up Wine and WineGUI in Linux.</p>
+
+            <h2 id="Wine - Preparation">Preparation</h2>
+
+            <p class="noIndent">Enable 32 bit architecture first if your system is 64 bit:</p>
+
+            <code>sudo dpkg --add-architecture i386</code>
+
+            <p class="noIndent">Then check for your distribution name:</p>
+
+            <code>cat /etc/os-release</code>
+
+            <p>Look for a line with either <code class="inlineCode">UBUNTU_CODENAME</code> or <code class="inlineCode">VERSION_CODENAME</code>. If both are present, use the name after <code class="inlineCode">UBUNTU_CODENAME</code>. Take notes of that name.</p>
+
+            <img class="largerImage center" src="../../src/img/works/screenshots/wine_guide_distro_name.png" alt="">
+
+            <h2 id="Wine - Adding the Repository">Adding the Repository</h2>
+
+            <p class="noIndent">Download and add the repository key:</p>
+
+            <code>sudo mkdir -pm755 /etc/apt/keyrings
+            <br><br>
+            wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -</code>
+
+            <p>Then choose from the commands below that is based from the distribution name or <code class="inlineCode">UBUNTU_CODENAME</code> you have and enter it:</p>
+
+            <table>
+                <tr><th>Distribution name</th><th>Command</th></tr>
+
+                <tr><th>noble<br><span>Ubuntu 24.04<br>Linux Mint 22</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/noble/winehq-noble.sources</code></td></tr>
+
+                <tr><th>jammy<br><span>Ubuntu 22.04<br>Linux Mint 21.x</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/jammy/winehq-jammy.sources</code></td></tr>
+
+                <tr><th>focal<br><span>Ubuntu 20.04<br>Linux Mint 20.x</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/focal/winehq-focal.sources</code></td></tr>
+
+                <tr><th>oracular<br><span>Ubuntu 24.10</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/oracular/winehq-oracular.sources</code></td></tr>
+
+                <tr><th>bookworm<br><span>Debian 12</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/bookworm/winehq-bookworm.sources</code></td></tr>
+
+                <tr><th>bullseye<br><span>Debian 11</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/bullseye/winehq-bullseye.sources</code></td></tr>
+
+                <tr><th>trixie<br><span>Debian Testing</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/trixie/winehq-trixie.sources</code></td></tr>
+            </table>
+
+            <p class="noIndent">After that, update the packages:</p>
+
+            <code>sudo apt update</code>
+
+            <h2 id="Wine - Installation">Wine Installation</h2>
+
+            <p class="noIndent">We want a stable release for this guide, so enter the following command:</p>
+
+            <code>sudo apt install --install-recommends winehq-stable</code>
+
+            <h2 id="WineGUI - Installation">WineGUI Installation</h2>
+
+            <p class="noIndent">Then get a package from these releases: <a href="https://gitlab.melroy.org/melroy/winegui/-/releases" target="_blank">https://gitlab.melroy.org/melroy/winegui/-/releases</a></p>
+
+            <fieldset class="infoblock importantInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Important</b>
+                </legend>
+                Since I'm on Mint, I used a Debian package. Depending on your distribution you might want to download other packages.
+            </fieldset>
+
+            <p class="noIndent">Proceed on installing the downloaded file.</p>
+
+            <img class="bigImage center" src="../../src/img/works/screenshots/winegui_guide_package_install.png" alt="">
+
+            <p>And that's it! Enjoy using your WineGUI! ☕</p>
+
+            <hr>
+
+            <h1 id="Credits">Credits</h1>
+
+            <p class="noIndent">Notes are inspired by <a href="https://analogfeelings.github.io/" target="_blank">Nora's Hideout</a> theme, and <a href="https://github.com/orgs/community/discussions/16925" target="_blank">Github Markdown's notes</a>.</p>
+
+            <p class="noIndent">The SVGs used for notes are made by <a href="https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com" target="_blank">Dazzle Ui</a> in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.</p>
+
+            <p class="noIndent">Made with ❤️ and ☕! Best viewed on 1366x768 resolution. Not mobile friendly.</p>
+        </div>
+
+        <div class="column right">
+            <div class="sidebar sidebarRight">
+                
+                <ul class="sidebarLinks"><h3>Navigation</h3>
+                    <li>
+                        <div class="buttonLinks">
+                            <a href="javascript:window.history.back();">🡸 Go back</a><a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="buttonLinks">
+                            <a href="https://dinpixels.neocities.org">🏠 Go home</a><a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a>
+                        </div>
+                    </li>
+
+                    <hr>
+
+                    <li>This page contains my guides on game installation and making them work on Linux.<br><br>I daily drive Mint 22 so depending on your distribution some steps here may vary.</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <h2 id="NFSU2 - Mount the Disks">Mount the Disks</h2>
-
-    <p>If you have your own copy of NSFU2's 2 disks, please use it. Otherwise you can download these archived ISOs that are bundled with the <em>"NoCD" patch</em>, <em>"v1.2" patch</em> and <em>widescreen fix mod</em>.</p>
-
-    <p>Internet Archive file: <a href="https://archive.org/details/NFSU2-USA" target="_blank">https://archive.org/details/NFSU2-USA</a></p>
-
-    <fieldset class="infoblock warningInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Disclaimer</b>
-        </legend>
-        I don't own nor affiliated with this archive. Use it at your own risk.
-        <br>
-        Just a heads-up. I tested it and nothing abnormal happened to my Mint 22.
-        <br>
-        Before using the archived files always check them with antiviruses first.
-    </fieldset>
-
-    <p>Even if you have your own disks, I'd still recommend downloading the ZIP as they have all the patches included. It's a bit hassle to browse each file from the web.</p>
-
-    <p>Anyways, once the files are ready, extract them. Go to the extracted folder <b>NSFU2</b>, open the <b>Disk</b> folder, and mount each ISO file.</p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_mount_disk.png" alt="">
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_mounted_disks.png" alt="">
-    </div>
-
-    <p>With that they're ready now for being available during installation later.</p>
-
-    <p>For this guide we'll use Wine to run the game, and for convenience and set configurations easily we'll use WineGUI.</p>
-
-    <fieldset class="infoblock noteInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Note</b>
-        </legend>
-        If you already have them installed and possibly have prefixes set, feel free to skip <b>this note</b>. Else, jump to the <a href="#Wine x WineGUI">Wine x WineGUI</a> section for setup guide.
-    </fieldset>
-
-    <h2 id="NFSU2 - Setup WineGUI">Setup WineGUI</h2>
-
-    <p>To install the 2 disks via WineGUI, create a new prefix there first. I recommend making a <b>x32 Windows 7</b> environment to run this game.</p>
-
-    <div class="images">
-        <img class="bigImage" src="../../src/img/works/screenshots/winegui_guide_new_prefix.png" alt="">
-
-        <img class="bigImage" src="../../src/img/works/screenshots/winegui_guide_new_prefix_name_and_architecture.png" alt="">
-    </div>
-
-    <p>And skip the next steps to set them to default. Wait for it to complete the setup. Once the prefix is done and ready, select <b>Run Program...</b> and find the mounted <b>1st disk</b>'s folder. Select the <b>setup.exe</b>.</p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
-
-        <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_find_1st_disk_setup.png" alt="">
-    </div>
-
-    <h2 id="NFSU2 - Disk 1 Setup">Disk 1 Setup</h2>
-
-    <p>If it works, you'll be greeted with the setup. From there just input the code you have or the ones from the downloaded archive: <span class="spoiler">TFXX-888C-DRP7-CP3J-RLD0</span></p>
-
-    <div class="images">
-        <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_00.png" alt="">
-
-        <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_01.png" alt="">
-    </div>
-
-    <p>After entering the code, choose the <b>Advance User</b> to see the options it offers. In this guide we'll select <b>Full</b> to include all files on install.</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_02.png" alt="">
-
-    <p>Proceed on next steps and skip this popup with <b>Register Later</b>. (Man, the sound's nostalgic it makes me remember some PopCap and GameHouse titles)</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_03.png" alt="">
-
-    <p>The installation starts (finally).</p>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_04.png" alt="">
-
-    <h2 id="NFSU2 - Disk 2 Setup">Disk 2 Setup</h2>
-
-    <p>When asked for the <b>2nd disk</b>, go to <b>Run Program...</b> again. Go to the <b>2nd disk's mount folder</b> and select the <b>RunGame.exe</b> program.</p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_05.png" alt="">
-
-        <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
-    </div>
-
-    <br>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_06.png" alt="">
-
-    <p>After selecting the executable, press <b>OK</b> on the popup. If successful, the installation will continue to the 2nd part.</p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_05.png" alt="">
-
-        <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_07.png" alt="">
-    </div>
-
-    <p>And that's it! Or it supposed to be, but there's few fixes that must be done first. You're all free to test it for a drive first though.</p>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_08.png" alt="">
-
-    <p>With the setup being done, unmount the disks.</p>
-
-    <h2 id="NFSU2 - v1.2 Patch">v1.2 Patch</h2>
-
-    <p>Use <b>Run a Program...</b> again and find the extracted <b>NFSU2</b> folder. Go to the <b>Patch</b> folder and select the <b>NFSUG2V1-2SP.EXE</b> program to run it.</p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/winegui_guide_run_program.png" alt="">
-
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_09.png" alt="">
-    </div>
-
-    <h2 id="NFSU2 - No CD Patch">No CD Patch</h2>
-
-    <p>Once it's finished installing, go to the <b>NoCD</b> folder in <b>NFSU2</b> and copy the <b>SPEED2.EXE</b> file into the installation path of Need for Speed Underground 2.</p>
-
-    <fieldset class="infoblock importantInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Important</b>
-        </legend>
-        Non-default prefixes are usually stored in <code class="inlineCode">~/.local/share/winegui/prefixes</code>, while the default Wine machine is located in <code class="inlineCode">~/.wine</code>.
-    </fieldset>
-
-    <p>If the prefix you made isn't the default and has <b>NSFU2</b> name based from the previous steps in this guide, copy the file into the <code class="inlineCode">~/.local/share/winegui/prefixes/<b>NFSU2</b>/drive_c/Program Files/<b>EA GAMES/Need for Speed Underground 2</b></code> folder and choose <b>Replace</b> or <b>Replace All</b> when asked.</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_10.png" alt="">
-
-    <br>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_11.png" alt="">
-
-    <p>And with that, the No CD patch has been applied.</p>
-
-    <h2 id="NFSU2 - Widescreen Fix Mod">Widescreen Fix Mod</h2>
-
-    <p>After applying the patch, copy the contents of <b>Widescreen Fix</b> folder into the same installation path of Need for Speed Underground 2: <code class="inlineCode">~/.local/share/winegui/prefixes/NFSU2/drive_c/Program Files/EA GAMES/Need for Speed Underground 2</code></p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_12.png" alt="">
-
-    <p>And done! Almost. The Widescreen Fix mod won't work immediately as the <b>dinput8.dll</b> can't be detected for some reason. So in order to fix that, go to <b>Wine Config</b>:</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
-
-    <p>Switch to the <b>Libraries</b> tab, then enter or find <b>dinput8</b> on the dropdown that's adjacent to the Add button. Press <b>Add</b>, and hit <b>Apply</b>.</p>
-
-    <div class="images">
-        <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_14.png" alt="">
-
-        <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_15.png" alt="">
-    </div>
-
-    <p>With that the dinput8.dll is available to this entire prefix, and it should be detected by the game by now. Then, proceed on going to the <b>scripts</b> folder in the game's folder, and open the <b>NFSUnderground2.WidescreenFix.ini</b> file with any text editor.</p>
-
-    <p>From there, edit the parameters you'd like to adjust. For instance, you might want to adjust the <code class="inlineCode">ResX</code> and <code class="inlineCode">ResY</code> properties to your preferred resolution.</p>
-
-    <fieldset class="infoblock importantInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Important</b>
-        </legend>
-        If the entire setup were completed successfully, there's no need to follow the next parts below. You can jump straight to the <a href="#NFSU2 - End"> End</a> section.
-        <br><br>
-        If everything went right, the <b>shortcut in WineGUI</b> is in the <b>Applications</b> section, listed as <b>Need for Speed Underground 2</b>, while a global shortcut or <b>Desktop Entry</b> of the same name is available in the desktop's Applications (start menu) and Desktop itself.
-        <br><br>
-        Still, if for some reason the desktop shortcut doesn't work, you can proceed with the extra steps below.
-    </fieldset>
-
-    <h2 id="NFSU2 - Setup Shortcuts">Setup Shortcuts</h2>
-
-    <p>Now that we have everything setup, there's only few things left for the sake of convenience in launching the game: <em>setting up shortcuts</em> for the WineGUI and Desktop (or any folder).</p>
-
-    <h3 id="NFSU2 - WineGUI Shortcut">WineGUI Shortcut</h3>
-
-    <p>We'll start with a WineGUI shortcut. Go to WineGUI's <b>Applications</b> list and press the ➕ button to add a new shortcut.</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
-
-    <p>Fill in the blanks. As for the command just <b>Select executable...</b> and find the game's folder, then select the <b>SPEED2.EXE</b> program. If all necessary fields are satisfied, hit <b>Save</b>.</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_16.png" alt="">
-
-    <p>That's pretty much it. Now you have a shortcut <b>in the WineGUI</b> to run it easily from there.</p>
-
-    <h3 id="NFSU2 - Desktop Entry">Desktop Entry</h3>
-
-    <fieldset class="infoblock noteInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Note</b>
-        </legend>
-        If you're unfamiliar with Desktop Entry and would like to know more first, head to the <a href="#Desktop Entry">Desktop Entry</a> section first to get more info.
-    </fieldset>
-
-    <p>Now we'll make a shortcut that we can use pretty much anywhere. First, go to Desktop and make a <b>NFSU2.desktop</b> file:</p>
-
-    <p>Right click on Desktop and select <b>Create Launcher...</b></p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_17.png" alt="">
-    
-    <p>Set the name to <b>NFSU2</b> string, and comment values to anything you prefer.</p>
-
-    <p>Enter the command field with the following line: <code class="inlineCode">env WINEPREFIX="/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2" wine-stable "/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/drive_c/Program Files/EA GAMES/Need for Speed Underground 2/SPEED2.EXE"</code>, where <b>YOUR USERNAME</b> should be changed to yours.</p>
-
-    <p>Then, input the path with this string: <code class="inlineCode">/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/dosdevices/c:/Program Files/EA GAMES/Need for Speed Underground 2</code> where <b>YOUR USERNAME</b> is the same as the previous one.</p>
-
-    <p>Then, set the icon. Click the icon box and select from the available icons.</p>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_18.png" alt="">
-
-    <p>If the game's icon is not present on the list, proceed on using the path of the icon within the game's folder. <b>Save</b> the launcher first, then right click on the NFSU2 launcher and open it with a text editor.</p>
-
-    <p>In the text editor, go to the <b>Icon</b> property and enter the game icon's path: <code class="inlineCode">/home/<b>YOUR USERNAME</b>/.local/share/winegui/prefixes/NFSU2/dosdevices/c:/Program Files/EA GAMES/Need for Speed Underground 2/NFSU_icon.ico</code></p>
-
-    <div class="images">
-        <img class="smallImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_19.png" alt="">
-
-        <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_20.png" alt="">
-    </div>
-
-    <p>Done! Now a shortcut for NFSU2 has been made. If you want this shortcut to be available globally, i.e. can be accessed in the start menu, jump to the <a href="#Desktop Entry">Desktop Entry</a> guide for more info.</p>
-
-    <h2 id="NFSU2 - End">End</h2>
-
-    <p>It's not the end of the road, but only this specific guide...</p>
-
-    <p>With everything setup I hope you got it right and find it kinda fun to see things work. Enjoy your Need for Speed Underground 2 experience on Linux!</p>
-
-    <hr>
-
-    <h1 id="Wine x WineGUI">Wine x WineGUI</h1>
-
-    <p class="noIndent">A guide for setting up Wine and WineGUI in Linux.</p>
-
-    <h2 id="Wine - Preparation">Preparation</h2>
-
-    <p class="noIndent">Enable 32 bit architecture first if your system is 64 bit:</p>
-
-    <code>sudo dpkg --add-architecture i386</code>
-
-    <p class="noIndent">Then check for your distribution name:</p>
-
-    <code>cat /etc/os-release</code>
-
-    <p>Look for a line with either <code class="inlineCode">UBUNTU_CODENAME</code> or <code class="inlineCode">VERSION_CODENAME</code>. If both are present, use the name after <code class="inlineCode">UBUNTU_CODENAME</code>. Take notes of that name.</p>
-
-    <img class="largerImage center" src="../../src/img/works/screenshots/wine_guide_distro_name.png" alt="">
-
-    <h2 id="Wine - Adding the Repository">Adding the Repository</h2>
-
-    <p class="noIndent">Download and add the repository key:</p>
-
-    <code>sudo mkdir -pm755 /etc/apt/keyrings
-    <br><br>
-    wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -</code>
-
-    <p>Then choose from the commands below that is based from the distribution name or <code class="inlineCode">UBUNTU_CODENAME</code> you have and enter it:</p>
-
-    <table>
-        <tr><th>Distribution name</th><th>Command</th></tr>
-
-        <tr><th>noble<br><span>Ubuntu 24.04<br>Linux Mint 22</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/noble/winehq-noble.sources</code></td></tr>
-
-        <tr><th>jammy<br><span>Ubuntu 22.04<br>Linux Mint 21.x</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/jammy/winehq-jammy.sources</code></td></tr>
-
-        <tr><th>focal<br><span>Ubuntu 20.04<br>Linux Mint 20.x</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/focal/winehq-focal.sources</code></td></tr>
-
-        <tr><th>oracular<br><span>Ubuntu 24.10</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/ubuntu/dists/oracular/winehq-oracular.sources</code></td></tr>
-
-        <tr><th>bookworm<br><span>Debian 12</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/bookworm/winehq-bookworm.sources</code></td></tr>
-
-        <tr><th>bullseye<br><span>Debian 11</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/bullseye/winehq-bullseye.sources</code></td></tr>
-
-        <tr><th>trixie<br><span>Debian Testing</span></th><td><code class="tableCode">sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/<br><br>wine-builds/debian/dists/trixie/winehq-trixie.sources</code></td></tr>
-    </table>
-
-    <p class="noIndent">After that, update the packages:</p>
-
-    <code>sudo apt update</code>
-
-    <h2 id="Wine - Installation">Wine Installation</h2>
-
-    <p class="noIndent">We want a stable release for this guide, so enter the following command:</p>
-
-    <code>sudo apt install --install-recommends winehq-stable</code>
-
-    <h2 id="WineGUI - Installation">WineGUI Installation</h2>
-
-    <p class="noIndent">Then get a package from these releases: <a href="https://gitlab.melroy.org/melroy/winegui/-/releases" target="_blank">https://gitlab.melroy.org/melroy/winegui/-/releases</a></p>
-
-    <fieldset class="infoblock importantInfoBlock">
-        <legend>
-            <img src=""/>
-            <b>Important</b>
-        </legend>
-        Since I'm on Mint, I used a Debian package. Depending on your distribution you might want to download other packages.
-    </fieldset>
-
-    <p class="noIndent">Proceed on installing the downloaded file.</p>
-
-    <img class="bigImage center" src="../../src/img/works/screenshots/winegui_guide_package_install.png" alt="">
-
-    <p>And that's it! Enjoy using your WineGUI! ☕</p>
-
-    <hr>
-
-    <h1>Credits</h1>
-
-    <p class="noIndent">Notes are inspired by <a href="https://analogfeelings.github.io/" target="_blank">Nora's Hideout</a> theme, and <a href="https://github.com/orgs/community/discussions/16925" target="_blank">Github Markdown's notes</a>.</p>
-
-    <p class="noIndent">The SVGs used for notes are made by <a href="https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com" target="_blank">Dazzle Ui</a> in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.</p>
 </body>
 </html>
