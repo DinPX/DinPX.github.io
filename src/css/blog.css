@@ -5,52 +5,42 @@ body {
     background-repeat: repeat;
     background-attachment: fixed;
 }
-.entryFeed {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    image-rendering: optimizeSpeed;
 }
-.entryNavi {
-    padding: 20px;
-    position: sticky;
-    top: 0;
-}
-.navBtn {
-    margin: 0;
-    padding: 10px 20px;
-    border: 5px solid #ffe23d;
-    border-radius: 10px;
-    background-color: #a76714;
-    color: #fdff7f;
-    font-size: 16px;
-    box-shadow: inset 2px 2px 2px 1px rgba(78, 27, 4, 0.6);
-}
-.navBtn:hover {
-    box-shadow: none;
+
+summary {
+    text-indent: 0;
+    text-align: center;
     cursor: pointer;
 }
-.navBtn:hover > a {
-    text-decoration: none;
+.tableOfContents summary {
+    text-align: left;
+    font-weight: 700;
+}
+
+pre {
+    margin: 0;
+    padding: 20px;
+    display: block;
+    background-color: #884609;
+    border-top: 4px solid #6d2e03;
+    border-radius: 10px;
+    font-size: 14px;
+    text-indent: 0;
+    text-align: left;
+    text-wrap-mode: wrap;
+    text-wrap-style: pretty;
+}
+
+h1, h2 {
     color: #ffe23d;
 }
-.entry {
-    margin: 0 16% 30px 16%;
-    padding: 30px 40px;
-    position: relative;
-    top: -78px;
-    border: 5px solid #ffe23d;
-    border-radius: 30px;
-    box-shadow: inset 2px 2px 2px 1px rgba(78, 27, 4, 0.6);
-    background-color: #a76714;
-    color: #fdff7f;
-    text-align: justify;
-    text-indent: 50px;
-}
-h1 {
-    color: #ffe23d;
-}
-h1, h3, .date, ol {
+h1, h2, h3, .date, ol, ul {
     text-indent: 0;
 }
 a, a:visited {
@@ -75,16 +65,145 @@ ol {
     list-style-type: upper-roman;
     list-style-position: inside;
 }
+ul {
+    list-style-position: inside;
+}
+
+.sideContents {
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: fixed;
+}
+
+.sidePageButtons {
+    margin: 0;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    background-color: #a76714;
+    color: #fdff7f;
+
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 4px solid #884609;
+    outline: 4px solid #ffe23d;
+}
+
+.sidePageButtonsLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.sidePageButtonsLinks a {
+    display: block;
+}
+
+.sideNavTitle {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #a76714;
+    color: #fdff7f;
+
+    border-radius: 10px;
+    border-top: 4px solid #884609;
+    outline: 4px solid #ffe23d;
+
+    overflow: auto;
+}
+
+.sidebarLinks {
+    position: relative;
+    left: -20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+}
+.sidespace {
+    margin: 0;
+    padding: 30px;
+    width: 35vw;
+}
+.entryFeed {
+    margin: 0;
+    padding: 30px;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.entry {
+    margin: 0;
+    padding: 30px 40px;
+    background-color: #a76714;
+    color: #fdff7f;
+    border-radius: 10px;
+    border-top: 4px solid #884609;
+    
+    outline: 4px solid #ffe23d;
+    text-align: justify;
+    text-indent: 50px;
+}
 .entryInfo {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
     text-indent: 0;
-}
-.entryInfo > p {
     font-size: 12px;
 }
+
+.images {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-height: 256px;
+    overflow-x: auto;
+}
+
+.images img {
+    display: block;
+    max-height: 240px;
+    width: auto;
+}
+
+.myQuote {
+    margin: 20px 0;
+    padding-left: 20px;
+    text-indent: 0;
+    text-align: left;
+    border-left: 10px solid #884609;
+}
+
+.numbered {
+    list-style-type: decimal;
+}
+
 .source {
     text-align: right;
 }
@@ -97,6 +216,8 @@ ol {
 .blockEnd, .entryInfo {
     border-bottom: 1px solid #ffe23d;
 }
+
+
 .footer {
     top: 0;
     text-indent: 0;
@@ -113,6 +234,8 @@ ol {
     text-indent: 0;
     text-align: center;
 }
+
+
 @media screen and (max-width: 800px) {
     .entry {
         margin: 0 0 20px 0;

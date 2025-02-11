@@ -55,30 +55,32 @@
         margin-bottom: 0;
     }
 }
-
-:root {
-    --notification-sfx: "../src/audio/sfx/chat_notif.wav"; 
-}
+/*:root { --notification-sfx: "../src/audio/sfx/chat_notif.wav"; }*/
 
 body {
     background: none;
     -webkit-font-smoothing: antialiased;
 }
-.allMessages {
-    margin: 0;
-    padding: 5px;
-    width: auto;
-    display: flex;
-    position: relative;
-    gap: 2.5vh;
-    color: #555;
-    border: 1px solid rgb(208, 208, 191);
-    border-radius: 0 3px 3px 3px;
-    font-family: Ubuntu;
-    font-size: 12px;
-}
 br {
     height: 6pt;
+}
+
+#background {
+    background: none;
+}
+
+.allMessages {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    color: #8D442E;
+    border: 4px solid #2EB41C;
+    border-radius: 10px;
+    font-family: Ubuntu;
+    font-size: 16px;
 }
 .allMessages:hover:after {
     width: 100%;
@@ -91,12 +93,59 @@ br {
     background-color: rgba(0, 0, 0, 0.05);
     pointer-events: none;
 }
+
+.msgBody {
+    text-align: left;
+    cursor: text;
+}
+.allMessages a, .allMessages a:visited {
+    color: #2EB41C !important;
+}
+.allMessages a:hover {
+    color: #EE3774 !important;
+}
+
 .senderInfo {
     display: block;
     margin: 2px;
     font-family: UbuntuBold;
-    text-align: justify;
+    font-size: 16px;
+    text-align: left;
 }
+.emoji {
+    max-width: 72px;
+    max-height: 72px;
+    image-rendering: optimizeQuality;
+}
+
+#input {
+    margin: 0;
+    padding: 10px 20px;
+    background: none;
+    color: #333;
+    
+    font-family: Ubuntu;
+    font-size: 16px;
+    width: calc(100% - 50px);
+    
+    border: 4px solid #EE3774;
+    border-radius: 10px;
+}
+#input:focus {
+    border: 4px dotted #C0E658;
+}
+#input:empty::before {
+    content: "The most comment bar ever 0_0";
+}
+
+#timestamp {
+    color: #AAA;
+    font-size: 16pt;
+}
+.badge {
+    display: none;
+}
+
 /* .sent > .senderInfo {
     text-align: right;
 }
@@ -104,48 +153,18 @@ br {
     text-align: left;
 }
 */
-#background {
-    background: none;
-}
-.msgBody {
-    text-align: justify;
-    cursor: text;
-}
-#input {
-    color: #333;
-    background-color: #CCC;
-    border: none;
-    font-family: Ubuntu;
-    font-size: 8px;
-    padding: 5px;
-    width: calc(100% - 10px);
-    border-radius: 0;
-    margin: 0;
-    border-top: solid 1px #555;
-}
-#input:focus {
-    outline: dotted 1px #000;
-}
-#input:empty::before {
-    content: "Leave a comment...";
-}
-a {
-    font-family: Ubuntu;
-}
-#timestamp {
-    color: #AAA;
-    font-size: 8pt;
-}
-.badge {
-    display: none;
-}
+
 .senderInfo:has(.owner), .senderInfo:has(.mod) {
     font-family: Ubuntu;
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #000;
 }
+.senderInfo:has(.owner) {
+    color: #EE3774;
+}
+.senderInfo:has(.mod) {
+    color: #2EB41C;
+}
+
 #top_banner {
     display: none;
 }

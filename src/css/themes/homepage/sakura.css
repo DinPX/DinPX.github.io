@@ -1,0 +1,828 @@
+:root {
+    --border-color: #EE3774;
+    --background-color: #FFEEEE;
+    --background-image: url('../../../img/Slime%20Town%203.gif');
+    --background-image-reduced: url('../../../img/Slime%20Town%203.png');
+
+    --banner-background-image: url('../../../img/works/personal/2024/Serenity_XP_Landscape_x1.png');
+    --banner-info-block: #8D442E;
+
+    --min-size-button-border-color: #F58396;
+    --exit-button-color: #95DA3C;
+    --exit-button-border-color: #C0E658;
+
+    --border-decor: url('../../../img/works/vine_decor_border_x1.png');
+
+    --button-border-color: #571513;
+    --button-border-color-hover: #EE3774;
+    --button-background-color: #8D442E;
+    --button-text-color: #FFEEEE;
+    --art-button: #ffa9b7;
+    --art-button-important: #C0E658;
+
+    --taskbar-color: #EE3774;
+    --taskbar-text: #FFEEEE;
+    --start-button-color: #95DA3C;
+
+    --text-color: #8D442E;
+    --text-link-color: #2EB41C;
+    --text-link-color-hover: #95DA3C;
+    --blog-link-color: #2EB41C;
+    --blog-link-color-hover: #95DA3C;
+    --list-border-color: #ffa9b7;
+
+    --list-text-color: #8D442E;
+    --list-line-color: #ffa9b7;
+    --list-strike-color: #EE3774;
+    
+    --player-track-bgcolor: #8D442E;
+    --player-track-color: #95DA3C;
+
+    --cursor-default: url('../../../img/cursor_leap_bound.png');
+    --cursor-pointer: url('../../../img/cursor_pointing_leap_bound.png');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../../../fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuItalic';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../../../fonts/ubuntu-v20-latin-300italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegular';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../../fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuRegularItalic';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../../../fonts/ubuntu-v20-latin-500italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../../fonts/ubuntu-v20-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'UbuntuBoldItalic';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../../../fonts/ubuntu-v20-latin-700italic.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Visitor';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../../../fonts/visitor2.ttf') format('woff2');
+}
+
+
+html {
+    font-family: Ubuntu;
+    cursor: var(--cursor-default), default;
+}
+
+b, .toDo > p, .updates > p, .mySetup > p {
+    font-family: UbuntuRegular;
+}
+
+em {
+    font-family: UbuntuItalic;
+}
+
+body {
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    image-rendering: optimizeSpeed;
+}
+
+p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+a, button, .switch {
+    cursor: var(--cursor-pointer), default;
+}
+
+li {
+    color: var(--list-text-color);
+    border-bottom: 1px solid var(--list-line-color);
+    text-decoration-color: var(--list-strike-color);
+}
+
+.tooltip {
+    background-color: var(--background-color) !important;
+    border: solid 4px var(--text-link-color) !important;
+    border-radius: 10px !important;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background-image: var(--banner-background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    image-rendering: pixelated;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.headerBg {
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.mainHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.cssThemes {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.headerPfp {
+    width: 128px;
+    height: 128px;
+    image-rendering: pixelated;
+    border-radius: 10px;
+}
+
+.headerName {
+    height: 128px;
+    image-rendering: optimizeSpeed;
+}
+
+.headerLinks {
+    padding-top: 20px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    image-rendering: pixelated;
+}
+
+.headerBtn {
+    padding: 2px;
+    display: block;
+    transition: transform 0.10s;
+}
+
+.headerBtn:hover {
+    transform: scale(1.5);
+}
+
+.headerButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.headerInfo .censorpanda {
+    transition: transform 0.10s;
+}
+
+.headerInfo .censorpanda:hover {
+    transform: scale(1.5);
+}
+
+.headerInfoDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headerInfoDetails > div {
+    padding: 10px;
+    background-color: var(--banner-info-block);
+    color: white;
+    border-radius: 10px;
+}
+
+.desktop {
+    /* STRETCHES ON FULL RESOLUTION
+    width: calc(100vw - 20px);
+    */
+
+    /* ASPECT RATIO REMAINS */
+    width: 1350px;
+    height: auto;
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: column;
+}
+.columns {
+    width: 1350px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.left, .right {
+    width: 50%;
+}
+.middle {
+    width: 100%;
+}
+.window {
+    margin: 10px;
+    padding: 10px;
+    /*
+    min-width: 300px;
+    min-height: 20px;
+    */
+    position: relative;
+    background-color: var(--background-color);
+    border: 5px solid;
+    border-top: 36px solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+}
+
+.borderDecor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    border: 12px solid transparent;
+    border-image: var(--border-decor) 12 round;
+    pointer-events: none;
+}
+
+.windowIcon {
+    text-shadow: -1px -1px white;
+    color: transparent;
+}
+.windowTitle {
+    font-size: 16px;
+    color: whitesmoke;
+    position: absolute;
+    top: -38px;
+    left: 10px;
+}
+.navi > a, .mobileNavi > a {
+    margin: 0;
+    padding: 0;
+}
+.btn {
+    padding: 5px;
+    background-color: var(--button-background-color);
+    border: 2px solid var(--button-border-color);
+    border-radius: 5px;
+    color: var(--button-text-color);
+    transition: transform 0.10s;
+}
+.btn:hover {
+    border: 2px solid var(--button-border-color-hover);
+    transform: scale(1.5);
+}
+.embed {
+    margin-left: 5px;
+}
+.xBtn {
+    padding: 2px 8px;
+    background-color: var(--exit-button-color);
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 0;
+    border: 2px outset var(--exit-button-border-color);
+    border-radius: 4px;
+}
+.sizeBtn {
+    padding: 2px 8px;
+    background: none;
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 32px;
+    border: 2px outset var(--min-size-button-border-color);
+    border-radius: 4px;
+}
+.minBtn {
+    padding: 2px 8px;
+    background-color: transparent;
+    color: whitesmoke;
+    position: absolute;
+    top: -34px;
+    right: 66px;
+    border: 2px outset var(--min-size-button-border-color);
+    border-radius: 4px;
+}
+.embedsrc {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.coolSites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.coolSites img {
+    transition: transform 0.10s;
+}
+.coolSites img:hover {
+    transform: scale(1.5);
+}
+
+.footer, .credits {
+    text-align: center;
+}
+.bio {
+    display: flex;
+    flex-direction: row;
+}
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bio > .info {
+    justify-content: center;
+    align-items: center;
+}
+
+.info-data {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.pfp {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+.gifypetoc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.toDo, .updates, .mySetup {
+    margin-left: -20px;
+    height: 128px;
+    overflow-y: auto;
+}
+.toDo > p, .updates > p, .mySetup > p {
+    font-weight: bold;
+    margin-left: 24px;
+}
+.toDo > ul, .updates > ul, .mySetup > ul {
+    margin-top: 5px;
+}
+
+.txtImg {
+    margin: 0;
+    padding: 0;
+    width: 128px;
+    height: 90px;
+    image-rendering: pixelated;
+}
+.chat {
+    height: 480px;
+}
+#btnEmbed {
+    padding: 0;
+    width: calc(100% - 24px);
+    height: 40px;
+    text-align: center;
+}
+.blog {
+    width: 100%;
+    height: 402px;
+    overflow-y: auto;
+}
+
+.coolSites img, .fanlists img, .toolLinks img {
+    image-rendering: optimizeQuality;
+}
+
+.taskbar {
+    width: 100%;
+    height: 42px;
+    background-color: var(--taskbar-color);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.taskbarItems {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.taskbarStart {
+    width: auto;
+    height: 100%;
+}
+.taskbarLinks {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    overflow-x: auto;
+}
+.taskbarDate {
+    width: auto;
+    height: 100%;
+    align-content: center;
+}
+.startBtn {
+    margin-right: 5px;
+    padding: 5px 2px 10px 2px;
+    width: 120px;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    background-color: var(--start-button-color);
+    color: var(--taskbar-text);
+    border: 2px outset var(--min-size-button-border-color);
+    border-left: 0;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+}
+.dateTime {
+    margin: 0;
+    padding: 4px 2px;
+    width: 96px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--taskbar-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnLink {
+    image-rendering: pixelated;
+}
+.txtLink, .txtLink:visited {
+    color: var(--text-link-color);
+}
+.txtLink:hover {
+    color: var(--text-link-color-hover);
+
+}
+.statsMain {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.statsViews {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.embedButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.fanlists, .toolLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.fanlists a img, .toolLinks a img {
+    transition: transform 0.10s;
+}
+.fanlists a img:hover, .toolLinks a img:hover {
+    transform: scale(1.5);
+}
+.webrings, .navlink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.webrings {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: 16px;
+}
+.webring-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+.navlink {
+    padding: 0;
+}
+.navi, .mobileNavi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+.mobileNavi {
+    margin: -10px -20px;
+    padding: 10px 20px;
+    background-color: var(--border-color);
+    display: none;
+}
+.navi .btn, .mobileNavi .btn {
+    font-family: Ubuntu;
+}
+.galleryBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+.artBtn .btn {
+    margin-bottom: 5px;
+    width: 100%;
+    font-family: UbuntuBold;
+    color: var(--art-button);
+}
+.artBtn b {
+    color: var(--art-button-important);
+}
+.welcome {
+    height: 100px;
+    overflow-y: auto;
+}
+.imgInsert {
+    display: flex;
+}
+.divider {
+    margin: 32px auto;
+    width: 80%;
+    border: none;
+    border-top: 2px dotted slategray;
+}
+#chattable {
+    border: none;
+    height: 100%;
+}
+
+/* MP3 PLAYER CSS */
+.player {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 5px;
+}
+.playerCtrl {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.playerImg {
+    height: 100%;
+}
+.trackArt {
+    height: 100%;
+}
+.trackName {
+    padding: 4px 4px 0 8px;
+    font-size: 20px;
+    font-family: Visitor;
+    background-color: var(--player-track-bgcolor);
+    color: var(--player-track-color);
+}
+.playerInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.playpause-track, .prev-track, .next-track {
+    opacity: 0.8;
+    transition: opacity .2s; /* Smoothly transition the opacity */
+}
+.playpause-track:hover, .prev-track:hover, .next-track:hover {
+    opacity: 1.0;
+
+}
+.sliders {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: grab;
+}
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.seek_slider:hover, .volume_slider:hover {
+    opacity: 1.0;
+}
+.volume-icon {
+    font-size: 12px;
+}
+.playpause-track, .prev-track, .next-track {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* RSS Feed CSS */
+/* Feed CHANNEL title */
+.blog a {
+    color: var(--button-background-color) !important;
+
+}
+.microblog h3.feed-title,
+.blog h3.feed-title {
+    display: none;
+}
+/* Feed ITEM title */
+.microblog h4.feed-item-title a, .microblog h4.feed-item-title a:visited,
+.blog h4.feed-item-title a, .blog h4.feed-item-title a:visited  {
+    margin: 0 !important;
+    margin-bottom: 6px !important;
+    color: var(--blog-link-color) !important;
+}
+.microblog h4.feed-item-title a:hover,
+.blog h4.feed-item-title a:hover {
+    color: var(--blog-link-color-hover) !important;
+}
+.microblog p.feed-item-desc,
+.blog p.feed-item-desc {
+    margin-bottom: 16px !important;
+}
+
+
+/* Featured Art START */
+.featuredArt {
+    width: calc(100%-10px);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+#retronaut-webring p {
+    font-size: 16px;
+}
+
+#retronaut-webring p a {
+    text-decoration: none;
+}
+
+/* Mobile layout support */
+@media (max-width: 800px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+    .desktop {
+        margin-top: 4%;
+    }
+    .banner {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        height: auto;
+    }
+    .headerBg {
+        padding-left: 0;
+    }
+
+    .cssThemes {
+        padding: 0;
+        padding-bottom: 20px;
+    }
+    .desktop, .columns {
+        width: auto;
+        height: auto;
+        margin-bottom: 42px;
+        display: flex;
+        flex-direction: column;
+    }
+    .left, .middle, .right {
+        width: 100%;
+    }
+    .bio > .info {
+        justify-content: center;
+        align-items: center;
+    }
+    .webring-items {
+        flex-direction: column;
+    }
+    .webring-items img {
+        max-width: 100%;
+    }
+    .linkBtn, .galleryBtn {
+        display: none;
+    }
+
+    .mobileNavi {
+        display: flex;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        background-image: var(--background-image-reduced);
+    }
+    .gifypetoc, .adsWindow, #surfclub {
+        display: none !important;
+    }
+    #surfclub object#melonland-surf-club svg g#Outer {
+        animation: none !important;
+    }
+    .btn, .coolSites img, .fanlists img, .toolLinks img, .headerBtn {
+        transition: none;
+    }
+}

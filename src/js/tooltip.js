@@ -4,7 +4,7 @@ if (!!isAnimationReduced) {
     console.log("Animations are disabled.")
 } else {
     // Tooltip by Xobyte
-    // Dynamic data-* tooltips by DinPixels muhehehehe
+    // I just added the custom data from certain elements
     Element.prototype.tooltip = function(text){
     var root = this;
     this.onmouseover = function(e){

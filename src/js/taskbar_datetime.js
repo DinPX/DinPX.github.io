@@ -1,4 +1,3 @@
-// Taskbar date and time
 function showTime() {
     let timeTxt = document.querySelector('.time');
     let dateTxt = document.querySelector('.date');
@@ -7,4 +6,6 @@ function showTime() {
     dateTxt.textContent = now.toLocaleDateString();
 }
 
-setInterval(showTime, 1000);
+document.addEventListener("visibilitychange", function() {
+    if (!document.hidden) { setInterval(showTime, 1000); }
+});
