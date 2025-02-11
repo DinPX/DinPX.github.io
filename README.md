@@ -1,7 +1,11 @@
 # [DinPX.github.io](https://dinpx.github.io/)
 My static personal website that is [hosted on Neocities](https://dinpixels.neocities.org).
 
-![homepage preview](/preview.png)
+## XP Theme
+![homepage xp theme preview](/preview_xp_theme.png)
+
+## Sakura Theme
+![homepage sakura theme preview](/preview_sakura_theme.png)
 
 It is a hobby project as well as a personal site for my creations and thoughts, which aesthetics and functionalities are not only inspired by the modern time but also (a bit heavily) by the early 2000s.
 
@@ -10,6 +14,7 @@ As the webpage is inspired by the old web, it has a music player, a pet sim and 
 ## Features
 - Animations can be turned off with `prefers-reduced-motion`
     - Helpful for visitors who want/need less motions
+- Theme options (on the top right corner of the banner)
 - Chat box powered by [Chattable by xobyte](https://iframe.chat/).
 - Tooltips on hovered items by [xobyte](https://andrew-grider.com/).
 - Pet sim game powered by [GifyPet by MelonKing](https://gifypet.neocities.org/).
@@ -20,13 +25,13 @@ As the webpage is inspired by the old web, it has a music player, a pet sim and 
 
 ## To-do
 - [ ] My manifesto (internet, webpage, freedom)
-- [ ] Script for showing featured images (even 'daily' memes)
-- [ ] Fix mobile UI
+- [x] Script for showing featured images (even 'daily' memes)
+- [x] Fix mobile UI
 - [ ] Add games section on homepage
 - [ ] Update games page
-    - Show games list and devlogs on the same page
+    - ~~Show games list and devlogs on the same page~~
 - [ ] Update RSS formatting
-- [ ] Theme toggle (between classic blue XP and current sakura theme)
+- [x] Theme toggle (between classic blue XP and current sakura theme)
 - [ ] Host to Nekoweb
 
 ## Copyright
