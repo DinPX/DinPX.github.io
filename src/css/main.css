@@ -15,17 +15,26 @@ body {
     font-family: Ubuntu;
 }
 
+.headerButtons {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .theme-switches {
+    padding: 20px;
     image-rendering: pixelated;
-    padding-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
 .switch {
-    width: 36px;
-    height: 36px;
+    width: 72px;
+    height: 72px;
+    background-repeat: no-repeat;
+    background-size: contain;
     transition: transform 0.10s;
 }
   
@@ -39,4 +48,22 @@ body {
 
 #switch-2 {
     background-image: var(--sakura);
+}
+
+
+@media (max-width: 800px) {
+    .headerButtons {
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .theme-switches {
+        padding-top: 0;
+        image-rendering: pixelated;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 }

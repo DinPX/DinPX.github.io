@@ -61,7 +61,7 @@
         }
 
         .largerImage {
-            max-height: 500px;
+            max-height: 700px;
         }
 
         .bigImage {
@@ -79,7 +79,7 @@
         img {
             image-rendering: optimizeSpeed;
             display: block;
-            z-index: 4;
+            z-index: 4 !important;
         }
         
         img:not(.infoblock > legend > img, .siteButton) {
@@ -91,6 +91,7 @@
         }
 
         .center {
+            position: relative;
             margin-left: auto;
             margin-right: auto;
         }
@@ -336,6 +337,15 @@
 
                     <hr>
 
+                    <li><a href="#RPG Maker 2000-2003">RPG Maker 2000-2003</a></li>
+                    <li><small>This section covers Yume Nikki.</small></li>
+                    <li>&emsp;&emsp;<a href="#RPG Maker 2000-2003 - Preparation">Preparation</a></li>
+                    <li>&emsp;&emsp;<a href="#RPG Maker 2000-2003 - EasyRPG Player">EasyRPG Player</a></li>
+                    <li>&emsp;&emsp;&emsp;&emsp;<a href="#RPG Maker 2000-2003 - EasyRPG Player - Run Time Package">Run Time Package</a></li>
+                    <li>&emsp;&emsp;<a href="#RPG Maker 2000-2003 - Game Launcher">Game Launcher</a></li>
+
+                    <hr>
+
                     <li><a href="#NFSU2">Need for Speed Underground 2</a></li>
                     <li>&emsp;&emsp;<a href="#NFSU2 - Mount the Disks">Mount the Disks</a></li>
                     <li>&emsp;&emsp;<a href="#NFSU2 - Setup WineGUI">Setup WineGUI</a></li>
@@ -358,20 +368,296 @@
 
                     <hr>
 
-                    <li>&emsp;&emsp;<a href="#Credits">Credits</a></li>
+                    <li><a href="#Desktop Entry">Desktop Entry</a></li>
+                    <li><small>This section covers Celeste 64.</small></li>
+                    <li>&emsp;&emsp;<a href="#Desktop Entry - Setting Up Desktop Entry">Setting Up Desktop Entry</a></li>
+                    <li>&emsp;&emsp;<a href="#Desktop Entry - Updating the Apps Database">Updating the Apps Database</a></li>
+
+                    <hr>
+
+                    <li><a href="#Credits">Credits</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="column middle">
-            <h1 class="Introduction">Linux Gaming</h1>
+            <br>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/celeste_64_preview.png" alt="celeste_64_preview.png">
+                <img class="smallImage" src="../../src/img/yume_nikki_crop_preview.png" alt="celeste_64_preview.png">
+            </div>
+            
+            <h1 id="Introduction">Linux Gaming</h1>
             <p>Over the years the gaming ecosystem thrive mostly on Windows platforms alone, and large studios just can't afford to release titles much on Linux given its low potential market at the time. But now the times have changed. Wine was introduced to the world, Bottles and Lutris came for convenience and more compatibility support, and Valve have given us Proton to play games with little to no issues in a Linux environment.</p>
 
             <p>And so I made this page to not only record what I did to make older games run on modern Linux systems, but also to run modern titles as well as to hopefully convince some users to switch to Linux. But regardless, this is just a space for Linux Gaming.</p>
 
             <hr>
 
-            <h1 class="NFSU2">Need for Speed Underground 2</h1>
+            <h1 id="RPG Maker 2000-2003">RPG Maker 2000-2003</h1>
+
+            <p>RPG Maker is undoubtedly one of the most influential game engines and even became its own genre starting around 2012-2013 for introducing well-beloved titles in the horror landscape. Games such as Ib, The Crooked Man, Ao Oni, and so much more gems became possible thanks to these tools. RPG Maker is just popular that even other games like Mad Father which was made with WOLF RPG Editor still falls under this game category.</p>
+
+            <h2 id="RPG Maker 2000-2003 - Preparation">Preparation</h2>
+
+            <p>In this tutorial, we'll use a standalone version of Yume Nikki, meaning that we won't use the Steam version. With this method we don't have to launch Steam every time just to open Yume Nikki. If you don't have a copy of Yume Nikki, you can <a href="https://uboachan.net/yumenikki_portable.zip" target="_blank">download this archive by Uboachan</a>, then extract it.</p>
+
+            <fieldset class="infoblock warningInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Disclaimer</b>
+                </legend>
+                I don't own nor affiliated with this archive. Use it at your own risk.
+                <br>
+                Also another warning that I don't recommend going on the homepage as some links and users are NSFW.
+            </fieldset>
+
+            <p>Make a new folder which will contain your RPG Maker games. In this example I'll make a folder named <em>RPG Maker</em> under <em>Document/Games</em>, e.g. <code class="inlineCode">/home/dinpixels/Documents/Games/RPG Maker/</code>. This is for the sake of convenience when setting up games onwards.</p>
+
+            <p>Copy the extracted folder to the path.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_folder.png" alt="">
+            </div>
+
+            <h2 id="RPG Maker 2000-2003 - EasyRPG Player">EasyRPG Player</h2>
+
+            <p>Going into the folder you can run the <b>RPG_RT.exe</b> with Wine, however it won't launch as it needs to be in Japanese locale. We can setup Wine with a Japanese locale, but personally I find it a hassle for this setup, and so we will use an interpreter instead called <b>EasyRPG Player</b> which already supports multiple languages. For more info you can read them here: <a href="https://wiki.easyrpg.org/user/player/special-features" target="_blank">https://wiki.easyrpg.org/user/player/special-features</a></p>
+
+            <p>Download their official Linux build here: <a href="https://easyrpg.org/downloads/player/0.8/easyrpg-player-0.8-linux.tar.gz" target="_blank">https://easyrpg.org/downloads/player/0.8/easyrpg-player-0.8-linux.tar.gz</a></p>
+
+            <p>After downloading it extract the file to the folder we made.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_easyrpgplayer_00.png" alt="">
+            </div>
+
+            <br>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                You can also just move it in a much accessible folder like <code class="inlineCode">Documents</code> or <code class="inlineCode">/home/user</code> and make a shortcut of it instead.
+                <br><br>
+                That way any folder can access it without the need of copying it.
+            </fieldset>
+
+            <p>Open the EasyRPG Player and you should see something like this. As you can see, the name of <b>yumenikki</b> appears under the Games list. This is the same game folder of Yume Nikki we extracted before.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_easyrpgplayer_01.png" alt="">
+            </div>
+
+            <p>To navigate around the menu is just as the same as with RPG Maker games:</p>
+
+            <div class="images">
+                <div>
+                    <table>
+                        <tr><th>Key</th><th>Action</th></tr>
+                        <tr><th>Z</th><td>confirm</td></tr>
+                        <tr><th>X</th><td>cancel</td></tr>
+                    </table>
+                </div>
+    
+                <div>
+                    <table>
+                        <tr><th>Key</th><th>Action</th></tr>
+                        <tr><th>⬆️</th><td>move up</td></tr>
+                        <tr><th>⬇️</th><td>move down</td></tr>
+                    </table>
+                </div>
+    
+                <div>
+                    <table>
+                        <tr><th>Key</th><th>Action</th></tr>
+                        <tr><th>➡️</th><td>move left</td></tr>
+                        <tr><th>⬅️</th><td>move right</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <p>Close EasyRPG Player and go back to the folder, then rename it to <b>Yume Nikki</b>. Open EasyRPG Player and you should see that it's updated now with a proper name.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_easyrpgplayer_02.png" alt="">
+            </div>
+
+            <p>Press <b>Z</b> to enter the Games menu. By now Yume Nikki should be highlighted.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_easyrpgplayer_03.png" alt="">
+            </div>
+
+            <p>If everything went correctly without any problems, Yume Nikki should run just fine after pressing <b>Z</b> key again. From there you'll be welcomed with its title screen. Feel free to test if everything works!</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_preparation_easyrpgplayer_yume_nikki_00.png" alt="">
+            </div>
+
+            <p>Still, if for some reason the game has missing files, it means that its necessary assets, the <em>Run Time Package</em>, isn't complete. To fix this issue proceed to the instructions below.</p>
+
+            <h3 id="RPG Maker 2000-2003 - EasyRPG Player - Run Time Package">Run Time Package</h3>
+
+            <p>Firstly, go to RPG Maker's Run Time Package page and download the <b>RPG Maker 2003</b> and <b>RPG Maker 2000</b> RTPs: <a href="https://www.rpgmakerweb.com/run-time-package" target="_blank">https://www.rpgmakerweb.com/run-time-package</a></p>
+
+            <p>The RTP for RPG Maker 2003 comes in a ZIP archive so extract it. Both programs only runs on Windows, so in order to get the files we need we'll run them via Wine. We'll start with RPG Maker 2000's RTP:</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_00.png" alt="">
+            </div>
+
+            <p>Proceed with the entire installation.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_01.png" alt="">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_02.png" alt="">
+            </div>
+
+            <p>Feel free to set it to a location you prefer to. Just take note of its install path as we'll need that later.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_03.png" alt="">
+            </div>
+
+            <p>With that the installation should finally start and proceed smoothly...</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_04.png" alt="">
+            </div>
+            
+            <p>And done! Now we have the necessary RTP files for RPG Maker 2000.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_05.png" alt="">
+            </div>
+
+            <p>After that simply do the same things with the RPG Maker 2003's RTP installer. Don't forget to take note of its installation path as well. Once that every thing is done, go to their installation paths and copy their folders into the RPG Maker folder we made (i.e. the folder which will hold our RPG Maker games).</p>
+
+            <p>Since I left the installation paths to default, they were installed at: <code class="inlineCode">/home/<b>YOUR USERNAME</b>/.wine/drive_c/users/<b>YOUR USERNAME</b>/AppData/Roaming/KADOKAWA/Common/</code></p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_06.png" alt="">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_07.png" alt="">
+            </div>
+
+            <p>With that, the RTP files would be read by EasyRPG and fix the RTP issue. You can open and test the game to see if it's running.</p>
+
+            <p>If it's running without any problems then that's great. Still, about the EasyRPG games list we only want valid games to be listed. We need to get rid of the 2 RTP folders.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_08.png" alt="">
+            </div>
+
+            <p>Move to the parent folder <code class="inlineCode">Games</code> and create a new folder name <code class="inlineCode">Assets</code>. We'll store these RTP folders in <code class="inlineCode">~/Documents/Games/Assets</code> path.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_09.png" alt="">
+                <img class="largerImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_rtp_10.png" alt="">
+            </div>
+
+            <p>Now we have a fully working Yume Nikki! Still, given this setup we need to launch EasyRPG Player first every time we're going to play it. Therefore in order to have a <em>standalone app</em> feel and experience to it, we'll make a Desktop Entry and add it directly to our Linux system's recognized apps (e.g. it will appear on start menu as a valid program).</p>
+
+            <h2 id="RPG Maker 2000-2003 - Game Launcher">Game Launcher</h2>
+
+            <p>We'll start making a launcher that would store the game's <b>name</b>, <b>icon</b>, <b>description</b> and <b>command</b> on <em>launching Yume Nikki via EasyRPG Player</em>. First, create an empty file anywhere and name it <b>YumeNikki.desktop</b>.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/desktop_entry_new_empty_file.png" alt="">
+                <img class="smallImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_desktop_entry_00.png" alt="">
+            </div>
+
+            <p>Open the file with a text editor and enter the following:</p>
+            
+            <code class="tableBlock"><b>[Desktop Entry]</b>
+<br><br><b>Type</b>=Application
+<br><b>Name</b>=Yume Nikki
+<br><b>Comment</b>=Traverse into the depths of dreams
+<br><b>Icon</b>=<em> put the path to your icon (e.g. png, icns, ico) here</em>
+<br><br><b>Exec</b>=/home/<b>YOUR USERNAME</b>/Documents/Games/RPGMaker --project-path "/home/<b>YOUR USERNAME</b>/Documents/Games/RPGMaker/Yume Nikki"</code>
+
+            <p><code class="inlineCode">[Desktop Entry]</code> just tells the system that this file is a launcher.</p>
+
+            <p><code class="inlineCode">Type=Application</code> tells the system that this is an application.</p>
+
+            <p><code class="inlineCode">Name</code> is the alias for this launcher.</p>
+
+            <p><code class="inlineCode">Comment</code> is the launcher's description.</p>
+
+            <p><code class="inlineCode">Icon</code> is the path to the launcher's icon.</p>
+
+            <p><code class="inlineCode">Exec</code> is the execution command of a program.</p>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                Terms have been simplified here. For more info see the <a href="#Desktop Entry">Desktop Entry</a> section or visit the <a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/basic-format.html" target="_blank">Basic format of the file | Desktop Entry Specification</a> page.
+            </fieldset>
+
+            <p>If we take a look at the <b>Exec</b>'s value there are 2 paths, 1 without open and close parentheses while the other is encapsulated with it. The reason for this is that the first path refers to the location of EasyRPG Player. Then, after finding and running EasyRPG Player, we used its built-in command <em>flag</em> <code class="inlineCode">--project-path</code>. It expects a string of an RPG Maker game's path, hence the open and close parentheses around it.</p>
+
+            <p>In short, <b>Exec</b> executes EasyRPG Player with the first path. Then, the EasyRPG Player uses its <code class="inlineCode">--project-path</code> command to locate the game and run it.</p>
+
+            <p>Anyways with that you should have something like this:</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_desktop_entry_01.png" alt="">
+            </div>
+
+            <p>Save the file. Now its name and icon has been updated. If you hover on it, details like its <code class="inlineCode">comment</code> will show up.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_desktop_entry_02.png" alt="">
+            </div>
+
+            <p>Back to the file and text editor, enter the extra details below <b>Exec</b>:</p>
+
+            <code class="tableBlock"><b>Terminal</b>=false
+<br><b>Categories</b>=Game;
+<br><b>StartupNotify</b>=false</code>
+
+            <br>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_desktop_entry_03.png" alt="">
+            </div>
+
+            <p>It just tells the system that this launcher won't open a terminal, it falls under the <em>Game</em> category (e.g. seen in the start menu), and that it doesn't notify the user whenever it launches.</p>
+
+            <p>After this, save the file and close it. Then, move this launcher to the path of available and <em>registered</em> applications <code class="inlineCode">/usr/share/applications/</code>. If you can't access the files you need to allow root priveleges. Simply right click and <b>Open as Root</b>.</p>
+            
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_06.png" alt="">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_07.png" alt="">
+            </div>
+
+            <br>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/rpgmaker_2000-2003_desktop_entry_04.png" alt="">
+            </div>
+
+            <p>After moving the file, open up a terminal and enter the <code class="inlineCode">sudo <b>update-desktop-database</b></code> command.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_09.png" alt="">
+            </div>
+
+            <p>This command updates the cache list of <em>registered</em> and <em>valid</em> apps in the system. If it appears on the start menu and launches when wanted to, then it's a success.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/desktop_entry_entries_10.png" alt="">
+            </div>
+            
+            <p>Feel free to make shortcuts of Yume Nikki anywhere in your Linux system. Enjoy!</p>
+
+            <hr>
+
+            <h1 id="NFSU2">Need for Speed Underground 2</h1>
 
             <p>This game was a big part of my childhood. It's one of the games that even with no access to the internet, it will keep you hooked with its replayability and charm. Particularly, it offers a large array of parts for customizability, as well as an aesthetic (retrofuturistic-like even) open world to explore.</p>
 
@@ -449,15 +735,21 @@
 
             <p>After entering the code, choose the <b>Advance User</b> to see the options it offers. In this guide we'll select <b>Full</b> to include all files on install.</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_02.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_02.png" alt="">
+            </div>
 
             <p>Proceed on next steps and skip this popup with <b>Register Later</b>. (Man, the sound's nostalgic it makes me remember some PopCap and GameHouse titles)</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_03.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_03.png" alt="">
+            </div>
 
             <p>The installation starts (finally).</p>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_04.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_04.png" alt="">
+            </div>
 
             <h2 id="NFSU2 - Disk 2 Setup">Disk 2 Setup</h2>
 
@@ -471,7 +763,9 @@
 
             <br>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_06.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_06.png" alt="">
+            </div>
 
             <p>After selecting the executable, press <b>OK</b> on the popup. If successful, the installation will continue to the 2nd part.</p>
 
@@ -483,7 +777,9 @@
 
             <p>And that's it! Or it supposed to be, but there's few fixes that must be done first. You're all free to test it for a drive first though.</p>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_08.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_08.png" alt="">
+            </div>
 
             <p>With the setup being done, unmount the disks.</p>
 
@@ -515,7 +811,9 @@
 
             <br>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_11.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_11.png" alt="">
+            </div>
 
             <p>And with that, the No CD patch has been applied.</p>
 
@@ -523,11 +821,15 @@
 
             <p>After applying the patch, copy the contents of <b>Widescreen Fix</b> folder into the same installation path of Need for Speed Underground 2: <code class="inlineCode">~/.local/share/winegui/prefixes/NFSU2/drive_c/Program Files/EA GAMES/Need for Speed Underground 2</code></p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_12.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_12.png" alt="">
+            </div>
 
             <p>And done! Almost. The Widescreen Fix mod won't work immediately as the <b>dinput8.dll</b> can't be detected for some reason. So in order to fix that, go to <b>Wine Config</b>:</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+            </div>
 
             <p>Switch to the <b>Libraries</b> tab, then enter or find <b>dinput8</b> on the dropdown that's adjacent to the Add button. Press <b>Add</b>, and hit <b>Apply</b>.</p>
 
@@ -561,11 +863,15 @@
 
             <p>We'll start with a WineGUI shortcut. Go to WineGUI's <b>Applications</b> list and press the ➕ button to add a new shortcut.</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_13.png" alt="">
+            </div>
 
             <p>Fill in the blanks. As for the command just <b>Select executable...</b> and find the game's folder, then select the <b>SPEED2.EXE</b> program. If all necessary fields are satisfied, hit <b>Save</b>.</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_16.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_16.png" alt="">
+            </div>
 
             <p>That's pretty much it. Now you have a shortcut <b>in the WineGUI</b> to run it easily from there.</p>
 
@@ -583,7 +889,9 @@
 
             <p>Right click on Desktop and select <b>Create Launcher...</b></p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_17.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_17.png" alt="">
+            </div>
             
             <p>Set the name to <b>NFSU2</b> string, and comment values to anything you prefer.</p>
 
@@ -593,7 +901,9 @@
 
             <p>Then, set the icon. Click the icon box and select from the available icons.</p>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/NFSU2_guide_setup_18.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/NFSU2_guide_setup_18.png" alt="">
+            </div>
 
             <p>If the game's icon is not present on the list, proceed on using the path of the icon within the game's folder. <b>Save</b> the launcher first, then right click on the NFSU2 launcher and open it with a text editor.</p>
 
@@ -631,7 +941,9 @@
 
             <p>Look for a line with either <code class="inlineCode">UBUNTU_CODENAME</code> or <code class="inlineCode">VERSION_CODENAME</code>. If both are present, use the name after <code class="inlineCode">UBUNTU_CODENAME</code>. Take notes of that name.</p>
 
-            <img class="largerImage center" src="../../src/img/works/screenshots/wine_guide_distro_name.png" alt="">
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/wine_guide_distro_name.png" alt="">
+            </div>
 
             <h2 id="Wine - Adding the Repository">Adding the Repository</h2>
 
@@ -685,19 +997,170 @@
 
             <p class="noIndent">Proceed on installing the downloaded file.</p>
 
-            <img class="bigImage center" src="../../src/img/works/screenshots/winegui_guide_package_install.png" alt="">
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/winegui_guide_package_install.png" alt="">
+            </div>
 
             <p>And that's it! Enjoy using your WineGUI! ☕</p>
 
             <hr>
 
+            <h1 id="Desktop Entry">Desktop Entry</h1>
+            <p>Desktop Entries are basically links to programs. Just like in Windows they act as shortcuts to applications, making it more easy to run on the go rather than navigating numerous folders.</p>
+
+            <p>In this guide we'll talk about how to make one, how to add them in a category (e.g. games, tools, etc.), and finally adding them to the application database, i.e. making them available to the <em>start menu</em>.</p>
+
+            <h2 id="Desktop Entry - Setting Up Desktop Entry">Setting Up Desktop Entry</h2>
+
+            <p>For this demonstration I'm going to download and use <a href="https://maddymakesgamesinc.itch.io/celeste64" target="_blank">Celeste 64</a>, but you're free to download any game or app as you want.</p>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                Please use any Linux compatible programs only as this section will only focus on Desktop Entry.
+                <br><br>
+                For a guide on running Windows apps to Linux go to the <a href="#Wine x WineGUI">Wine x WineGUI</a> section.
+            </fieldset>
+
+            <br>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/celeste_64_preview.png" alt="celeste_64_preview.png">
+            </div>
+
+            <p>To make a Desktop Entry, go to Desktop (or any folder really) and make a new file. The extension should be <b>.desktop</b>. In this example I'll name the Desktop Entry as <code class="inlineCode">celeste_64<b>.desktop</b></code>.</p>
+
+            <div class="images">
+                <img src="../../src/img/works/screenshots/desktop_entry_new_empty_file.png">
+                <img src="../../src/img/works/screenshots/desktop_entry_new_file.png">
+            </div>
+
+            <p>Open the file with a text editor and write <code class="inlineCode">[Desktop Entry]</code>. This tells the system that it is a Desktop Entry. Then, below it write <code class="inlineCode">Type=Application</code>. This tells the system that it is a launchable application.</p>
+            
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                I'm simplifying terms here. For more specific details, see <a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/basic-format.html#group-header" target="_blank">Basic format of the file | Desktop Entry Specification - Group Headers</a>.
+            </fieldset>
+
+            <br>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_00.png" alt="">
+            </div>
+
+            <p>Save the file. After saving it you should see that it changed its icon into generic, default program icon.</p>
+
+            <p>Next, enter the <code class="inlineCode">Name</code> and <code class="inlineCode">Comment</code> of this Desktop Entry. The <code class="inlineCode">Comment</code> refers to its description when viewed from anywhere and particularly on the start menu.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_01.png" alt="">
+            </div>
+
+            <p>Then, enter the <code class="inlineCode">Exec</code>, which is the path to the executable file.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_02.png" alt="">
+            </div>
+
+            <p>Save the file and open it. Select <b>Launch Anyway</b> to allow running the program just this time, or <b>Mark Executable</b> so it's allowed to run every time.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_03.png" alt="">
+            </div>
+
+            <p>And there you have it! We have made a Desktop Entry for a program.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/celeste_64_preview.png" alt="">
+            </div>
+
+            <p>Of course we can add more details to the Desktop Entry such as its icon, categories, and more.</p>
+
+            <p>To add an icon simply enter <code class="inlineCode">Icon</code> and the absolute path of the file.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_04.png" alt="">
+            </div>
+
+            <br>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                <code class="inlineCode">#Extra details</code> is a comment. It only acts as a guide or comment within this file, and will be ignored by the system when running the file.
+                <br><br>
+                You can add more comments by starting a line with a <code class="inlineCode">#</code> character.
+            </fieldset>
+
+            <p>Save it and you should see the icon has been set. In this example I made an icon in PNG format, and set it as the Desktop Entry's icon.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_celeste_64_icon.png" alt="">
+            </div>
+
+            <p>Then I set its categories with <code class="inlineCode">Categories=Game;ActionGame;3DGraphics;</code>. This makes it easier to find when navigating like in the start menu.</p>
+
+            <fieldset class="infoblock noteInfoBlock">
+                <legend>
+                    <img src=""/>
+                    <b>Note</b>
+                </legend>
+                To find more valid <code class="inlineCode">Categories</code> see <a href="https://specifications.freedesktop.org/menu-spec/1.0/category-registry.html" target="_blank">Registered Categories | Desktop Menu Specification</a> or <a href="https://askubuntu.com/questions/674403/when-creating-a-desktop-file-what-are-valid-categories" target="_blank">this thread</a>.
+            </fieldset>
+
+            <br>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_05.png" alt="">
+            </div>
+
+            <p>In general, we just covered the basics. Now we have a program shortcut that can run from pretty much anywhere (as long as a folder doesn't need any previleges).</p>
+
+            <p>But what if we want the Desktop Entry to be available to the list of available programs in the system, that is, listed and accessible through the start menu? We can do that by updating the <em>desktop database</em>.</p>
+
+            <h2 id="Desktop Entry - Updating the Apps Database">Updating the Apps Database</h2>
+
+            <p>To update the database of our programs, we need to copy the file first into the folder containing them, then we'll enter a command later to <em>register</em> it.</p>
+
+            <p>Go to the <code class="inlineCode">/usr/share/applications/</code> folder. Right click and <b>Open as Root</b>.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_06.png" alt="">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_07.png" alt="">
+            </div>
+
+            <p>Copy the Desktop Entry you made into the opened folder with root previleges.</p>
+
+            <div class="images">
+                <img class="bigImage" src="../../src/img/works/screenshots/desktop_entry_entries_08.png" alt="">
+            </div>
+
+            <p>Finally, open a terminal and enter <code class="inlineCode">sudo <b>update-desktop-database</b></code> to update the cache database of desktop files.</p>
+
+            <div class="images">
+                <img class="smallImage" src="../../src/img/works/screenshots/desktop_entry_entries_09.png" alt="">
+            </div>
+
+            <p>Aaaand done! Now the Desktop Entry is added to the recognized apps in the system. Going to the start menu you should see the Desktop Entry now under the <em>Games</em> category.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/works/screenshots/desktop_entry_entries_10.png" alt="">
+            </div>
+
+            <hr>
+
             <h1 id="Credits">Credits</h1>
 
-            <p class="noIndent">Notes are inspired by <a href="https://analogfeelings.github.io/" target="_blank">Nora's Hideout</a> theme, and <a href="https://github.com/orgs/community/discussions/16925" target="_blank">Github Markdown's notes</a>.</p>
-
-            <p class="noIndent">The SVGs used for notes are made by <a href="https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com" target="_blank">Dazzle Ui</a> in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.</p>
-
-            <p class="noIndent">Made with ❤️ and ☕! Best viewed on 1366x768 resolution. Not mobile friendly.</p>
+            <p class="noIndent">Notes are inspired by <a href="https://analogfeelings.github.io/" target="_blank">Nora's Hideout</a> theme, and <a href="https://github.com/orgs/community/discussions/16925" target="_blank">Github Markdown's notes</a>.
+            <br>
+            The SVGs used for notes are made by <a href="https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com" target="_blank">Dazzle Ui</a> in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.</p>
         </div>
 
         <div class="column right">
@@ -718,6 +1181,10 @@
                     <hr>
 
                     <li>This page contains my guides on game installation and making them work on Linux.<br><br>I daily drive Mint 22 so depending on your distribution some steps here may vary.</li>
+
+                    <hr>
+
+                    <li>Made with ❤️ and ☕! Best viewed on 1366x768 resolution. Not mobile friendly.</li>
                 </ul>
             </div>
         </div>

@@ -151,40 +151,7 @@ li {
     border-radius: 20px;
 }
 
-.headerBg {
-    padding-top: 20px;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.mainHeader {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.cssThemes {
-    padding-right: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.headerPfp {
-    width: 128px;
-    height: 128px;
-    image-rendering: pixelated;
-    border-radius: 10px;
-}
-
-.headerName {
-    height: 128px;
-    image-rendering: optimizeSpeed;
-}
-
 .headerLinks {
-    padding-top: 20px;
     height: 36px;
     display: flex;
     flex-direction: row;
@@ -202,12 +169,6 @@ li {
     transform: scale(1.5);
 }
 
-.headerButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .headerInfo {
     display: flex;
     flex-direction: row;
@@ -215,6 +176,7 @@ li {
 }
 
 .headerInfo .censorpanda {
+    image-rendering: pixelated;
     transition: transform 0.10s;
 }
 
@@ -444,8 +406,12 @@ li {
     overflow-y: auto;
 }
 
-.coolSites img, .fanlists img, .toolLinks img {
+.fanlists img {
     image-rendering: optimizeQuality;
+}
+
+.coolSites img, .toolLinks img {
+    image-rendering: pixelated;
 }
 
 .taskbar {
@@ -769,9 +735,6 @@ li {
         gap: 0;
         align-items: center;
         height: auto;
-    }
-    .headerBg {
-        padding-left: 0;
     }
 
     .cssThemes {

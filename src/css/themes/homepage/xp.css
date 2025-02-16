@@ -22,11 +22,11 @@
     --start-button-color: #95DA3C;
 
     --text-color: black;
-    --text-link-color: #2EB41C;
+    --text-link-color: #245DDA;
     --text-link-color-hover: #FFA500;
-    --blog-link-color: #2EB41C;
+    --blog-link-color: #245DDA;
     --blog-link-color-hover: #FFA500;
-    --list-border-color: #ffa9b7;
+    --list-border-color: #83C2F5;
 
     --list-text-color: black;
     --list-line-color: #83C2F5;
@@ -147,40 +147,7 @@ li {
     border-radius: 20px;
 }
 
-.headerBg {
-    padding-top: 20px;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.mainHeader {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.cssThemes {
-    padding-right: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.headerPfp {
-    width: 128px;
-    height: 128px;
-    image-rendering: pixelated;
-    border-radius: 10px;
-}
-
-.headerName {
-    height: 128px;
-    image-rendering: optimizeSpeed;
-}
-
 .headerLinks {
-    padding-top: 20px;
     height: 36px;
     display: flex;
     flex-direction: row;
@@ -198,12 +165,6 @@ li {
     transform: scale(1.5);
 }
 
-.headerButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .headerInfo {
     display: flex;
     flex-direction: row;
@@ -211,6 +172,7 @@ li {
 }
 
 .headerInfo .censorpanda {
+    image-rendering: pixelated;
     transition: transform 0.10s;
 }
 
@@ -385,7 +347,7 @@ li {
     gap: 10px;
 }
 .pfp {
-    width: 100%;
+    width: 96px;
     height: auto;
     image-rendering: pixelated;
 }
@@ -431,8 +393,12 @@ li {
     overflow-y: auto;
 }
 
-.coolSites img, .fanlists img, .toolLinks img {
+.fanlists img {
     image-rendering: optimizeQuality;
+}
+
+.coolSites img, .toolLinks img {
+    image-rendering: pixelated;
 }
 
 .taskbar {
@@ -756,9 +722,6 @@ li {
         gap: 0;
         align-items: center;
         height: auto;
-    }
-    .headerBg {
-        padding-left: 0;
     }
 
     .cssThemes {
