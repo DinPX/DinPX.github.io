@@ -1,11 +1,15 @@
 # [DinPX.github.io](https://dinpx.github.io/)
 My static personal website that is [hosted on Neocities](https://dinpixels.neocities.org).
 
-## XP Theme
-![homepage xp theme preview](/preview_xp_theme.png)
-
-## Sakura Theme
-![homepage sakura theme preview](/preview_sakura_theme.png)
+<table>
+    <tr>
+        <td colspan="2"><img src="./preview_halloween_theme.png" alt="preview_halloween_theme.png"></td>
+    </tr>
+    <tr>
+        <td><img src="./preview_xp_theme.png" alt="preview_xp_theme.png"></td>
+        <td><img src="./preview_sakura_theme.png" alt="preview_sakura_theme.png"></td>
+    </tr>
+</table>
 
 It is a hobby project as well as a personal site for my creations and thoughts, which aesthetics and functionalities are not only inspired by the modern time but also (a bit heavily) by the early 2000s.
 

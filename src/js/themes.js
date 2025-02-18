@@ -3,7 +3,7 @@ let switches = document.getElementsByClassName('switch');
 let style = localStorage.getItem('style');
 
 if (style == null) {
-    setTheme('xp');
+    setTheme('halloween');
 } else {
     setTheme(style);
 }
@@ -24,6 +24,10 @@ function setTheme(theme) {
         document.getElementById('switcher-id').href = 'src/css/themes/homepage/sakura.css';
         document.getElementById('chattable').src = document.getElementById('chattable').src
         chattable.initialize({stylesheet : "src/css/themes/chattable/sakura.css"});
+    } else if (theme == 'halloween') {
+        document.getElementById('switcher-id').href = 'src/css/themes/homepage/halloween.css';
+        document.getElementById('chattable').src = document.getElementById('chattable').src
+        chattable.initialize({stylesheet : "src/css/themes/chattable/halloween.css"});
     }
     localStorage.setItem('style', theme);
 }

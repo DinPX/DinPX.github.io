@@ -22,21 +22,31 @@
 
     --taskbar-color: #EE3774;
     --taskbar-text: #FFEEEE;
-    --start-button-color: #95DA3C;
+    --start-button-background-color: #95DA3C;
+    --start-button-text-color: #FFEEEE;
 
     --text-color: #8D442E;
     --text-link-color: #2EB41C;
     --text-link-color-hover: #95DA3C;
+
     --blog-link-color: #2EB41C;
     --blog-link-color-hover: #95DA3C;
-    --list-border-color: #ffa9b7;
+    --blog-RSS-credits-link-color: #EE3774;
 
+    --list-border-color: #ffa9b7;
     --list-text-color: #8D442E;
     --list-line-color: #ffa9b7;
     --list-strike-color: #EE3774;
     
+    --player-text-color: #8D442E;
     --player-track-bgcolor: #8D442E;
     --player-track-color: #95DA3C;
+    --player-volume-slider-color: #EE3774;
+    --player-seek-slider-color: #2EB41C;
+
+    --tooltip-background-color: #FFEEEE;
+    --tooltip-border-color: #2EB41C;
+    --tooltip-text-color: #571513;
 
     --cursor-default: url('../../../img/cursor_leap_bound.png');
     --cursor-pointer: url('../../../img/cursor_pointing_leap_bound.png');
@@ -131,8 +141,9 @@ li {
 }
 
 .tooltip {
-    background-color: var(--background-color) !important;
-    border: solid 4px var(--text-link-color) !important;
+    background-color: var(--tooltip-background-color) !important;
+    border: solid 4px var(--tooltip-border-color) !important;
+    color: var(--tooltip-text-color) !important;
     border-radius: 10px !important;
 }
 
@@ -360,7 +371,7 @@ li {
     gap: 10px;
 }
 .pfp {
-    width: 100%;
+    width: 96px;
     height: auto;
     image-rendering: pixelated;
 }
@@ -456,8 +467,8 @@ li {
     font-size: 24px;
     font-style: italic;
     font-weight: bold;
-    background-color: var(--start-button-color);
-    color: var(--taskbar-text);
+    background-color: var(--start-button-background-color);
+    color: var(--start-button-text-color);
     border: 2px outset var(--min-size-button-border-color);
     border-left: 0;
     border-top-right-radius: 10px;
@@ -591,6 +602,7 @@ li {
     flex-direction: column;
     font-size: 12px;
     gap: 5px;
+    color: var(--player-text-color);
 }
 .playerCtrl {
     width: 100%;
@@ -648,11 +660,16 @@ li {
     appearance: none;
     width: 100%;
     height: 5px;
-    background: black;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
     cursor: grab;
+}
+.seek_slider {
+    background: var(--player-seek-slider-color);
+}
+.volume_slider {
+    background: var(--player-volume-slider-color);
 }
 /* Modify the appearance of the slider thumb */
 .seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
@@ -679,8 +696,7 @@ li {
 /* RSS Feed CSS */
 /* Feed CHANNEL title */
 .blog a {
-    color: var(--button-background-color) !important;
-
+    color: var(--blog-RSS-credits-link-color) !important;
 }
 .microblog h3.feed-title,
 .blog h3.feed-title {
