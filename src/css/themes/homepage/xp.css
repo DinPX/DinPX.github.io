@@ -30,6 +30,8 @@
     --blog-link-color-hover: #FFA500;
     --blog-RSS-credits-link-color: #2EB41C;
     
+    --chat_background-color: #F5F5F5;
+
     --list-border-color: #83C2F5;
     --list-text-color: black;
     --list-line-color: #83C2F5;
@@ -391,6 +393,10 @@ li {
 }
 .chat {
     height: 480px;
+    background-color: var(--chat_background-color);
+}
+.window:has(.chat) {
+    background-color: var(--chat_background-color);
 }
 #btnEmbed {
     padding: 0;

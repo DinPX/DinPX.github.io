@@ -35,9 +35,6 @@ function set_featured_art() {
         "url('src/img/works/challenges/PixelJoint/01_Baby_Yoda_Stories_Mockup_FINAL_x1_UPDATED.png')",
         "url('src/img/works/challenges/Requests/holly_michdev_x1.png')",
         "url('src/img/works/challenges/Requests/miseree_x1.png')",
-        "url('src/img/works/challenges/Swordtember/2023/00_witch_blade_v1.1.png')",
-        "url('src/img/works/challenges/Swordtember/2023/01_wizards_valor_x1.png')",
-        "url('src/img/works/challenges/Swordtember/2023/02_seething_rogue_wo_bg_x1.png')",
     ]
     
     let random = Math.floor(Math.random() * artworks.length);
