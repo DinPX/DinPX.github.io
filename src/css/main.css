@@ -55,6 +55,10 @@ body {
     background-image: var(--halloween);
 }
 
+.floatingLogs {
+    height: 300px;
+}
+
 @media (max-width: 800px) {
     .headerButtons {
         padding-bottom: 0;

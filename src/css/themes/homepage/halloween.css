@@ -412,6 +412,11 @@ li {
     overflow-y: auto;
 }
 
+.floatingLogs iframe {
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
 .fanlists img {
     image-rendering: optimizeQuality;
 }
