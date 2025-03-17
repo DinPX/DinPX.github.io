@@ -16,6 +16,35 @@ body {
     font-family: Ubuntu;
 }
 
+.desktop {
+    /* STRETCHES ON FULL RESOLUTION
+    width: calc(100vw - 20px);
+    */
+
+    /* ASPECT RATIO REMAINS */
+    width: 1350px;
+    height: auto;
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: column;
+}
+.columns {
+    width: 1350px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.left, .right {
+    width: 50%;
+}
+.middle {
+    width: 100%;
+}
+
 .headerButtons {
     padding: 20px;
     display: flex;
@@ -57,6 +86,10 @@ body {
 
 .floatingLogs {
     height: 300px;
+}
+
+.periodic_table_container {
+    height: 400px;
 }
 
 @media (max-width: 800px) {
