@@ -378,11 +378,6 @@ li {
     height: 40px;
     text-align: center;
 }
-.blog {
-    width: 100%;
-    height: 402px;
-    overflow-y: auto;
-}
 
 .floatingLogs iframe {
     filter: invert(1);
@@ -550,19 +545,10 @@ li {
 .artBtn b {
     color: var(--art-button-important);
 }
-.welcome {
-    height: 100px;
-    overflow-y: auto;
-}
 .imgInsert {
     display: flex;
 }
-.divider {
-    margin: 32px auto;
-    width: 80%;
-    border: none;
-    border-top: 2px dotted slategray;
-}
+
 #chattable {
     border: none;
     height: 100%;

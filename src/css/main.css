@@ -45,6 +45,34 @@ body {
     width: 100%;
 }
 
+.twocols div {
+    width: 100% !important;
+}
+
+.blog {
+    height: 256px !important;
+}
+
+.blog, .floatingLogs {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 640px;
+    overflow-y: auto;
+}
+
+.divider {
+    margin: 10px auto;
+    width: 60%;
+    border: none;
+    border-top: 2px dotted slategray;
+}
+
 .headerButtons {
     padding: 20px;
     display: flex;
@@ -82,10 +110,6 @@ body {
 
 #switch-3 {
     background-image: var(--halloween);
-}
-
-.floatingLogs {
-    height: 300px;
 }
 
 .periodic_table_container {
