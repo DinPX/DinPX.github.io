@@ -73,6 +73,10 @@ body {
     border-top: 2px dotted slategray;
 }
 
+.apartment_webring_entry {
+    image-rendering: pixelated;
+}
+
 .headerButtons {
     padding: 20px;
     display: flex;

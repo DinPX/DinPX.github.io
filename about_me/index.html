@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Webmaster</title>
+    <link rel="icon" type="image/x-icon" href="../src/img/tsuyomi_favicon.gif">
+    <style>
+        :root {
+            --border-color: #245DDA;
+            --background-color: #F5F5F5;
+
+            --min-size-button-border-color: #83C2F5;
+            --exit-button-color: #E74848;
+            --exit-button-border-color: #FF7F7F;
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100%;
+            font-family: Ubuntu;
+            overflow-x: hidden;
+        }
+        .columns {
+            width: 1366px;
+            height: calc(100% - 200px);
+            padding-top: 100px;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .window {
+            /*margin: 10px;*/
+            padding: 10px;
+            /*
+            min-width: 300px;
+            min-height: 20px;
+            */
+            position: relative;
+            background-color: var(--background-color);
+            border: 5px solid;
+            border-top: 36px solid;
+            border-color: var(--border-color);
+            border-radius: 10px;
+            /*box-shadow: -5px -5px magenta, 5px -5px yellow, 5px 5px aqua;*/
+        }
+        .windowIcon {
+            position: relative;
+        }
+        .tilted {
+            position: absolute;
+            top: -36px;
+            left: -40px;
+            rotate: -15deg;
+            font-size: 36px;
+        }
+        .windowTitle {
+            width: 100%;
+            font-size: 16px;
+            color: whitesmoke;
+            position: absolute;
+            top: -38px;
+            left: 10px;
+        }
+        .xBtn {
+            padding: 2px 8px;
+            background-color: var(--exit-button-color);
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 0;
+            border: 2px outset var(--exit-button-border-color);
+            border-radius: 4px;
+        }
+        .sizeBtn {
+            padding: 2px 8px;
+            background: none;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 32px;
+            border: 2px outset var(--min-size-button-border-color);
+            border-radius: 4px;
+        }
+        .minBtn {
+            padding: 2px 8px;
+            background-color: transparent;
+            color: whitesmoke;
+            position: absolute;
+            top: -34px;
+            right: 66px;
+            border: 2px outset var(--min-size-button-border-color);
+            border-radius: 4px;
+        }
+
+        .sticker {
+            position: absolute;
+            pointer-events:none;
+        }
+        .ReiAyanami {
+            top: -96px;
+            right: 128px;
+        }
+        .Hornet {
+            width: 100px;
+            top: -96px;
+            right: 256px;
+        }
+
+        .MegaManZero {
+            width: 600px;
+            top: 160px;
+            left: 800px;
+        }
+        .Ceruledge {
+            width: 600px;
+            top: 40px;
+            left: 50px;
+            rotate: -10deg;
+        }
+
+        .Kuromi {
+            width: 240px;
+            top: 10px;
+            left: 1100px;
+            animation: float1 3s ease-in-out infinite;
+        }
+
+        .webmaster {
+            max-width: 1280px;
+        }
+        .profile_pic {
+            width: 128px;
+            height: 128px;
+            background-image: url("../src/img/mekakucity_actors_ene.png");
+            image-rendering: optimizeQuality;
+            background-position: top;
+            background-size: cover;
+            display: block;
+        }
+        .brief_info th {
+            text-align: end;
+            padding-right: 10px;
+        }
+        .brief_info td {
+            text-align: start;
+        }
+        .more_info {
+            width: 640px;
+            overflow-x: auto;
+        }
+
+        .webmaster p {
+            text-align: justify;
+            text-indent: 42px;
+            text-wrap-mode: wrap;
+        }
+
+        .toggle_text {
+            background-color: var(--background-color) !important;
+            text-decoration: dashed;
+            text-decoration-line: underline;
+            transition: padding 0.10s;
+        }
+        .toggle_text .context {
+            display: none;
+        }
+        .toggle_text:hover {
+            cursor: none;
+            text-decoration: none;
+            border: 1px solid black;
+            padding: 10px 20px;
+            font-weight: bolder;
+        }
+        .toggle_text:hover > .context {
+            display: contents;
+        }
+
+        .break {
+            width: 100%;
+            height: 128px;
+        }
+
+        .text_stuff {
+            margin: 0;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .bg_wallpaper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .basic_info_bg {
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(
+                    to bottom, 
+                    rgba(255, 0, 0, 0.5),
+                    rgba(255, 0, 0, 0.5),
+                    rgba(0, 0, 255, 0.5),
+                    rgba(255, 255, 255, 1.0)
+                ), url("../src/img/muse-dash-neon-radio.png");
+            background-size: contain;
+        }
+
+        .kins_other_bg {
+            top: 125%;
+            left: 0;
+            background-image: linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 1.0) 2%,
+                    transparent 98%
+                ), url("../src/img/muse_dash_bg_00.png");
+            background-size: contain;
+            background-position-x: 230%;
+        }
+
+        .all_windows {
+            gap: 50px;
+        }
+
+        .notes {
+            position: absolute;
+            top: 30px;
+            left: 60px;
+        }
+
+        .white_icon {
+            color: transparent;
+            text-shadow: 0 0 white;
+        }
+
+        @keyframes float1 {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="columns">
+        <div class="bg_wallpaper basic_info_bg"></div>
+        <div class="bg_wallpaper kins_other_bg"></div>
+
+        <div class="window notes">
+            <h1 class="windowTitle"><span class="windowIcon">📝</span> notes</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+            <div>
+                <p>Made for 1366x768 resolution<br>Animations can't disable for now</p>
+            </div>
+        </div>
+
+        <div class="column all_windows">
+            
+            <div class="row">
+                <div class="window">
+                    <h1 class="windowTitle"><span class="windowIcon tilted">💻</span><span class="windowIcon white_icon">👤</span> My Profile<img class="sticker ReiAyanami" src="../src/img/stickers/evangelionblink.gif" alt="Rei Ayanami sitting and blinking"><img class="sticker Hornet" src="../src/img/stickers/hollow-knight-hornet.gif" alt="Hollow Knight Hornet sitting"></h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    
+                    <div class="webmaster">
+                        <div class="column">
+                            <div class="row">
+                                <div class="profile_pic"></div>
+                                <table class="brief_info">
+                                    <tr><th>name:</th><td>Din</td></tr>
+                                    <tr><th>age:</th><td>my back hurts</td></tr>
+                                    <tr><th>pronouns:</th><td>it / that creature</td></tr>
+                                    <tr><th>nationality:</th><td>from this planet</td></tr>
+                                    <tr><th>status:</th><td>Solo Leveling: Arise</td></tr>
+                                </table>
+                            </div>
+                            <span><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>🌟<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub><sub>⭐</sub><small>⭐</small>⭐<small>⭐</small><sub>⭐</sub></span>
+                            <div class="row">
+                                <table class="brief_info more_info">
+                                    <tr><th>hobbies:</th><td>pixel art, coding, sleeping & eating</td></tr>
+                                    <tr><th>interests:</th><td>art, gamedev, UNIX-like systems, retrocomputing</td></tr>
+                                    <tr><th>likes:</th><td>emulation, games, obscure media essays</td></tr>
+                                    <tr><th>dislikes:</th><td>atrocities, AI, Web3, market devoid of creative care and passion</td></tr>
+                                    <tr><th>fav color:</th><td>purple, blue, aqua & magenta</td></tr>
+                                    <tr><th>fav food:</th><td>blood stew, choco snacks, crispy calamari, ur meat</td></tr>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img class="sticker MegaManZero" src="../src/img/shrines/MegaMan/Zero.png" alt="Mega Man Zero">
+
+            <img class="sticker Ceruledge" src="../src/img/shrines/MegaMan/ceruledge.png" alt="Pokemon Ceruledge">
+
+            <img class="sticker Kuromi" src="../src/img/stickers/kuromi_plush_toy_by_fieryunikitty.png" alt="Kuromi plush by fieryunikitty">
+
+            <div class="row">
+                <div class="window">
+                    <h1 class="windowTitle"><span class="windowIcon">🎲</span> Games & Systems</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+
+                    <div class="game_stuff">
+                        <div class="column">
+                            <div class="row">
+                                <p class="text_stuff">Mega Man Battle Network / Zero, Cookie Run, Guardian Tales,<br>Summon Night: Swordcraft Story 2, Hollow Knight, Celeste</p>
+                            </div>
+                            <div class="row">
+                                <p class="text_stuff">PSP, GBA, & PS4 (I'd be happy for N-GAGE, Ouya & Gizmondo)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="break"></div>
+            
+            <div class="row">
+                <div class="window">
+                    <h1 class="windowTitle"><span class="windowIcon">💻</span> Akin to Myself</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    
+                    <div class="kins">
+                        <p>askdksakhdkhsahkdhaskdhkahkkhdaskdhksahkdkjsadkjaskj</p>
+                    </div>
+                </div>
+
+                <div class="window">
+                    <h1 class="windowTitle"><span class="windowIcon">💻</span> My Profile</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    
+                    <div class="likes">
+                        <p>asldkjasldlasjldjladljljdasljdjl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
