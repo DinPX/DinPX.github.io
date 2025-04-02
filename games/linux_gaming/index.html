@@ -333,7 +333,19 @@
             <div class="sidebar sidebarLeft">
                 <h3>Sections</h3>
                 <ul class="sidebarLinks">
+                    <li><a href="#RPG Maker 2000-2003 - Preparation">Yume Nikki</a></li>
+                    <li><a href="#Desktop Entry - Setting Up Desktop Entry">Celeste 64</a></li>
+
+                    <hr>
+
                     <li><a href="#Introduction">Linux Gaming</a></li>
+
+                    <hr>
+
+                    <li><a href="#Steam">Steam</a></li>
+                    <li>&emsp;&emsp;<a href="#Steam - Check the Game First">Check the Game First</a></li>
+                    <li>&emsp;&emsp;<a href="#Steam - Launch Command">Launch Command</a></li>
+                    <li>&emsp;&emsp;<a href="#Steam - Locale Command">Locale Command</a></li>
 
                     <hr>
 
@@ -392,6 +404,42 @@
             <p>Over the years the gaming ecosystem thrive mostly on Windows platforms alone, and large studios just can't afford to release titles much on Linux given its low potential market at the time. But now the times have changed. Wine was introduced to the world, Bottles and Lutris came for convenience and more compatibility support, and Valve have given us Proton to play games with little to no issues in a Linux environment.</p>
 
             <p>And so I made this page to not only record what I did to make older games run on modern Linux systems, but also to run modern titles as well as to hopefully convince some users to switch to Linux. But regardless, this is just a space for Linux Gaming.</p>
+
+            <hr>
+
+            <h1 id="Steam">Steam</h1>
+
+            <p>Steam is undoubtedly one of the leading games marketplace that is heavily favored by the many. It's been going solid for years and even made it to the hardware and OS space. They're one of the remaining corporates who seemingly cares about their consumers given all the options and services they provide for everyone (looking at the bundles, refunds, and both Steam OS and Proton ofc).</p>
+            <p>They made it possible so that games who were used to be <em>Windows only</em>, can now be <em>'easily'</em> run on various Linux systems. In this section we'll discuss how to run some Steam games on Linux.</p>
+
+            <h2 id="Steam - Check the Game First">Check the Game First</h2>
+
+            <p>Firstly, see if the game runs just fine when the compatibility settings is on and is on default options. To enable it, go to <strong>Settings > Compatibility</strong> and check <strong>'Enable Steam Play for all other titles'.</strong> Feel free to select any version you'd like to use by default to all games. If it works then congratulations!</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/steam_compatibility_settings.png" alt="A screenshot of Steam's Compatibility settings">
+            </div>
+
+            <h2 id="Steam - Launch Command">Launch Command</h2>
+
+            <p>If nothing works then a command is needed to specify what it needs to work with when launching. Some games show a DirectX 11 error, and for that you can enter the following: <code class="inlineCode">PROTON_USE_WINED3D=1 %command%</code>.</p>
+            <p>Enter it on <strong>Manage > Properties > General > LAUNCH OPTIONS</strong>.</p>
+
+            <div class="images">
+                <img class="largerImage" src="../../src/img/launch_command.png" alt="A screenshot of launch command for a Steam game">
+            </div>
+
+            <p>Next, go to <strong>Compatibility</strong> and choose a version. I usually use <code class="inlineCode">Proton 9.0-4</code> or <code class="inlineCode">Proton 5.0-10</code>, for modern titles and older games respectively. It could be different in your case so feel free to try any options.</p>
+
+            <h2 id="Steam - Locale Command">Locale Command</h2>
+
+            <p>There are some games that need a specific locale in order to run. For instance, we would like to run a Japanese game that we added on our Library in Steam, we could do so by entering <code class="inlineCode">HOST_LC_ALL=ja_JP.UTF-8 %command%</code> in the LAUNCH OPTIONS. If you want to set it to other languages just change the <em>country locale code</em>.</p>
+
+            <p>If you need to put multiple commands in a game's LAUNCH OPTIONS, just put a space between the two and add <code class="inlineCode">%command%</code> at the end of the line.</p>
+
+            <p>For example: <code class="inlineCode">PROTON_USE_WINED3D=1 HOST_LC_ALL=ja_JP.UTF-8 %command%</code></p>
+
+            <p>And that's it! Hopefully the issues get resolved. If not, there are still forums and sources out there that can help you.</p>
 
             <hr>
 

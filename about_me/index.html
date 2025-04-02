@@ -10,6 +10,8 @@
             --border-color: #245DDA;
             --background-color: #F5F5F5;
 
+            --blood-theme-border-color: #8c13d8;
+
             --min-size-button-border-color: #83C2F5;
             --exit-button-color: #E74848;
             --exit-button-border-color: #FF7F7F;
@@ -28,6 +30,10 @@
             height: 100%;
             font-family: Ubuntu;
             overflow-x: hidden;
+            background-color: aqua;
+        }
+        img {
+            image-rendering: optimizeSpeed;
         }
         .columns {
             width: 1366px;
@@ -68,7 +74,7 @@
             border-top: 36px solid;
             border-color: var(--border-color);
             border-radius: 10px;
-            /*box-shadow: -5px -5px magenta, 5px -5px yellow, 5px 5px aqua;*/
+            box-shadow: 10px 10px rgb(0, 255, 255), -10px -10px rgb(255, 0, 255);
         }
         .windowIcon {
             position: relative;
@@ -152,6 +158,12 @@
             animation: float1 3s ease-in-out infinite;
         }
 
+        .RedRunSL {
+            top: 560px;
+            left: 40px;
+            transform: scaleX(-1);
+        }
+
         .webmaster {
             max-width: 1280px;
         }
@@ -223,40 +235,101 @@
             top: 0;
             left: 0;
             background-image: linear-gradient(
-                    to bottom, 
-                    rgba(255, 0, 0, 0.5),
-                    rgba(255, 0, 0, 0.5),
-                    rgba(0, 0, 255, 0.5),
-                    rgba(255, 255, 255, 1.0)
-                ), url("../src/img/muse-dash-neon-radio.png");
+                to bottom, 
+                rgba(255, 0, 255, 0.5),
+                rgba(255, 0, 255, 0.5),
+                rgba(0, 0, 255, 0.5),
+                rgba(255, 0, 255, 0.75)
+            ), url("../src/img/muse-dash-neon-radio.png");
             background-size: contain;
         }
 
         .kins_other_bg {
-            top: 125%;
+            top: 125vh;
             left: 0;
             background-image: linear-gradient(
-                    to bottom,
-                    rgba(255, 255, 255, 1.0) 2%,
-                    transparent 98%
-                ), url("../src/img/muse_dash_bg_00.png");
+                to bottom,
+                rgba(255, 0, 255, 0.75),
+                rgba(0, 0, 0, 0),
+                rgba(0, 255, 255, 1.0)
+            ), url("../src/img/muse_dash_bg_00.png");
             background-size: contain;
-            background-position-x: 230%;
+            background-position-x: 230vw;
+        }
+
+        .site_about_bg {
+            top: 230vh;
+            left: 0;
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 255, 255, 1.0),
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0),
+                rgba(255, 255, 255, 1.0)
+            ), url("../src/img/muse_dash_bg_01.png");
+            background-size: cover;
+        }
+
+        .manifesto_bg {
+            top: 330vh;
+            left: 0;
+            background-image: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 1.0),
+                rgba(0, 0, 0, 0)
+            ), url("../src/img/nikke_sky_wallpaper.png");
+            background-size: contain;
+            background-position-x: 230vw;
         }
 
         .all_windows {
             gap: 50px;
         }
 
-        .notes {
+        .floating_window {
             position: absolute;
+        }
+        .notes {
             top: 30px;
+            left: 60px;
+        }
+        .extraMe {
+            top: 1000px;
+            left: 960px;
+        }
+        .evenExtraMe {
+            top: 1280px;
             left: 60px;
         }
 
         .white_icon {
             color: transparent;
             text-shadow: 0 0 white;
+        }
+
+        .kinStuff .window {
+            border-color: var(--blood-theme-border-color);
+        }
+
+        .kins table {
+            text-align: center;
+        }
+        .kins table tr td {
+            padding: 10px;
+        }
+        .kins table th {
+            font-size: 24px;
+        }
+        .kins table td img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .about_site {
+            max-width: 560px;
+            text-align: justify;
+            text-indent: 40px;
         }
 
         @keyframes float1 {
@@ -270,11 +343,13 @@
     <div class="columns">
         <div class="bg_wallpaper basic_info_bg"></div>
         <div class="bg_wallpaper kins_other_bg"></div>
+        <div class="bg_wallpaper site_about_bg"></div>
+        <div class="bg_wallpaper manifesto_bg"></div>
 
-        <div class="window notes">
+        <div class="window floating_window notes">
             <h1 class="windowTitle"><span class="windowIcon">📝</span> notes</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
             <div>
-                <p>Made for 1366x768 resolution<br>Animations can't disable for now</p>
+                <p>Best on 1366x768 resolution<br>Animations can't disable rn!</p>
             </div>
         </div>
 
@@ -329,32 +404,105 @@
                                 <p class="text_stuff">Mega Man Battle Network / Zero, Cookie Run, Guardian Tales,<br>Summon Night: Swordcraft Story 2, Hollow Knight, Celeste</p>
                             </div>
                             <div class="row">
-                                <p class="text_stuff">PSP, GBA, & PS4 (I'd be happy for N-GAGE, Ouya & Gizmondo)</p>
+                                <p class="text_stuff">PSP, GBA, & PS4 (N-GAGE & Gizmondo are cool)</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <img class="sticker RedRunSL" src="../src/img/about_me/kins_alike/Red_running_Smash_Legends.png" alt="Red from Smash Legends">
+
             <div class="break"></div>
             
-            <div class="row">
+            <div class="row kinStuff">
                 <div class="window">
-                    <h1 class="windowTitle"><span class="windowIcon">💻</span> Akin to Myself</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                    <h1 class="windowTitle"><span class="windowIcon tilted">🧘‍♀️</span><span class="windowIcon">🙂‍↕️</span> Akin to Myself</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
                     
                     <div class="kins">
-                        <p>askdksakhdkhsahkdhaskdhkahkkhdaskdhksahkdkjsadkjaskj</p>
+                        <table>
+                            <tr><td colspan="5">I'm literally them at peak<br>(when I can eat 5 lions, unstarved, locked in and feral)</td></tr>
+                            <tr>
+                                <td><img src="../src/img/about_me/kins_alike/sunraku_alt_headgear.png" alt="Shangri-la Frontier Sunraku alt headgear" title="Sunraku in alt headgear, Shangri-la Frontier anime"></td>
+                                <td><img src="../src/img/about_me/kins_alike/cod_ftl_null.png" alt="COD FTL Null" title="FTL Null, Call of Duty"></td></tr>
+                                <td><img src="../src/img/about_me/kins_alike/yoshimitsu_tekken_7.png" alt="Yoshimitsu, Tekken 7" title="Yoshimitsu from Tekken 7"></td>
+                                <td><img src="../src/img/about_me/kins_alike/Osaka_Azumanga_Daioh.png" alt="Osaka, Azumanga Daioh" title="(evil) Osaka from Azumanga Daioh (Ayumu Kasuga is no moe)"></td></tr>
+                        </table>
                     </div>
                 </div>
 
-                <div class="window">
-                    <h1 class="windowTitle"><span class="windowIcon">💻</span> My Profile</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
-                    
-                    <div class="likes">
-                        <p>asldkjasldlasjldjladljljdasljdjl</p>
+                <div class="window floating_window extraMe">
+                    <h1 class="windowTitle"><span class="windowIcon tilted">🫩</span><span class="windowIcon">☕</span> GGEZS</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+
+                    <div class="kins">
+                        <table>
+                            <tr><td><img src="../src/img/about_me/kins_alike/konata_fatigue.png" alt="Konata tired, Lucky Stars"><br><strong>25/8 nerfed</strong></td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="window floating_window evenExtraMe">
+                    <h1 class="windowTitle"><span class="windowIcon tilted">👹</span> The Darkness Within</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                
+                    <div class="kins">
+                        <table>
+                            <tr><td><img style="width: 100%;" src="../src/img/about_me/kins_alike/satania_gabriel_dropout.png" alt="Satania (truly evil), Gabriel Dropout" title="Satania (truly evil), Gabriel Dropout"><br>Nothing but evil motives and world domination<br>in mind. <span style="color: #8c13d8;"><strong>There's no salvation.</strong></span></td></tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="break"></div>
+
+            <div class="row">
+                <div class="window" style="box-shadow: none;">
+                    <h1 class="windowTitle"><span class="windowIcon white_icon tilted">❓</span><span class="windowIcon white_icon">❓</span> Why the site?</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                
+                    <div class="about_site">
+                        <p>I made the site as aside from the ai crap which pushed me in the first place, I finally got concrete reasons to despise and avoid social media. I dislike how it's very corporate to the core, marketing-centric, and a farm-engagement hole. It's all about the trends and numbers and I don't like them a bit even if I used to give them a try.</p>
+                        <p>Moving on to another platform once the popular one is on fire is one thing, but repeating it and just seeing people flock back after declaring their resolve to change platform is just exhausting to see every time. I don't really like being used and so I made a space where I'm in full control, and that I don't have to follow anyone for the sake of likes.</p>
+                        <p>Also, personally, given that I'm studying again, I find that social media does brainrot in a literal sense. I don't like how idiots called influencers get to twerk or abuse an animal, call it a day, and get thousands of sponsorships and be promoted into a saint of their victims. I also want to lessen my brainrot memes to my phone, as it literally degrades my sense of humor. Overall, it's a braindead platform which targets idiocracy, hate speech, and propaganda.</p>
+                        <p>As a web surfer (and individual as a whole), I don't want to deal with all of that plus the genai garbage, I just want a space for my creations and keep creating and posting and talking to small communities and have fun with the process. I don't need all the death threats and hateful remarks on my feed. I love surfing the web for the sake of seeing all cool creations with passion. Thank god Neocities exists and so is Nekoweb.</p>
+                        <p>So here I am, slowly building this website in a cave with a bunch of scraps.</p>
                     </div>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="window" style="box-shadow: none;">
+                    <h1 class="windowTitle"><span class="windowIcon tilted">📜</span><span class="windowIcon">👁️</span> Read this or I'll be in your walls</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                
+                    <div class="about_site">
+                        <h1 id="Manifesto" style="text-align: center; text-indent: 0;">Manifesto</h1>
+                        <p>Remember that you create not just for others, but most importantly <strong>for yourself</strong> too. While following trends is cool, especially if it's one's interests or a part of fandom, creating something unique can be for oneself's appreciation and expression. I believe that the internet wasn't only meant to connect us but also to be a bridge on sharing our own tunes and colors. We express ourselves not just so to 'validate' our purpose or existence, but mainly so that even a single person can here us, and hopefully come to an understanding--<strong>especially</strong> ourselves as it is also a mirror. By limiting ourselves on following the trends and such (only and for the most part), we constrain our individuality, even our entire personality. So create something for yourself and let others see you a bit clearer in pixels (does this make any sense I guess I have to rewrite this topic later). <strong>Social media is designed so that its algorithm dictates what matters and what isn't.</strong></p>
+                        <p><strong>Copy is an act of love</strong> or something between those lines is a huge lie. It promotes laziness and theft. One could not learn what they desire to make unless they create it out of <strong>inspiration</strong>, not a direct or a bit modified replica. If one wants to spread love, do it by being inspired with someone, and not by taking what they've worked hard for and <em>'claiming'</em> it as your creation. <strong>There's no love and respect towards the creator with copying, only an act of spitting on to their face.</strong></p>
+                        <p><strong>Web3 is the future</strong> is one of the most intellectually challenged notion. The blockchain aims for scarcity, whilst the web itself, with what we have now, isn't for the most part. As long as one has a data connection they can freely surf with anywhere they like to, while taking some limitations into account of course. <strong>it is not decentralized and will never be.</strong> As long as it involves control and money, there are greedy people who will take the opportunity to get data and manipulate everything. With that being said, <strong>no, you still don't own nor control your data there.</strong> The Web3 services will have that 'covered' just as your average corporate fuck.</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="window" style="box-shadow: none;">
+                    <h1 class="windowTitle"><span class="windowIcon tilted">📜</span><span class="windowIcon">👁️</span> Credits to the assets are here</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+                
+                    <div class="about_site" style="text-align: left; text-indent: 0;">
+                        <h1 style="center">Credits</h1>
+                        <h2>Muse Dash</h2>
+                        <ul>
+                            <li>Placeholder text as I need to list them aaaaaaaa</li>
+                        </ul>
+                        <h2>Mega Man Battle Network</h2>
+                        <ul>
+                            <li>Ceruledge (Pokémon UNITE)<br>
+                                Link: <a href="https://www.wikidex.net/wiki/Ceruledge_(Pok%C3%A9mon_UNITE)" target="_blank">WikiDex</a> | Image: <a href="https://images.wikidexcdn.net/mwuploads/wikidex/8/8e/latest/20240613223024/Artwork_Ceruledge_UNITE.png" target="_blank">Artwork_Ceruledge_UNITE.png</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
