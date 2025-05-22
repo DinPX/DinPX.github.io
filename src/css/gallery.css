@@ -1,28 +1,43 @@
+:root {
+    --background-image: url('/src/img/konata_windows_xp.png');
+
+    --window-background-color: #F5F5F5;
+    --window-text-color: #000;
+    --window-border-color: #245DDA;
+
+    --link-default-color: #245DDA;
+    --link-hovered-color: #FFA500;
+}
+
 @font-face {
     font-display: swap;
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 300;
-    src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+    src: url('/src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
 }
 @font-face {
     font-display: swap;
     font-family: 'UbuntuRegular';
     font-style: normal;
     font-weight: 500;
-    src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
+    src: url('/src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
 }
-html {
-    cursor: url('../img/cursor_leap_bound.png'), default;
-}
+
 body {
-    padding: 20px;
+    cursor: url('../img/cursor_leap_bound.png'), default;
+    margin: 0;
+    padding: 0;
     font-family: Ubuntu;
-    background-color: #34313b;
-    color: #a9a9bd;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    image-rendering: optimizeSpeed;
 }
 h1, h2 {
-    margin-bottom: 0;
+    margin: 0;
     font-family: UbuntuRegular;
 }
 h1, p {
@@ -32,22 +47,19 @@ a {
     cursor: url('../img/cursor_pointing_leap_bound.png'), default;
 }
 a, a:visited {
-    color: #a9a9bd;
+    color: var(--link-default-color);
 }
 a:hover {
-    color: #FFA500;
+    color: var(--link-hovered-color);
 }
 hr {
     border-top: 1px solid #a9a9bd;
 }
 .gallery, .gallerySmall, .galleryBig {
-    line-height: 3;
+    line-height: 0;
     column-count: 6;
-    column-gap: 3;
+    column-gap: 0;
     display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 48px;
 }
 .gallerySmall {
     column-count: 10;
@@ -72,7 +84,7 @@ hr {
 .note {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 20px;
 }
 /*
 .gallery:has(img:hover) img:not(:hover) {
@@ -86,7 +98,29 @@ img, picture {
     transition: transform 0.25s;
 }
 img:hover, picture:hover {
-    transform: scale(1.25);
+    transform: scale(1.5);
+}
+
+#main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.window {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 100%;
+    border: 4px solid var(--window-border-color);
+    border-radius: 10px;
+    background-color: var(--window-background-color);
+    color: var(--window-text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Mobile layout support */

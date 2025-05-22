@@ -49,6 +49,17 @@ body {
     width: 100% !important;
 }
 
+.meButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.meButtons a {
+    margin: 2px;
+}
+
 .blog {
     height: 256px !important;
 }
@@ -116,6 +127,9 @@ body {
     background-image: var(--halloween);
 }
 
+.periodic_table {
+    background-color: #F5F5F5 !important;
+}
 .periodic_table_container {
     height: 400px;
 }
