@@ -364,7 +364,7 @@ li {
     image-rendering: pixelated;
 }
 .chat {
-    height: 480px;
+    height: 436px;
     background-color: var(--chat_background-color);
 }
 .window:has(.chat) {

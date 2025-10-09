@@ -82,6 +82,7 @@ let track_list = [
 
 let track_index = Math.floor(Math.random() * track_list.length);
 
+
 function loadTrack(track_index) {
     clearInterval(updateTimer);
     resetValues();

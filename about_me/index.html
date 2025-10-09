@@ -293,6 +293,12 @@
             top: 30px;
             left: 60px;
         }
+        .navigate {
+            padding: 0 20px;
+            top: 30px;
+            left: 360px;
+            border-top: 5px solid var(--border-color);
+        }
         .extraMe {
             top: 1000px;
             left: 960px;
@@ -332,6 +338,9 @@
             text-indent: 40px;
         }
 
+        .navbtn, .navbtna:visited { color: #245DDA; }
+        .navbtn:hover { color: #FFA500; }
+
         @keyframes float1 {
             0% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
@@ -352,6 +361,13 @@
                 <p>Best on 1366x768 resolution<br>Animations can't disable rn!</p>
             </div>
         </div>
+
+        <div class="window floating_window navigate">
+                <p><small><a href="javascript:window.history.back();" class="navbtn">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org" class="navbtn">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, document.body.scrollHeight);" class="navbtn">Go to bottom 🡳</a></small></p>
+        </div>
+
+
+        
 
         <div class="column all_windows">
             
@@ -488,7 +504,7 @@
                     <h1 class="windowTitle"><span class="windowIcon tilted">📜</span><span class="windowIcon">👁️</span> Credits to the assets are here</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
                 
                     <div class="about_site" style="text-align: left; text-indent: 0;">
-                        <h1 style="center">Credits</h1>
+                        <h1 style="text-align: center;">Credits</h1>
                         <h2>Muse Dash</h2>
                         <ul>
                             <li>Placeholder text as I need to list them aaaaaaaa</li>
@@ -503,6 +519,12 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="window" style="box-shadow: none;">
+                    <h1 class="windowTitle"><span class="windowIcon">🔍</span> Navigation</h1><button class="minBtn">🗕</button><button class="sizeBtn">🗖</button><button class="xBtn">🗙</button>
+
+                    <p><small><a href="javascript:window.history.back();" class="navbtn">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org" class="navbtn">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, 0);" class="navbtn">Go to top 🡹</a></small></p>
+                </div>
         </div>
     </div>
 </body>

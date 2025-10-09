@@ -21,31 +21,19 @@
             src: url('../src/fonts/ubuntu-v20-latin-500.woff2') format('woff2');
         }
         body {
-            color: black;
+            background-color: #F5F5F5;
+        }
+        section {
+            padding: 20px;
+            border: 5px solid #245DDA;
+            border-radius: 20px;
         }
         h1 {
-            font-family: UbuntuRegular;
+            text-align: center;
         }
-        .title {
-            margin-bottom: 0;
-        }
-        .title, .note {
-            text-indent: 20px;
-        }
-        .note {
-            margin-top: 0;
-        }
-        .item {
-            padding-left: 20px;
-        }
-        ul {
-            margin: 10px 0;
-            padding: 10px 20px;
-            font-family: Ubuntu;
-            font-size: 20px;
-            list-style: none;
-            outline: 1px solid black;
-            border-radius: 8px;
+        h1 span {
+            font-size: 12px;
+            font-weight: normal;
         }
         a, a:visited {
             color: #245DDA;
@@ -53,162 +41,149 @@
         a:hover {
             color: #FFA500;
         }
-        .listSection {
+        .main {
             display: flex;
-            margin-bottom: 8px;
-            font-style: italic;
-            color: rgb(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .nav section {
+            padding: 0;
+            border: none;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1 class="title">Sitemap</h1>
-    <p class="note"><small>Note: Most sites are still under construction including this page.</small></p>
-    <ul>
-        <li><a href="https://dinpixels.neocities.org">home</a>
-            <ul><span class="listSection">navigation links</span>
-                <li>personal
-                    <ul>
-                        <li>about me</li>
-                        <li>kins</li>
-                    </ul>
-                </li><br>
-                <li>gallery
-                    <ul>
-                        <li>pixelart</li>
-                        <li>oekaki</li>
-                        <li>illust</li>
-                        <li>photos</li>
-                        <li>3d model</li>
-                    </ul>
-                </li><br>
-                <li>shrines
-                    <ul><span class="listSection">games</span>
-                        <li class="item">Invizimals: Shadow Zone</li>
-                        <li class="item">Summon Night: Swordcraft Story 2</li>
-                        <li class="item">Need for Speed: Underground 2</li>
-                        <li class="item">Mega Man Battle Network</li>
-                        <li class="item">Mega Man Star Force</li>
-                    </ul>
-                    <ul><span class="listSection">characters</span>
-                        <li class="item">Hitori "Bocchi" Gotoh (Bocchi the Rock!)</li>
-                        <li class="item">Fushi (To Your Eternity)</li>
-                        <li class="item">Kahaku (To Your Eternity)</li>
-                        <li class="item">Mega Man.EXE (Mega Man Battle Network)</li>
-                        <li class="item">Star Force Mega Man (Mega Man Star Force)</li>
-                    </ul>
-                    <ul><span class="listSection">monsters</span>
-                        <li class="item">Ceruledge (Pokemon)</li>
-                        <li class="item">Flameclaw (Invizimals)</li>
-                        <li class="item">Tigershark (Invizimals)</li>
-                        <li class="item">Ha-ha-yena (Invizimals)</li>
-                    </ul>
-                </li><br>
-                <li>projects</li><br>
-                <li>commissions</li><br>
-                <li>portfolio
-                    <ul>
-                        <li>animations</li>
-                        <li>game assets</li>
-                        <li>streaming assets</li>
-                        <li>personal works</li>
-                    </ul>
-                </li><br>
-                <li>resources
-                    <ul><span class="listSection">webmastery</span>
-                        <li class="item">my stuff - how I built some elements</li>
-                        <li class="item">resources - useful materials to learn webdev</li>
-                    </ul>
-                    <ul><span class="listSection">assets</span>
-                        <li class="item">my stuff - assets I made for the site and anything else</li>
-                        <li class="item">resources - elements that are made by cool people</li>
-                    </ul>
-                    <ul><em>articles, video essays, and more</em></ul>
-                </li><br>
-                <li>sitemap - you're looking at it right now!</li><br>
-                <li>fun</li>
-            </ul><br>
+    <h1 class="title">Sitemap<span>&nbsp;&nbsp;&nbsp;&nbsp;much simpler and less stimuli (I think)</span></h1>
+    <div class="nav">
+        <section>
+            <p><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a></p>
+        </section>
+    </div>
+    <div class="main">
+        <section>bio - personal stuff
             <ul>
-                <li><em>miscellaneous - stuff that aren't in navigation bar</em>
+                <li><a href="https://dinpixels.neocities.org/about_me/" target="_blank">about</a></li>
+                <li><a href="https://dinpixels.neocities.org/manifesto/" target="_blank">Manifesto</a></li>
+                <li><a href="https://dinpixels.neocities.org/ocs/designs/" target="_blank">OCs</a></li>
+                <li><a href="https://dinpixels.neocities.org/blog/" target="_blank">blog</a></li>
+                <li><a href="https://dinpixels.neocities.org/plushies/" target="_blank">shrines - redirects to Kuromi plushies for now</a></li>
+                <li><a href="https://dinpixels.neocities.org/fav_songs/" target="_blank">fav songs</a></li>
+                <li><a href="https://dinpixels.neocities.org/memes/" target="_blank">memes</a></li>
+                <li><a href="https://dinpixels.neocities.org/games/linux_gaming/" target="_blank">Linux Gaming</a></li>
+            </ul>
+        </section>
+        <section>gallery & comms - art stuff
+            <ul>
+                <li><a href="https://dinpixels.neocities.org/gallery/" target="_blank">gallery</a></li>
+                <li><a href="https://dinpixels.neocities.org/commissions/" target="_blank">commissions</a></li>
+                <li><a href="https://dinpixels.neocities.org/portfolio/" target="_blank">portfolio</a></li>
+                <li><a href="https://ko-fi.com/dinpixels" target="_blank">Ko-fi</a></li>
+                <li><a href="https://vgen.co/dinpixels" target="_blank">VGen</a></li>
+            </ul>
+        </section>
+        <section>links - more stuff
+            <ul>
+                <li><a href="https://dinpixels.neocities.org/games/" target="_blank">games</a></li>
+                <li><a href="https://dinpixels.neocities.org/projects/" target="_blank">projects</a></li>
+                <li>reads</li>
+                <li>fun</li>
+                <li>archive</li>
+                <li><a href="https://dinpixels.neocities.org/resources/" target="_blank">resources</a>
                     <ul>
-                        <li>
-                            <ul><span class="listSection">home</span>
-                                <li class="item"><a href="https://frutiger-aero.org/" target="_blank">Frutiger Aero</a></li>
-                                <li class="item"><a href="https://lilithdev.neocities.org/" target="_blank">LilithDev</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul><span class="listSection">cool sites</span>
-                                <li class="item">Arutemu64</li>
-                                <li class="item">mitzyrie</li>
-                                <li class="item">LilithDev</li>
-                                <li class="item">dimden</li>
-                                <li class="item">Zoey</li>
-                                <li class="item">olliveen</li>
-                                <li class="item">DaikoNET</li>
-                                <li class="item">ray.m</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul><span class="listSection">more sites</span>
-                                <li class="item">andou</li>
-                                <li class="item">Medjed</li>
-                                <li class="item">pocl</li>
-                                <li class="item">WHITEDESERT</li>
-                                <li class="item">xobyte</li>
-                                <li class="item">olliveen</li>
-                                <li class="item">DaikoNET</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul><span class="listSection">toolbox</span>
-                                <li class="item">Aseprite</li>
-                                <li class="item">Godot</li>
-                                <li class="item">picoCAD</li>
-                                <li class="item">Linux Mint</li>
-                                <li class="item">Mozilla Firefox</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul><span class="listSection">fanlists</span>
-                                <li class="item">Azumanga Daioh</li>
-                                <li class="item">Hi Score Girl</li>
-                                <li class="item">Saber (Fate/stay night)</li>
-                                <li class="item">Goblin Slayer</li>
-                                <li class="item">Yume Nikki</li>
-                                <li class="item">Kuromi (Sanrio)</li>
-                                <li class="item">Gameboy Advance SP</li>
-                                <li class="item">Lain Iwakura (Serial Experiments Lain)</li>
-                                <li class="item">Lucky Star</li>
-                                <li class="item">Erased</li>
-                                <li class="item">Shana (Shakugan no Shana)</li>
-                                <li class="item">Clannad</li>
-                                <li class="item">Roll.EXE (Mega Man Battle Network)</li>
-                                <li class="item">OneShot</li>
-                                <li class="item">Kirby</li>
-                                <li class="item">Playstation 4</li>
-                                <li class="item">Frutiger Aero</li>
-                                <li class="item">Steam</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul><span class="listSection">stats</span>
-                                <li class="item"><a href="https://www.cutercounter.com/" target="_blank">CuterCounter.com</a></li>
-                                <li class="item"><a href="https://www.imood.com/" target="_blank">imood.com</a></li>
-                            </ul>
-                        </li>
-                        <li>pet *</li>
-                        <li>
-                            <ul><span class="listSection">my tamanotchis!</span>
-                                <li class="item"><a href="https://tamanotchi.world/15848c" target="_blank">Cluster</a></li>
-                            </ul>
-                        </li>
-                        <li><em>taskbar - isn't really labeled, but its the bar at bottom</em></li>
+                        <li><a href="https://dinpixels.neocities.org/resources/#Webmastery" target="_blank">Webmastery</a></li>
+                        <li><a href="https://dinpixels.neocities.org/resources/#WorldWideWeb" target="_blank">World Wide Web</a></li>
+                        <li><a href="https://dinpixels.neocities.org/resources/#Tools" target="_blank">Tools</a></li>
+                        <li><a href="https://dinpixels.neocities.org/resources/#Education" target="_blank">Education</a></li>
+                        <li><a href="https://dinpixels.neocities.org/resources/#Credits" target="_blank">Credits</a></li>
                     </ul>
                 </li>
+                <li>sitemap - you're looking at it right now!</li>
             </ul>
-        </li>
-    </ul>
+        </section>
+        <section>social links - the buttons at home header
+            <ul>
+                <li><a href="https://bsky.app/profile/dinpixels.bsky.social" target="_blank">Bluesky</a></li>
+                <li><a href="https://ko-fi.com/dinpixels" target="_blank">Ko-fi</a></li>
+                <li><a href="https://pixeljoint.com/p/253036.htm" target="_blank">Pixel Joint</a></li>
+                <li><a href="https://dinpixels.itch.io/" target="_blank">itch.io</a></li>
+                <li><a href="https://github.com/DinPX" target="_blank">Github</a></li>
+                <li><a href="https://dinpixels.newgrounds.com" target="_blank">Newgrounds</a></li>
+            </ul>
+        </section>
+        <section>cool sites - I find them nice and interesting
+            <ul>
+                <li><a href="https://lilithdev.neocities.org/" target="_blank">LilithDev</a></li>
+                <li><a href="https://pixelglade.net/index.html" target="_blank">Pixel Glade</a></li>
+                <li><a href="https://zoeyonline.me/" target="_blank">Zoey Online</a></li>
+                <li><a href="https://piranhebula.neocities.org/" target="_blank">Piranhebula</a></li>
+                <li><a href="https://snailburger.neocities.org/" target="_blank">Snail Burger</a></li>
+                <li><a href="https://analogfeelings.github.io/" target="_blank">Nora's Hideout</a></li>
+                <li><a href="https://badgraph1csghost.neocities.org/" target="_blank">badgraph1csghost</a></li>
+                <li><a href="https://daikonet.neocities.org/" target="_blank">DaikoNET</a></li>
+                <li><a href="https://trick-916.neocities.org/" target="_blank">trick-916</a></li>
+                <li><a href="https://dimden.dev/" target="_blank">Dimden</a></li>
+                <li><a href="https://evehibi.nekoweb.org/doodlering/" target="_blank">doodlering</a></li>
+                <li><a href="https://medjed.nekoweb.org/" target="_blank">Medjed</a></li>
+                <li><a href="https://pocl.vip/" target="_blank">pocl.v</a></li>
+                <li><a href="https://whitedesert.neocities.org/" target="_blank">WHITEDESERT</a></li>
+                <li><a href="https://arutemu64.neocities.org/" target="_blank">arutemu64</a></li>
+                <li><a href="https://mitzyrie.neocities.org/" target="_blank">mitzyrie</a></li>
+                <li><a href="https://raym.neocities.org/" target="_blank">ray's room</a></li>
+            </ul>
+        </section>
+        <section>toolbox - my daily drive and programs I use
+            <ul>
+                <li><a href="https://godotengine.org/" target="_blank">Godot Engine</a></li>
+                <li><a href="https://www.aseprite.org/" target="_blank">Aseprite</a></li>
+                <li><a href="https://johanpeitz.itch.io/picocad" target="_blank">picoCAD</a></li>
+                <li><a href="https://planets.corvidae.digital/linux-mint" target="_blank">Linux Mint XFCE</a></li>
+                <li><a href="https://fans.thislove.nu/mozilla" target="_blank">Mozilla Firefox - I use Librewolf actually</a></li>
+            </ul>
+        </section>
+        <section>fanlist - stuff I'm a fan of
+            <ul>
+                <li><a href="https://akiba.flirt-wind.net/azumanga/" target="_blank">Azumanga Daioh</a></li>
+                <li><a href="http://www.noonvale.net/hiscoregirl/" target="_blank">Hi Score Girl</a></li>
+                <li><a href="http://www.marheavenj.net/saber/" target="_blank">Saber (Fate series)</a></li>
+                <li><a href="http://amalgamate.afflatus-misery.net/orcbolg/" target="_blank">Goblin Slayer</a></li>
+                <li><a href="https://zanarkand.neocities.org/stardust/yume" target="_blank">Yume Nikki</a></li>
+                <li><a href="http://hellokitty.ravenbeauty.net/kuromi" target="_blank">Kurumi (Sanrio)</a></li>
+                <li><a href="http://fan.greenhype.net/gbasp/" target="_blank">Gameboy Advance SP</a></li>
+                <li><a href="https://hoshi.nu/lain/" target="_blank">Lain Iwakura (Serial Experiments Lain)</a></li>
+                <li><a href="https://fan.glast-heim.net/lucky/" target="_blank">Konata Izumi (Lucky Star)</a></li>
+                <li><a href="http://yandere.nu/erased/" target="_blank">Erased</a></li>
+                <li><a href="http://shana.reiji-maigo.net/" target="_blank">Shana (Shakugan no Shana)</a></li>
+                <li><a href="http://sky-petals.org/clannad" target="_blank">Clannad</a></li>
+                <li><a href="http://www.marheavenj.net/roll/" target="_blank">Roll.EXE (Mega Man Battle Network)</a></li>
+                <li><a href="https://moondvsted.neocities.org/fan/oneshot/" target="_blank">OneShot</a></li>
+                <li><a href="https://fan.hopeslair.haliya.net/fl/kirby/" target="_blank">Kirby</a></li>
+                <li><a href="http://powerup.i-heart-you.net/ps4" target="_blank">Playstation 4</a></li>
+                <li><a href="https://aerofanlisting.nekoweb.org/" target="_blank">Frutiger Aero</a></li>
+                <li><a href="https://silent.am/pixelart" target="_blank">Pixel Art</a></li>
+                <li><a href="https://fan.greenhype.net/mountaindew/" target="_blank">Mountain Dew</a></li>
+                <li><a href="https://glitterskies.org/steam/" target="_blank">Steam</a></li>
+            </ul>
+        </section>
+        <section>webrings - nice internet circles I found
+            <ul>
+                <li><a href="https://darkosparko.nekoweb.org/webrings%2Fapartments-webring/apartment-webring-main.html" target="_blank">Apartments Webring</a></li>
+                <li><a href="https://evehibi.nekoweb.org/ckwr/" target="_blank">Cookie Run Webring</a></li>
+                <li><a href="https://zorrpu.com/Webring/GalleryRing" target="_blank">Galleryring!</a></li>
+                <li><a href="https://pixscape.neocities.org/index.html" target="_blank">PixScape Webring</a></li>
+                <li><a href="https://evehibi.nekoweb.org/doodlering/" target="_blank">doodlering</a></li>
+                <li><a href="https://baccyflap.com/noai" target="_blank">the no ai webring</a></li>
+                <li><a href="https://nuthead.neocities.org/ring/" target="_blank">null webring</a></li>
+                <li><a href="https://melonland.net/surf-club" target="_blank">Surf Club</a></li>
+                <li><a href="https://webring.dinhe.net/" target="_blank">Retronaut Webring</a></li>
+            </ul>
+        </section>
+    </div>
+    <div class="nav">
+        <section>
+            <p><a href="javascript:window.history.back();">🡸 Go back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://dinpixels.neocities.org">Go to home page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a></p>
+        </section>
+    </div>
 </body>
 </html>
