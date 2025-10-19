@@ -3,7 +3,7 @@ let switches = document.getElementsByClassName('switch');
 let style = localStorage.getItem('style');
 
 if (style == null) {
-    setTheme('xp');
+    setTheme('halloween');
 } else {
     setTheme(style);
 }
