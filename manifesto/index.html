@@ -3,56 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Manifesto | Din's Desktop</title>
+    <title>Cyberspace Manifesto @ Din</title>
     <link rel="icon" type="image/x-icon" href="../src/img/tsuyomi_favicon.gif">
     <style>
+        :root {
+            --black: rgb(31, 5, 96);
+            --purple: rgb(178, 110, 255);
+            --yellow: rgb(255, 236, 66);
+            --pink: rgb(245, 110, 255);
+            --highlight: rgba(255, 255, 255, 0.25);
+            --shadow: rgba(0, 0, 0, 0.25);
+        }
         @font-face {
             font-display: swap;
-            font-family: 'Ubuntu';
+            font-family: 'URW Gothic';
             font-style: normal;
             font-weight: 300;
-            src: url('../src/fonts/ubuntu-v20-latin-300.woff2') format('woff2');
+            src: url('../src/fonts/URWGothic-Book.ttf') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'URW Gothic Bold';
+            font-style: bold;
+            font-weight: 700;
+            src: url('../src/fonts/URWGothic-Demi.ttf') format('woff2');
         }
         
         body {
             margin: 0;
             padding: 0;
-            font-family: Ubuntu;
+            font-family: "URW Gothic";
             background-image: url("../src/img/muse-dash-neon-radio.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             image-rendering: optimizeSpeed;
         }
+
+        p {
+            text-indent: 56px;
+        }
+
+        p, blockquote {
+            text-align: justify;
+            transition: background-color 0.25s ease-in-out;
+        }
+
+        p:hover, blockquote:hover {
+            background-color: var(--highlight);
+        }
         
-        #main {
+        p, blockquote {
+            font-size: 24px;
+        }
+
+        blockquote {
             margin: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 40px;
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-left: 10px solid var(--shadow);
+            background-color: var(--shadow);
+        }
+
+        blockquote .author, .side_thoughts blockquote .author {
+            margin: 0;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .author a {
+            text-decoration: none;
+            color: black;
+            transition: padding 0.20s ease-in-out, background-color 0.20s ease-in-out;
+        }
+
+        .author a:hover {
+            padding: 5px;
+            background-color: var(--yellow);
+        }
+
+        strong {
+            font-family: "URW Gothic Bold";
+        }
+
+        .chapter {
+            margin: 0;
+            margin-left: 30px;
             padding: 20px 60px;
+            margin-bottom: 60px;
             max-width: 720px;
-            background-image: url("../src/img/tiles/lilac.png");
+            background-color: var(--purple);
             overflow-y: auto;
         }
 
         #page_title {
-            margin-top: 150px;
+            font-family: "URW Gothic Bold";
             font-size: 42px;
+        }
+
+        #intro #page_title {
+            margin-top: 80px;
             text-align: center;
         }
 
-        .subject {
-            margin-bottom: 50px;
-        }
-
-        .aspect {
+        .subject_title {
+            margin: 0;
+            margin-top: 60px;
             font-size: 30px;
-        }
-
-        .description {
-            font-size: 20px;
-            text-align: justify;
-            text-indent: 56px;
         }
 
         #navigation {
@@ -62,56 +121,182 @@
             position: fixed;
             display: flex;
             flex-direction: row;
+            align-items: center;
             justify-content: space-evenly;
-            background-color: blueviolet;
+            background-color: var(--black);
         }
         #navigation a {
-            padding: 20px 30px;
+            padding: 10px 20px;
             display: block;
             color: white;
             text-decoration: none;
             transition: background-color 0.15s;
         }
         #navigation a:hover {
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: var(--highlight);
         }
-        
+
+        .side_thoughts {
+            margin-right: 40px;
+            padding: 30px 30px;
+            max-width: 400px;
+            background-color: var(--pink);
+            text-align: justify;
+            position: absolute;
+            left: 850px;
+            border-radius: 20px;
+        }
+        .side_thoughts p {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .side_thoughts blockquote {
+            margin: 0;
+        }
+
+        .chapter, .side_thoughts {
+            border: 10px solid rgb(31, 5, 96);
+            box-shadow: 10px 10px rgb(0, 255, 255);
+        }
+
+        strong {
+            background-color: var(--yellow);
+            padding: 5px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .version {
+            margin: 0;
+            padding: 10px 0 10px 20px;
+            font-size: 24px;
+            position: absolute;
+            transition: background-color 0.20s ease-in-out, padding 0.20s ease-in;
+        }
+        .version:hover {
+            padding: 10px;
+            background-color: var(--yellow);
+            cursor: help;
+        }
     </style>
 </head>
 <body>
-    
-    
-
-    <section id="main">
+    <section class="chapter" id="intro">
         <nav id="navigation">
             <a href="javascript:window.history.back();">🡸 Go back</a>
             <a href="javascript:window.scrollTo(0, 0);">Go to top 🡹</a>
-            <a href="https://dinpixels.neocities.org">🏠 Go home</a>
+            <a href="https://dinpixels.neocities.org">🡹 Go home</a>
             <a href="javascript:window.scrollTo(0, document.body.scrollHeight);">Go to bottom 🡳</a>
         </nav>
 
-        <h1 id="page_title">My Manifesto</h1>
+        <h1 id="page_title">Cyberspace Manifesto<span class="version" title="November 10, 2025">v1.0</span></h1>
+        <p>I keep seeing posts and videos about how internet used to be a fun place to hangout with, like how it was more lively and had personality back then, and over the years I feel the same thing. We have this problem of corporate platforms bombarded with ads and algorithms that cater to no one's taste and yet reels everyone back in.</p>
 
-        <section class="subject">
-            <h2 class="aspect">Works for Oneself, Originally</h2>
-            <p class="description">Remember that you create not just for others, but most importantly <strong>for yourself</strong> too. I believe that the internet wasn't only meant to connect us but also to be a bridge on sharing our own tunes and colors. We express ourselves not just so to 'validate' our purpose or existence, but mainly so that even a single person can here us, and hopefully come to an understanding--<strong>especially</strong> ourselves as it is also a mirror. So create something for yourself and let others see you a bit clearer in pixels (does this make any sense I guess I have to rewrite this topic later). <strong>Social media is designed so that its algorithm dictates what matters and what isn't.</strong></p>
+        <section class="side_thoughts">
+            <p>Profile page customization is still there. You can set your profile picture, cover picture, and others like badges as much as you want but that doesn't give you much control how your page will look, navigate, and feel like overall. The background doesn't change, the layout is fixed, and much worse, not all contents in your feed will stay as some posts get deleted for different reasons.</p>
+            <p>You can set your feed to any interests you're into by having most algorithms see what you like and share but then again you have no total control over the contents you see on the feed as algorithms changes over time.</p>
+            <p>Also because of it, not all your posts will be visible to your mutuals unless they visit your profile page. Furthermore, it can't be helped at times to feel like posting for the sake of content and clicks, for increasing numbers, instead of sharing your creation just for the sake of it. Having your work be treated as a mere content and have its worth defined by numbers gives me the ick.</p>
         </section>
 
-        <section class="subject">
-            <h2 class="aspect">Copying is Cheating, Not Love</h2>
-            <p class="description"><em>"Copy is an act of love"</em> or something between those lines is a huge lie. It promotes laziness and theft. One could not learn what they desire to make unless they create it out of <strong>inspiration</strong>, not a direct or a bit modified replica. If one wants to spread love, do it by being inspired with someone, and not by taking what they've worked hard for and <em>'claiming'</em> it as your creation. <strong>There's no love and respect towards the creator with copying, only an act of spitting on to their face.</strong></p>
-        </section>
+        <p>Personally I find it as people yearning to feel the same way they did in the past, all the nostalgia and niche that made the internet far from what it is today, but it's just hard to. The social media platforms make it difficult to be how it is in the old days: <strong>having the freedom of expression and identity</strong> and <strong>the feeling that you belong and in home<span class="blink">❚</span></strong></p>
+        <p>With the common web platforms being owned by companies who hold so much power they can abuse to their benefit, and doesn't really care about its users, it's no surprise that over the years these the internet experience becomes much worse. They can just take away useful features that they don't like or put them behind a paywall, strip away users of freedom of speech (see Twitter), throw more ads on your face, steal more of your data, and much more.</p>
+    </section>
+    <section class="chapter">
+            <h2 id="page_title" id="website_philosophy">Website Philosophy</h2>
+            <p>For these reasons, plus the AI bubble being the last straw to push me, I built my own website with these 3 founding <strong>philosophies: identity, freedom, and fun<span class="blink">❚</span></strong></p>
+            <p>The website won't work with the absence of either one of these foundations. The aforementioned essentials are necessary for its creation because what's even the point of making one if it's just another brainless copy out there with the countless corpo slop that are dead to their very cores?</p>
 
-        <section class="subject">
-            <h2 class="aspect">Web3 is An Idea to Imprison the Internet</h2>
-            <p class="description"><em>"Web3 is the future"</em> is one of the most intellectually challenged notion. The blockchain aims for scarcity, whilst the web itself, with what we have now, isn't for the most part. As long as one has a data connection they can freely surf with anywhere they like to, while taking some limitations into account of course. <strong>It is not decentralized and will never be.</strong> As long as it involves control and money, there are greedy people who will take the opportunity to get data and manipulate everything. With that being said, <strong>no, you still don't own nor control your data there.</strong> The Web3 services will have that 'covered' just as your average corporate fuck.</p>
-        </section>
+            <h3 class="subject_title" id="identity">Identity</h3>
+            <p>At a glance the website shows what kind of a person the webmaster is. It is filled with their interests, hobbies, likes and dislikes, thoughts, creations, the communities they're part of, and more. It's design and layout is all up to its creator—they can decorate and arrange their place as much as they want. The same applies to its function and purpose as well, only the webmaster defines and controls them as they please.</p>
 
-        <section class="subject">
-            <h2 class="aspect">GenAI is Helping No One</h2>
-            <p class="description">As countlessly have been mentioned already by numerous creators, it doesn't magically give anyone an art or any form of media from nothing, no, it steals from everything that's publicly accessible online without the knowledge nor consent from the original creators. It isn't even just a matter of environmental impact nor legalities, it's about trampling on everyone's endeavors, identities, feelings, memories, and experiences. <strong>It is an insult to life itself</strong>, as mentioned by a well-known director in the animation industry.</p>
-        </section>
+            <section class="side_thoughts">
+                <p>We had visitors and have been connected to different circles and friends online, and over time the people, their homes, and even the places they could consider home change, and so the website itself. Overall, despite these changes only our selves could get such experiences and formed bonds which itself defines our very own identity. That itself is permanent.</p>
+            </section>
 
+            <p>While <strong>the website is a form of expression, it is also one's extension<span class="blink">❚</span></strong> I believe that a place you can call home is a mirror to one's soul, like how you tend the plants, how you take care of your pets, how frequently you clean your room, and so on, and the same applies to the website. Just as how the time flies, experiences and memories are made, and changes are inevitable, the same things go into our website.</p>
+            <p>How others see you and your website would most likely be different in your own perspective not just a webmaster but as an individual, but nevertheless, your website, your creation, is your extension of self. It could act as proxy (surely most of us do), but hints of ourselves inevitably incorporate deep within it that no one could ever replicate, and that what's makes our website, creations, special and unique.</p>
+
+            <section class="side_thoughts">
+                <p>Frankly even the content in social media is repetitive, look at how Mr. Beast contaminated the YouTube feed. Its algorithm favors contents that are similar in some way from their videos and it's really tiring to look at those ugly thumbnails.</p>
+                <p>Content aside, I also hate how invasive AI is. It's literally everywhere in every social media platform I'm using (well I haven't totally left social media for means of my contacts). On Github and Stack Overflow it's no surprise that they added these <em>'assistants'</em> since these are platforms catered for programming but on the likes of Twitter and Facebook? Clearly they want to disconnect us furthermore with these chatbots and unfortunately many people take the bite and indulge the sad dystopian idea.</p>
+            </section>
+
+            <p>This is why doomscrolling (as the name itself even implies) is utterly mundane on social media, mostly are simply identical carbon copies of algorithm-centered formula. The platforms are lifeless and only thrives by using its people. Not counting the content, there's nothing really new out there and it's just a race whether who creates a new trend or useless feature that nobody asked for.</p>
+
+            <blockquote>“The villain here is not necessarily the Internet, or even the idea of social media; it is the invasive logic of commercial social media and its financial incentive to keep us in a profitable state of anxiety, envy, and distraction. It is furthermore the cult of individuality and personal branding that grow out of such platforms and affect the way we think about our offline selves and the places where we actually live.”
+                <p class="author">~ <a href="https://www.goodreads.com/book/show/42771901-how-to-do-nothing" target="_blank">Jenny Odell, How to Do Nothing</a></p></blockquote>
+
+            <p>It's more fun to browse the indie web as the websites are always fresh, aren't constrained with any algorithm or trends, and always follows their heart and passion. It's lively and engaging, and I personally I feel that people here are more genuine than most on social media. <strong>It's a human behind the website and its creations<span class="blink">❚</span></strong> and not a machine.</p>
+
+            <blockquote>“You must not stay still, even if that means you will lose your way for a while. However you must find your own path, trends don’t survive.”
+                <p class="author">~ <a href="https://melonking.net/melon.html?z=/thoughts/manifesto" target="_blank">Melonking</a></p></blockquote>
+
+            <p>Never in my life the warmth and comfort of real people will be replaced by the cold, calculated being of so-called Artificial Intelligence. I share the joy and sorrow to my fellow flesh beings on the cyberspace (and grasslands, too).</p>
+            
+            <h3 class="subject_title" id="freedom">Freedom</h3>
+            <p><strong>The freedom to create, share, and speak<span class="blink">❚</span></strong>as long as it isn't inhumane and hurting anyone not just on the internet but in real life as well.</p>
+
+            <section class="side_thoughts">
+                <p>The censorship of opinions led to extremists dominating the platform, leaving no space for 'casual' users to leave their opinion without getting hunted by them. An example of this is Twitter where many terminologies are censored, feeds are rigged on elections, etc. Basically if you 'talk ill' against their beliefs you're automatically a villain to be taken down.</p>
+                
+                <blockquote>“One reason for the degree of hostility on Twitter is that the site’s metrics can be gamed to elevate controversial and abusive content. Research also shows false and misleading news is retweeted more than authentic stories, especially among like-minded groups.”
+                    <p class="author">~ <a href="https://theconversation.com/twitters-design-stokes-hostility-and-controversy-heres-why-and-how-it-might-change-166555" target="_blank">The Conversation</a></p>
+                </blockquote>
+            </section>
+
+            <p>Social media proved that as long as a web platform is centralized and under the influence of power, its supposedly opposition in views (mostly in politics) will be silenced and not given a space to speak. This is bad as social media should've been a place to let our voices be heard in the first place.</p>
+
+            <blockquote>“Social media is too limiting. We believe that everyone should be able to freely express themselves in their own little corner of the web, without having to worry about things like algorithms, tracking, or advertisements.”
+                <p class="author">~ <a href="https://nekoweb.org/" target="_blank">Nekoweb</a></p>
+            </blockquote>
+
+            <p>This censorship also led to the restrictions with NSFW content, leaving multiple creators less visibility to potential clients and thus harming their source of income. Again, an example of this is Twitter, adding the payment processors like Paypal.</p>
+            <p>Obviously it's not just the NSFW media that's affected, but the SFW ecosystem as well for the algorithms prioritize giving exposure to AI-generated content that's easy to consume and kill your brain. it isn't difficult to miss any genAI slop anywhere, especially Google, this search engine used to be versatile and now it's broken. I just need normal images for my normal artwork as normal references and it spits out the abnormal garbages I don't need nor want.</p>
+            <p><strong>There's not much freedom at all in a place where an influential power dictates all<span class="blink">❚</span></strong></p>
+            <p>I just want a space where I can freely share my creations and thoughts in full view for everyone to see. No algorithms, no ads, no NFT/crypto and most importantly, no AI bullshit. I don't want nor need anyone to sample my words and creations and spit out a mere cheap imitation of me.</p>
+            <p><strong>I alone, am enough to express myself<span class="blink">❚</span></strong> may it be through this medium or in person. I don't need anyone to speak for my opinions nor have AI replace my very being anywhere. Of course anyone can have their own opinion and perspective about me but when it comes to my own beliefs and words I'm certain that I can work on them myself. If I don't, then I might as well be just a shell of my being, physically breathing but dead in terms of being an individual.</p>
+
+            <section class="side_thoughts">
+                <p>I'd clarify that not all content presented in my website, like in the home and about me page, are my creations. I use images, videos, and music created by other artists to present my interests and niches. This includes screenshots of various media, animated GIFs obscure or not, and OSTs you can find publicly available and accessible in Spotify.</p>
+                <p>What I meant by this is that I don't just want to present myself in the cyberspace as an artist only, but also just as myself only as a fan of these interests.</p>
+            </section>
+
+            <p>With these factors taken into account, I made it so that I'm not following anyone and utterly just copying them even if I'm infuenced or have taken inspiration from them, an idea, or a niche. The entirety of my website still my original work of art and expression and I'm free to mold its shape to my liking.</p>
+            <p>TL;DR: I am free from the shackles that is corporate control and external factors' influence. My website screams which others might find chaotic and cringe but that's me and irreplaceable to the core.</p>
+
+            <h3 class="subject_title" id="fun">Fun</h3>
+            <p>Social media is boring. While taking your attention with how it's designed, it takes away your enthusiasm and the joy of browsing the internet.</p>
+            <p><strong>I want my website to be fun in its own way, and I wanna see unique and cool websites made by creative people<span class="blink">❚</span></strong> I don't want another corporate themed, flat and dull, generic website that doesn't even provide a user-friendly space in the first place to fill the internet.</p>
+            <p>We don't need a Web3, a blockchain, nor yet another Twitter copy to migrate into when executives just call it a day making drastic changes that ruin the user experience worldwide. No. What we need is an ecosystem of indie websites to fill the internet, keep communities close, alive, and thriving, and be relevant enough for the search engines not to ignore.</p>
+
+            <section class="side_thoughts">
+                <p>Personally, I see this leading social media into being more toxic or at least allowing more people to not be mindful with every human being behind the screen. The endless drama isn't new, so seeing what's happening in the VTuber space lately convinces me that the chase for numbers corrupts creators and makes them forget their very origin.</p>
+                <p>It's apparent too that it's the controversial takes which get more engagements in social media, which for verified users in Twitter means monetization, and so we got these endless cycle of drama and hate these vultures prey on. There's no joy in taking part of such platforms designed in a way to turn all of us against each other in exchange of money and control.</p>
+            </section>
+
+            <p>Also I'd like to add that not everything has to be made solely for making profit. These ads and monetization on content made social media a competitive infestation of engagement-hungry creators. I'm not saying that making money is bad, it's essential to buy necessities and wants to live, what I meant by this is that most content creators or users are blinded by numbers and popularity that they just not create in quantity instead of quality, but also forgot to express themselves genuinely.</p>
+            <p>Furthermore, a website would be fun if it's not being too formal and rather <strong>a much more relaxed personal home<span class="blink">❚</span></strong> Like while it would most likely be targeted to a very specific type of audience, anyone is still welcome. So go wild on making your own website and personalizing it. Still however, it depends on it's intended purpose as some might prefer to have a portfolio as their main website instead.</p>
+            <p>Regardless, these companies made such decisions and designs which led to the depressing state of the internet, at least to the most visible part of it. If you look hard enough, the internet is still as fun as it could be—<strong>the indie web will always live and resist against corporate control, maintaining lively and creative endeavors a reality<span class="blink">❚</span></strong></p>
+            <p>But frankly I'm getting tired of the notion that we should look hard enough just so we can enjoy the indie web surfing experience, when it should be the norm in the first place. Thankfully more people are becoming more aware and vocal on how dull the known internet came to be, and have been creating and sharing their own websites ever since then. I believe that indie web will just continue to grow from now on just like how Linux systems are gaining popularity thanks to the greed and dumb decisions of Microsoft, but I digress.</p>
+
+            <section class="side_thoughts">
+                <p>Take a look at some known games and films, there are countless remakes and live actions of these popular IPs as corporate executives know they can prey on everyone's nostalgia and take less to no risk with their profit margins in the process. It's a huge win for them if the said recycles were received well, but it's a 50/50 experience for the consumers themselves.</p>
+            </section>
+
+            <p>Corporate web doesn't have much to surprise us since most of them would rather take the boring but safe route rather than taking the risky but novel and inovative path. Unlike them, the indie web's foundation and philosophy isn't really constrained that much and has more growth potential. You can find games, sketch apps, galleries, blogs, chat and forums, 'emulations', easter eggs, and even achievements in some indie websites—all created by the cool webmasters themselves!</p>
+            <p>With all that being said, for me the website gives me joy when it presents its webmaster's character and humanity rather than being an ad billboard or show itself as a product. <strong>Web surfing should be a thrilling adventure to take<span class="blink">❚</span></strong> and not just a mundane task to get over with misery and be relatable to the majority to fit in.</p>
+
+            <h3 class="subject_title" id="website_philosophy_end">Conclusion</h3>
+            <p>Make fun websites our there. Make it your own, about yourself, family, and friends. Never let any company or power control not just your website but your life and self as well. Be free, get wild and creative!</p>
     </section>
 </body>
 </html>
